@@ -10,15 +10,15 @@
     scroll-behavior: smooth;
 }
 *::selection{
-    color: var(--color-blanco);
-    background: var(--color-selection);
+    color: var(--cl-blanco);
+    background: var(--cl-selection);
 }
 /*/////////////////////////////////////*/
 /*                BODY                 */
 /*/////////////////////////////////////*/
 body{
-	font-family: Montserrat;
-	font-size: 16px;
+	font-family: Montserrat-Black;
+	font-size: 1em;
 }
 /*/////////////////////////////////////*/
 /*                ROOT                 */
@@ -26,9 +26,18 @@ body{
 :root{
 
 	/*basic colors*/
-    --color-blanco: #f3f2f2;
-    --color-negro: #1b1b1d;
-    --color-selection: #a35cf8;
+    --cl-blanco: #f3f2f2;
+    --cl-negro: #1b1b1d;
+    --cl-selection: #a35cf8;
+}
+/*/////////////////////////////////////*/
+/*               LOGIN                 */
+/*/////////////////////////////////////*/
+.cl-black{
+    color: var(--cl-negro);
 }
 
-
+#titleLogin h2{
+    font-weight: 600;
+    font-size: 2em;
+}
