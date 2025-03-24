@@ -28,7 +28,7 @@ OBJETIVO:
 <body>
     
     <!-- Contenedor inicial de "crear una cuenta" -->
-    <form action="eh_logica.php" method="post">
+    <form action="CONTROLLER/userController.php" method="post">
     
     <!-- Título -->
         <span id="titleLogin">
