@@ -30,7 +30,7 @@ OBJETIVO:
 <body>
 
     <!-- Contenedor inicial de "crear una cuenta" -->
-    <form action="CONTROLLER/userController.php" method="post" id="contForm">
+    <form action="../CONTROLLER/userController.php" method="post" id="contForm">
 
         <div id="contTitle">
             <!-- Título -->
@@ -43,13 +43,13 @@ OBJETIVO:
             <div id="contInputs">
 
                 <!-- Nombre de usuario con el que se le denominará -->
-                <input type="text" name="nameLogin" placeholder="Nombre & Apellido">
+                <input type="text" name="nameLogin" placeholder="Nombre & Apellido" required>
 
                 <!-- Correo electrónico que usará para el registro -->
-                <input type="text" name="mailLogin" placeholder="Dirección de correo electrónico">
+                <input type="text" name="mailLogin" placeholder="Dirección de correo electrónico" required>
 
                 <!-- Contraseña de la cuenta -->
-                <input type="text" name="passwordLogin" placeholder="Contraseña">
+                <input type="text" name="passwordLogin" placeholder="Contraseña" required minlength="6">
 
                 <!-- Guardar y continuar los datos introducidos-->
                 <button class="btnLogin" name="btnLogin">
@@ -73,6 +73,8 @@ OBJETIVO:
             </button>
         </div>
     </form>
+
+
     <div id="my-signin2"></div>
     <script>
         function onSuccess(googleUser) {
