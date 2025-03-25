@@ -49,7 +49,7 @@ OBJETIVO:
                 <input type="text" name="mailLogin" placeholder="Dirección de correo electrónico" required>
 
                 <!-- Contraseña de la cuenta -->
-                <input type="text" name="passwordLogin" placeholder="Contraseña" required minlength="6">
+                <input type="password" name="passwordLogin" placeholder="Contraseña" required minlength="6">
 
                 <!-- Guardar y continuar los datos introducidos-->
                 <button class="btnLogin" name="btnLogin">
