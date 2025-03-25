@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
 
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/fonts.css">
-
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
     <!-- <link rel="icon" type="image/png" href="IMG/favicon.png"> -->
 </head>
 
@@ -25,13 +26,14 @@ OBJETIVO:
     · Validar formularis amb codi HTML.
 · Codificar un disseny responsiu amb CSS.
 -->
+
 <body>
-    
+
     <!-- Contenedor inicial de "crear una cuenta" -->
     <form action="CONTROLLER/userController.php" method="post" id="contForm">
-    
+
         <div id="contTitle">
-        <!-- Título -->
+            <!-- Título -->
             <span id="titleLogin">
                 <h2>CREA</h2>
                 <h2>UNA</h2>
@@ -40,37 +42,62 @@ OBJETIVO:
 
             <div id="contInputs">
 
-            <!-- Nombre de usuario con el que se le denominará -->
+                <!-- Nombre de usuario con el que se le denominará -->
                 <input type="text" name="nameLogin" placeholder="Nombre & Apellido">
 
-            <!-- Correo electrónico que usará para el registro -->
+                <!-- Correo electrónico que usará para el registro -->
                 <input type="text" name="mailLogin" placeholder="Dirección de correo electrónico">
 
-            <!-- Contraseña de la cuenta -->
+                <!-- Contraseña de la cuenta -->
                 <input type="text" name="passwordLogin" placeholder="Contraseña">
 
-            <!-- Guardar y continuar los datos introducidos-->
+                <!-- Guardar y continuar los datos introducidos-->
                 <button class="btnLogin" name="btnLogin">
                     Continuar
                 </button>
             </div>
         </div>
 
-    <!-- ------------------- -->
+        <!-- ------------------- -->
         <hr class="hrPadding">
 
         <div id="contSession">
-        <!-- Continuar con Google, si el usuario tiene esa clase de correo -->
+            <!-- Continuar con Google, si el usuario tiene esa clase de correo -->
             <button class="btnGoogle" name="btnGoogle">
                 Continuar con Google
             </button>
 
-        <!-- Iniciar sesión, si el usuario ya tiene cuenta registrada -->
+            <!-- Iniciar sesión, si el usuario ya tiene cuenta registrada -->
             <button class="btnNext" name="btnNext">
                 Iniciar sesión
             </button>
         </div>
     </form>
+    <div id="my-signin2"></div>
+    <script>
+        function onSuccess(googleUser) {
+            console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+        }
+
+        function onFailure(error) {
+            console.log(error);
+        }
+
+        function renderButton() {
+            gapi.signin2.render('my-signin2', {
+                'scope': 'profile email',
+                'width': 240,
+                'height': 50,
+                'longtitle': true,
+                'theme': 'dark',
+                'onsuccess': onSuccess,
+                'onfailure': onFailure
+            });
+        }
+    </script>
+
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 
 </body>
+
 </html>
