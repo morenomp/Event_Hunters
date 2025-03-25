@@ -9,8 +9,8 @@
     <meta name="copyright" content="propiedades del copyright Event Hunters">
     <title>Login - Event Hunters</title>
 
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/fonts.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/fonts.css">
 
     <!-- <link rel="icon" type="image/png" href="IMG/favicon.png"> -->
 </head>
@@ -28,41 +28,48 @@ OBJETIVO:
 <body>
     
     <!-- Contenedor inicial de "crear una cuenta" -->
-    <form action="CONTROLLER/userController.php" method="post">
+    <form action="CONTROLLER/userController.php" method="post" id="contForm">
     
-    <!-- Título -->
-        <span id="titleLogin">
-            <h2>CREA</h2>
-            <h2>UNA</h2>
-            <h2>CUENTA</h2>
-        </span>
+        <div id="contTitle">
+        <!-- Título -->
+            <span id="titleLogin">
+                <h2>CREA</h2>
+                <h2>UNA</h2>
+                <h2>CUENTA</h2>
+            </span>
 
-    <!-- Nombre de usuario con el que se le denominará -->
-        <input type="text" name="nameLogin" placeholder="Nombre & Apellido">
+            <div id="contInputs">
 
-    <!-- Correo electrónico que usará para el registro -->
-        <input type="text" name="mailLogin" placeholder="Dirección de correo electrónico">
+            <!-- Nombre de usuario con el que se le denominará -->
+                <input type="text" name="nameLogin" placeholder="Nombre & Apellido">
 
-    <!-- Contraseña de la cuenta -->
-        <input type="text" name="passwordLogin" placeholder="Contraseña">
+            <!-- Correo electrónico que usará para el registro -->
+                <input type="text" name="mailLogin" placeholder="Dirección de correo electrónico">
 
-    <!-- Guardar y continuar los datos introducidos-->
-        <button class="btnLogin" name="btnLogin">
-            Continuar
-        </button>
+            <!-- Contraseña de la cuenta -->
+                <input type="text" name="passwordLogin" placeholder="Contraseña">
+
+            <!-- Guardar y continuar los datos introducidos-->
+                <button class="btnLogin" name="btnLogin">
+                    Continuar
+                </button>
+            </div>
+        </div>
 
     <!-- ------------------- -->
-        <hr class="cl-black ">
+        <hr class="hrPadding">
 
-    <!-- Continuar con Google, si el usuario tiene esa clase de correo -->
-        <button class="btnGoogle" name="btnGoogle">
-            Continuar con Google
-        </button>
+        <div>
+        <!-- Continuar con Google, si el usuario tiene esa clase de correo -->
+            <button class="btnGoogle" name="btnGoogle">
+                Continuar con Google
+            </button>
 
-    <!-- Iniciar sesión, si el usuario ya tiene cuenta registrada -->
-        <button class="btnNext" name="btnNext">
-            Iniciar sesión
-        </button>
+        <!-- Iniciar sesión, si el usuario ya tiene cuenta registrada -->
+            <button class="btnNext" name="btnNext">
+                Iniciar sesión
+            </button>
+        </div>
     </form>
 
 </body>

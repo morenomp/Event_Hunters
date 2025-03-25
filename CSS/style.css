@@ -19,6 +19,7 @@
 body{
 	font-family: Montserrat-Black;
 	font-size: 1em;
+    color: var(--cl-negro);
 }
 /*/////////////////////////////////////*/
 /*                ROOT                 */
@@ -33,11 +34,40 @@ body{
 /*/////////////////////////////////////*/
 /*               LOGIN                 */
 /*/////////////////////////////////////*/
-.cl-black{
-    color: var(--cl-negro);
+#contForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contTitle{
+    width: 45%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#contInputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hrPadding{
+    padding: 0 25%;
+    margin: 25px;
 }
 
 #titleLogin h2{
     font-weight: 600;
     font-size: 2em;
+}
+#titleLogin h2:nth-child(2){
+    text-align: end;
+}
+
+/*             BUTTONS             */
+
+.btnNext{
+    border: none;
+    background-color: var(--cl-blanco);
 }
