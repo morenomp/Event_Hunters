@@ -20,3 +20,10 @@
     font-family: Montserrat-Black;
     src: url(../Fonts/Montserrat-Black.ttf);
 }
+/*/////////////////////////////////////*/
+/*               Moderna               */
+/*/////////////////////////////////////*/
+@font-face{
+    font-family: Moderna;
+    src: url(../Fonts/MODERNA_.ttf);
+}

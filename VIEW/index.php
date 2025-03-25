@@ -38,16 +38,16 @@ OBJETIVO:
         </span>
 
     <!-- Nombre de usuario con el que se le denominará -->
-        <input type="text">
+        <input type="text" name="nameLogin" placeholder="Nombre & Apellido">
 
     <!-- Correo electrónico que usará para el registro -->
-        <input type="text">
+        <input type="text" name="mailLogin" placeholder="Dirección de correo electrónico">
 
     <!-- Contraseña de la cuenta -->
-        <input type="text">
+        <input type="text" name="passwordLogin" placeholder="Contraseña">
 
     <!-- Guardar y continuar los datos introducidos-->
-        <button>
+        <button class="btnLogin" name="btnLogin">
             Continuar
         </button>
 
@@ -55,12 +55,12 @@ OBJETIVO:
         <hr class="cl-black ">
 
     <!-- Continuar con Google, si el usuario tiene esa clase de correo -->
-        <button>
+        <button class="btnGoogle" name="btnGoogle">
             Continuar con Google
         </button>
 
     <!-- Iniciar sesión, si el usuario ya tiene cuenta registrada -->
-        <button>
+        <button class="btnNext" name="btnNext">
             Iniciar sesión
         </button>
     </form>
