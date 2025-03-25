@@ -59,7 +59,7 @@ OBJETIVO:
     <!-- ------------------- -->
         <hr class="hrPadding">
 
-        <div>
+        <div id="contSession">
         <!-- Continuar con Google, si el usuario tiene esa clase de correo -->
             <button class="btnGoogle" name="btnGoogle">
                 Continuar con Google

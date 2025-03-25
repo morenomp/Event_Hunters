@@ -71,3 +71,7 @@ body{
     border: none;
     background-color: var(--cl-blanco);
 }
+#contSession{
+    display: flex;
+    align-items: center;
+}
