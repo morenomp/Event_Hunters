@@ -17,34 +17,7 @@ OBJETIVOS:
 · Se debe usar un único php llamado userController, que hará registro, login y logout
 · Añadir validaciones
 -->
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['nameLogin'];
-    $mail = $_POST['mailLogin'];
-    $passwd = $_POST['passwordLogin'];
-}
+<!-- 
+Este php no se usará todavía, ya que es el controlador que haremos con Jose
+-->
 
-if ($name == "admin" && $mail == "admin@admin.com" && $passwd == "12345aA") {
-    echo '<h1>ERES EL ADMINISTRADOR!</h1>';
-    echo "Bienvenido " . $name . "." . '<br>';
-    echo "Email: " . $mail . ".";
-} else {
-    echo "Bienvenido " . $name . "." . '<br>';
-    echo "Email: " . $mail . ".";
-}
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuenta</title>
-</head>
-
-<body>
-
-</body>
-
-</html>

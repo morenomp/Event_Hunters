@@ -10,16 +10,23 @@
     scroll-behavior: smooth;
 }
 *::selection{
-    color: var(--cl-blanco);
+    color: var(--cl-white);
     background: var(--cl-selection);
 }
 /*/////////////////////////////////////*/
 /*                BODY                 */
 /*/////////////////////////////////////*/
 body{
+    width: 100%;
+    height: 100vh;
+
 	font-family: Montserrat-Black;
 	font-size: 1em;
-    color: var(--cl-negro);
+    color: var(--cl-black);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 /*/////////////////////////////////////*/
 /*                ROOT                 */
@@ -27,9 +34,10 @@ body{
 :root{
 
 	/*basic colors*/
-    --cl-blanco: #f3f2f2;
-    --cl-negro: #1b1b1d;
+    --cl-white: #f3f2f2;
+    --cl-black: #1b1b1d;
     --cl-selection: #a35cf8;
+    --cl-blue: #e1f0f9;
 }
 /*/////////////////////////////////////*/
 /*               LOGIN                 */
@@ -43,13 +51,36 @@ body{
 #contTitle{
     width: 45%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 #contInputs{
+    width: 24em;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 20px;
+}
+
+#contInputs input,
+#contInputs button{
+    padding: 15px;
+    border-radius: 15px;
+}
+
+#contInputs input{
+    border: none;
+    background: #e0e0e0;
+    box-shadow: inset 5px 4px 15px #5a5a5a21, inset -60px -46px 25px #ffffff;
+}
+
+#contInputs button{
+    border: none;
+    font-family: 'Montserrat-Bold';
+    color: var(--cl-white);
+    background: var(--cl-selection);
+    box-shadow: 3px 3px 10px #d9d9d9, -5px -5px 10px #ffffff;
 }
 
 .hrPadding{
@@ -59,19 +90,47 @@ body{
 
 #titleLogin h2{
     font-weight: 600;
-    font-size: 2em;
+    font-size: 3.1em;
 }
 #titleLogin h2:nth-child(2){
     text-align: end;
 }
-
+/*/////////////////////////////////////*/
 /*             BUTTONS             */
-
+/*/////////////////////////////////////*/
 .btnNext{
     border: none;
-    background-color: var(--cl-blanco);
+    background-color: #fff;
 }
 #contSession{
     display: flex;
     align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.btnGoogle{
+    border-radius: 50px;
+    border: 3px solid #4285f4;
+    border: none;
+    background-color: var(--cl-white);
+
+    width: 30em;
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*/////////////////////////////////////*/
+/*                SIZE                 */
+/*/////////////////////////////////////*/
+.btnGoogle,
+.btnNext{
+    font-size: 1.1em;
+}
+
+.imgSize{
+    width: 1.4em;
+    margin-right: 15px;
 }
