@@ -24,18 +24,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $passwd = $_POST['passwordLogin'];
 }
 
-echo "Bienvenido " . $name . "." . '<br>';
-echo "Email: " . $mail . "."
+if ($name == "admin" && $mail == "admin@admin.com" && $passwd == "12345aA") {
+    echo '<h1>ERES EL ADMINISTRADOR!</h1>';
+    echo "Bienvenido " . $name . "." . '<br>';
+    echo "Email: " . $mail . ".";
+} else {
+    echo "Bienvenido " . $name . "." . '<br>';
+    echo "Email: " . $mail . ".";
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cuenta</title>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>

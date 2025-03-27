@@ -74,7 +74,7 @@ OBJETIVO:
         </div>
     </form>
 
-
+<!-- Hemos añadido el script para iniciar sesion con google, pero no sabemos como implementarlo correctamente. -->
     <div id="my-signin2"></div>
     <script>
         function onSuccess(googleUser) {
