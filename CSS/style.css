@@ -72,7 +72,7 @@ body{
 #contInputs input{
     border: none;
     background: #e0e0e0;
-    box-shadow: inset 5px 4px 15px #5a5a5a21, inset -60px -46px 25px #ffffff;
+    box-shadow: inset 2px 2px 7px #5a5a5a21, inset 0px -48px 9px #ffffff;
 }
 
 #contInputs button{
