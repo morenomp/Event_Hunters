@@ -21,3 +21,45 @@ OBJETIVOS:
 Este php no se usará todavía, ya que es el controlador que haremos con Jose
 -->
 
+<?php
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $user = new userController;
+
+    if (isset($_POST["login"])) {
+        echo "<p>Login button is clicked</p>";
+        $user->login();
+    } else if (isset($_POST["register"])) {
+        echo "<p>Register button is clicked</p>";
+        $user->register();
+    } else if (isset($_POST["logout"])) {
+        echo "<p>Logout button is clicked</p>";
+        $user->logout();
+    }
+}
+
+class userController
+{
+    private $connect;
+
+
+    function login()
+    {
+
+        echo __LINE__;
+    }
+
+    function register()
+    {
+
+        echo __LINE__;
+    }
+
+    function logout()
+    {
+
+        echo __LINE__;
+    }
+}
+?>
