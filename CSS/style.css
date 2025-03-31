@@ -95,9 +95,18 @@ body{
 #titleLogin h2:nth-child(2){
     text-align: end;
 }
+
+#imgProfile{
+    width: 100px;
+}
 /*/////////////////////////////////////*/
 /*             BUTTONS             */
 /*/////////////////////////////////////*/
+.btnLogin,
+.btnGoogle,
+.btnNext{
+    cursor: pointer;
+}
 .btnNext{
     border: none;
     background-color: #fff;
@@ -127,7 +136,7 @@ body{
 /*/////////////////////////////////////*/
 .btnGoogle,
 .btnNext{
-    font-size: 1.1em;
+    font-size: .9em;
 }
 
 .imgSize{
