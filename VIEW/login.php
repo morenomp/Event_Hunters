@@ -46,8 +46,7 @@ OBJETIVO:
                 <!-- Nombre de usuario con el que se le denominará -->
                 <input type="text" name="nameLogin" placeholder="Nombre & Apellido" pattern="^[A-Za-z]+$" required>
 
-                <!-- Correo electrónico que usará para el regis
-                 tro -->
+                <!-- Correo electrónico que usará para el registro -->
                 <input type="email" name="mailLogin" placeholder="Dirección de correo electrónico" pattern="^[A-Za-z0-9]+@[A-z0-9]+.[A-za-z0-9]{2,3}$" required>
 
                 <!-- Contraseña de la cuenta -->
