@@ -27,7 +27,7 @@ session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = new userController;
 
-    if (isset($_POST["login"])) {
+    if (isset($_POST["btnLogin"])) {
         echo "<p>Login button is clicked</p>";
         $user->login();
     } else if (isset($_POST["register"])) {

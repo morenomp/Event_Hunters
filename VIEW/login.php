@@ -30,7 +30,8 @@ OBJETIVO:
 <body>
 
     <!-- Contenedor inicial de "crear una cuenta" -->
-    <form action="../VIEW/cuenta.php" method="post" id="contForm">
+    <!-- <form action="../VIEW/cuenta.php" method="post" id="contForm"> -->
+    <form action="../CONTROLLER/userController.php" method="post" id="contForm">
 
         <div id="contTitle">
             <!-- Título -->
@@ -45,7 +46,8 @@ OBJETIVO:
                 <!-- Nombre de usuario con el que se le denominará -->
                 <input type="text" name="nameLogin" placeholder="Nombre & Apellido" pattern="^[A-Za-z]+$" required>
 
-                <!-- Correo electrónico que usará para el registro -->
+                <!-- Correo electrónico que usará para el regis
+                 tro -->
                 <input type="email" name="mailLogin" placeholder="Dirección de correo electrónico" pattern="^[A-Za-z0-9]+@[A-z0-9]+.[A-za-z0-9]{2,3}$" required>
 
                 <!-- Contraseña de la cuenta -->
