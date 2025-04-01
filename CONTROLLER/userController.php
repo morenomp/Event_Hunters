@@ -23,6 +23,34 @@ Este php no se usará todavía, ya que es el controlador que haremos con Jose
 
 <?php
 session_start();
+$server = "localhost";
+$user = "root";
+$password = "";
+$dbname = "event_hunters"; //Le pasamos los datos que vamos a usar para crear la base de datos
+
+$conn = new mysqli($server, $user, $password); //Iniciamos la conexion a traves de un objeto que iremos llamando en el codigo.
+
+
+$sql = "CREATE DATABASE IF NOT EXISTS $dbname"; // Creamos la base de datos, y hacemos la comprobacion de que funciona correctamente, en el caso de que no funcione, no sigue leyendo el script.
+if ($conn->query($sql) === TRUE) {
+    echo "Base de datos creada o ya existente.<br>";
+} else {
+    die("Error creando la base de datos: " . $conn->error);
+}
+
+$conn->select_db($dbname); // Seleccionamos la base de datos que vamos a usar.
+
+
+$sql = "CREATE TABLE IF NOT EXISTS USUARIOS ( 
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name varchar(25), 
+    email varchar(50),
+    password varchar(50));"; // Le pasamos la tabla que queremos crear, y comprobamos de nuevo si funciona correctamente, si no pasamos un die al script.
+if ($conn->query($sql) === TRUE) {
+    echo "Tabla creada o ya existente.<br>";
+} else {
+    die("Error creando la tabla: " . $conn->error);
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = new userController;
