@@ -24,69 +24,16 @@ Este php no se usará todavía, ya que es el controlador que haremos con Jose
 <?php
 session_start();
 
-// Le pasamos los datos que vamos a usar para crear la base de datos:
-$server = "localhost";
-$user = "root";
-$password = "";
-$dbname = "event_hunters";
-
-// Iniciamos la conexion a traves de un objeto que iremos llamando en el código.
-// A este objeto le pasaremos el server, user y la password, ya que nos servirá de conexión.
-$conn = new mysqli($server, $user, $password); 
-
-// Creamos la base de datos,...
-$sql = "CREATE DATABASE IF NOT EXISTS $dbname"; 
-
-//...y hacemos la comprobacion de que funciona correctamente,...
-if ($conn->query($sql) === TRUE) {
-
-    echo "Base de datos creada o ya existente.<br>";
-
-} else {
-
-// ...en el caso de que no funcione, no sigue leyendo el script.
-// Usaremos la propiedad "die", la cual se utiliza para finalizar inmediatamente 
-// la ejecución de un script y mostrar un mensaje
-    die("Error creando la base de datos: " . $conn->error);
-}
-
-// Seleccionaremos la base de datos que vamos a usar.
-$conn->select_db($dbname); 
-
-// Le pasamos la tabla que queremos crear, y comprobamos de nuevo si funciona correctamente,...
-$sql = "CREATE TABLE IF NOT EXISTS USUARIOS ( 
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name varchar(25), 
-    email varchar(50),
-    password varchar(50));"; 
-
-//...y hacemos la comprobacion de que funciona correctamente,...
-if ($conn->query($sql) === TRUE) {
-
-    echo "Tabla creada o ya existente.<br>";
-
-} else {
-
-    // ...si no pasamos un die al script.
-    die("Error creando la tabla: " . $conn->error);
-}
-
 //--------------------------------------------------
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = new userController;
-
     if (isset($_POST["btnLogin"])) {
-
         echo "<p>Login button is clicked</p>";
         $user->login();
-
     } else if (isset($_POST["register"])) {
-
         echo "<p>Register button is clicked</p>";
         $user->register();
-
     } else if (isset($_POST["logout"])) {
-
         echo "<p>Logout button is clicked</p>";
         $user->logout();
     }
@@ -94,12 +41,68 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 class userController
 {
-    private $connect;
+    private $conn;
 
+    public function __construct()
+    {
+        // Le pasamos los datos que vamos a usar para crear la base de datos:
+        $server = "localhost";
+        $user = "root";
+        $password = "";
+        $dbname = "event_hunters";
+
+        // Iniciamos la conexion a traves de un objeto que iremos llamando en el código.
+        // A este objeto le pasaremos el server, user y la password, ya que nos servirá de conexión.
+        $this->conn = new mysqli($server, $user, $password);
+
+        // Creamos la base de datos,...
+        $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
+
+        //...y hacemos la comprobacion de que funciona correctamente,...
+        if ($this->conn->query($sql) === TRUE) {
+
+            echo "Base de datos creada o ya existente.<br>";
+        } else {
+
+            // ...en el caso de que no funcione, no sigue leyendo el script.
+            // Usaremos la propiedad "die", la cual se utiliza para finalizar inmediatamente 
+            // la ejecución de un script y mostrar un mensaje
+            die("Error creando la base de datos: " . $this->conn->error);
+        }
+
+        // Seleccionaremos la base de datos que vamos a usar.
+        $this->conn->select_db($dbname);
+
+        // Le pasamos la tabla que queremos crear, y comprobamos de nuevo si funciona correctamente,...
+        $sql = "CREATE TABLE IF NOT EXISTS USUARIOS ( 
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name varchar(25), 
+    email varchar(50),
+    password varchar(50));";
+
+        //...y hacemos la comprobacion de que funciona correctamente,...
+        if ($this->conn->query($sql) === TRUE) {
+
+            echo "Tabla creada o ya existente.<br>";
+        } else {
+
+            // ...si no pasamos un die al script.
+            die("Error creando la tabla: " . $this->conn->error);
+        }
+    }
 
     function login()
     {
 
+        $sql = "SELECT * FROM USUARIOS";
+
+        $select = $this->conn->query($sql);
+
+        if ($select->num_rows > 0) {
+            while ($row = $select->fetch_assoc()) {
+                echo $row["id"] . $row["name"] . $row["email"] . $row["password"];
+            }
+        }
         echo __LINE__;
     }
 
