@@ -94,14 +94,23 @@ class userController
     function login()
     {
 
+        $mail = $_POST['mailLogin'];
+        $password = $_POST['passwordLogin'];
+
         $sql = "SELECT * FROM USUARIOS";
 
         $select = $this->conn->query($sql);
 
         if ($select->num_rows > 0) {
             while ($row = $select->fetch_assoc()) {
-                echo $row["id"] . $row["name"] . $row["email"] . $row["password"];
+                if ($mail == $row["email"] && $password == $row["password"]) {
+                    echo "bienvenido";
+                } else {
+                    echo "usuario o contraseña incorrecta";
+                }
             }
+        } else {
+            echo "0 results";
         }
         echo __LINE__;
     }
