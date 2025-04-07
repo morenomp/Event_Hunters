@@ -20,7 +20,7 @@ INICIO
 -->
 
 <body>
-
+<h1>INDEX.PHP</h1>
 </body>
 
 </html>
