@@ -104,12 +104,15 @@ body{
 /*/////////////////////////////////////*/
 .btnLogin,
 .btnGoogle,
-.btnNext{
+.btnRegistro,
+.btnNext a{
     cursor: pointer;
 }
-.btnNext{
+.btnNext,
+.btnNext a{
     border: none;
     background-color: #fff;
+    color: var(--cl-black);
 }
 #contSession{
     display: flex;
@@ -135,7 +138,7 @@ body{
 /*                SIZE                 */
 /*/////////////////////////////////////*/
 .btnGoogle,
-.btnNext{
+.btnNext a{
     font-size: .9em;
 }
 
