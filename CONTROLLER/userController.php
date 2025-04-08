@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["btnLogin"])) {
         echo "<p>Login button is clicked</p>";
         $user->login();
-    } else if (isset($_POST["register"])) {
+    } else if (isset($_POST["btnRegister"])) {
         echo "<p>Register button is clicked</p>";
         $user->register();
     } else if (isset($_POST["logout"])) {
@@ -97,21 +97,31 @@ class userController
         $mail = $_POST['mailLogin'];
         $password = $_POST['passwordLogin'];
 
-        $sql = "SELECT * FROM USUARIOS";
+        $sql = "SELECT email, name FROM USUARIOS WHERE email = ? AND password = ?";
 
-        $select = $this->conn->query($sql);
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("ss", $mail, $password);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-        if ($select->num_rows > 0) {
-            while ($row = $select->fetch_assoc()) {
-                if ($mail == $row["email"] && $password == $row["password"]) {
-                    echo "bienvenido";
-                } else {
-                    echo "usuario o contraseña incorrecta";
-                }
-            }
+        if ($row = $result->fetch_assoc()) {
+            $_SESSION["logged"] = true;
+            $_SESSION["email"] = $row['email'];
+            $_SESSION["name"] = $row['name'];
+
+            $this->conn->close();
+
+            header("Location: ../VIEW/cuenta.php");
+            exit();
         } else {
-            echo "0 results in the database";
+            $_SESSION["logged"] = false;
+            $_SESSION["email"] = null;
+            $_SESSION["name"] = null;
+
+            echo "Login failed";
         }
+
+
         echo __LINE__;
     }
 
@@ -121,14 +131,21 @@ class userController
         $mail = $_POST['mailLogin'];
         $password = $_POST['passwordLogin'];
 
+
+
         $sql = "INSERT INTO(name, email, password) VALUES " . $user . ", " . $mail . ", " . $password;
 
-        $this->conn->query($sql);
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+
         echo __LINE__;
     }
 
     function logout()
     {
+
+        header("Location: ../VIEW/cuenta.php");
+
         session_destroy();
         echo __LINE__;
     }
