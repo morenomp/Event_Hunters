@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["btnLogin"])) {
         echo "<p>Login button is clicked</p>";
         $user->login();
-    } else if (isset($_POST["btnRegister"])) {
+    } else if (isset($_POST["btnRegistro"])) {
         echo "<p>Register button is clicked</p>";
         $user->register();
     } else if (isset($_POST["logout"])) {
@@ -131,14 +131,27 @@ class userController
         $mail = $_POST['mailLogin'];
         $password = $_POST['passwordLogin'];
 
+        $checkSql = "SELECT email FROM usuarios WHERE email = ?";
 
+        $checkStmt = $this->conn->prepare($checkSql);
+        $checkStmt->bind_param("s", $mail);
+        $checkStmt->execute();
+        $result = $checkStmt->get_result();
 
-        $sql = "INSERT INTO(name, email, password) VALUES " . $user . ", " . $mail . ", " . $password;
+        if ($result->num_rows > 0) {
+            echo "El correo ya está en uso.";
+            echo __LINE__;
+            return;
+        } else {
 
-        $stmt = $this->conn->prepare($sql);
-        $stmt->execute();
+            $sql = "INSERT INTO usuarios (name, email, password) VALUES (?, ?, ?)";
 
-        echo __LINE__;
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param("sss", $user, $mail, $password);
+            $stmt->execute();
+
+            echo __LINE__;
+        }
     }
 
     function logout()
