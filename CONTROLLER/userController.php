@@ -110,20 +110,26 @@ class userController
                 }
             }
         } else {
-            echo "0 results";
+            echo "0 results in the database";
         }
         echo __LINE__;
     }
 
     function register()
     {
+        $user = $_POST['nameLogin'];
+        $mail = $_POST['mailLogin'];
+        $password = $_POST['passwordLogin'];
 
+        $sql = "INSERT INTO(name, email, password) VALUES " . $user . ", " . $mail . ", " . $password;
+
+        $this->conn->query($sql);
         echo __LINE__;
     }
 
     function logout()
     {
-
+        session_destroy();
         echo __LINE__;
     }
 }
