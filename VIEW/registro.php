@@ -34,7 +34,7 @@ OBJETIVO:
 
         <div id="contTitle">
             <!-- Título -->
-            <span id="titleLogin">
+            <span id="titleRegistro">
                 <h2>CREA</h2>
                 <h2>UNA</h2>
                 <h2>CUENTA</h2>
@@ -43,13 +43,13 @@ OBJETIVO:
             <div id="contInputs">
 
                 <!-- Nombre de usuario con el que se le denominará -->
-                <input type="text" name="nameLogin" placeholder="Nombre & Apellido" pattern="^[A-Za-z]+$" required>
+                <input type="text" name="nameRegistro" placeholder="Nombre & Apellido" pattern="^[A-Za-z]+$" required>
 
                 <!-- Correo electrónico que usará para el registro -->
-                <input type="email" name="mailLogin" placeholder="Dirección de correo electrónico" pattern="^[A-Za-z0-9]+@[A-z0-9]+.[A-za-z0-9]{2,3}$" required>
+                <input type="email" name="mailRegistro" placeholder="Dirección de correo electrónico" pattern="^[A-Za-z0-9]+@[A-z0-9]+.[A-za-z0-9]{2,3}$" required>
 
                 <!-- Contraseña de la cuenta -->
-                <input type="password" name="passwordLogin" placeholder="Contraseña" pattern="^[A-za-z0-9]{6,12}$" required>
+                <input type="password" name="passwordRegistro" placeholder="Contraseña" pattern="^[A-za-z0-9]{6,12}$" required>
 
                 <!-- Guardar y continuar los datos introducidos-->
                 <button class="btnRegistro" name="btnRegistro">

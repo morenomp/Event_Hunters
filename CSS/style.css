@@ -146,3 +146,78 @@ body{
     width: 1.4em;
     margin-right: 15px;
 }
+/*/////////////////////////////////////*/
+/*                MEDIA                */
+/*/////////////////////////////////////*/
+/*-------------------------------------*/
+/*               EXTRAS                */
+/*-------------------------------------*/
+@media only screen and (max-width: 1589px){
+    /* Login/Registro contenedor */
+    #contTitle {
+        justify-content: space-around;
+    }
+}
+@media only screen and (max-width: 1424px){
+    /* Login/Registro contenedor */
+    #contTitle {
+        width: 66%;
+    }
+    .hrPadding {
+        padding: 0 33%;
+    }
+}
+@media only screen and (max-width: 1080px){
+    /* Login/Registro contenedor */
+    #contTitle {
+        width: 72%;
+    }
+    .hrPadding {
+        padding: 0 42%;
+    }
+}
+
+/*-------------------------------------*/
+/*               TABLET                */
+/*-------------------------------------*/
+@media only screen and (max-width: 1000px){
+    /* Login/Registro contenedor */
+    #contTitle {
+        width: 85%;
+    }
+    .hrPadding {
+        padding: 0 44%;
+    }
+}
+/*-------------------------------------*/
+/*            MOVIL PEQUEÑO            */
+/*-------------------------------------*/
+@media only screen and (max-width: 795px){
+    /* Titulo  */
+    #contTitle{
+        flex-direction: column;
+        align-items: center;
+    }
+    #titleLogin{
+        display: flex;
+        gap: 20px;
+        padding: 0 20px 20px 20px;
+    }
+    #titleLogin h2 {
+        font-size: 8.7vw;
+    }
+    #titleRegistro h2 {
+        font-size: 8.3vw;
+    }
+    /* Formulario */
+    #contInputs {
+        width: 100%;
+    }
+    /* Google */
+    #contSession {
+        width: 85%;
+    }
+    .btnGoogle {
+        width: 100%;
+    }
+}
