@@ -32,18 +32,24 @@
 ---
 
 ## 📌 Perfiles
-<div style="display:flex; justify-content:center; gap: 20px;">
-
-  <a href="https://github.com/morenomp" style="display:inline-block; margin: 0 20px;">
-    <img src="https://github.com/morenomp.png" width="100px;" alt="morenomp"/><br/>
+<p align="center">
+  <a href="https://github.com/morenomp">
+    <img src="https://github.com/morenomp.png" width="100px;" alt="morenomp"/>
   </a>
-
-  <a href="https://github.com/mauroserralvodev" style="display:inline-block; margin: 0 20px;">
-    <img src="https://github.com/mauroserralvodev.png" width="100px;" alt="mauroserralvodev"/><br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/mauroserralvodev">
+    <img src="https://github.com/mauroserralvodev.png" width="100px;" alt="mauroserralvodev"/>
   </a>
-
-  <a href="https://github.com/AdrianPalmadev" style="display:inline-block; margin: 0 20px;">
-    <img src="https://github.com/AdrianPalmadev.png" width="100px;" alt="AdrianPalmadev"/><br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/AdrianPalmadev">
+    <img src="https://github.com/AdrianPalmadev.png" width="100px;" alt="AdrianPalmadev"/>
   </a>
+</p>
 
-</div>
+<p align="center">
+  <a href="https://github.com/morenomp"><b>@morenomp</b></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/mauroserralvodev"><b>@mauroserralvodev</b></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/AdrianPalmadev"><b>@AdrianPalmadev</b></a>
+</p>
