@@ -2,6 +2,7 @@
 <div align="center">
   <img src ="./IMG/logo.png" width="300"/>
 </div>
+
 *Una plataforma para vivir experiencias inmersivas en Cataluña.*
 
 ---
