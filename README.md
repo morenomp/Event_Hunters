@@ -32,7 +32,7 @@
 ---
 
 ## 📌 Perfiles
-<div style="display: flex;" align="center">
+<div style="display:flex; justify-content:center; gap: 20px;">
 
   <a href="https://github.com/morenomp" style="display:inline-block; margin: 0 20px;">
     <img src="https://github.com/morenomp.png" width="100px;" alt="morenomp"/><br/>
