@@ -1,6 +1,8 @@
 # App Gestión de Eventos - Proyecto Transversal DAW 1 Stucom 2024/2025 - Marc, Adrian y Mauro
 
-<div style="width: 100px;">![Logo Event Hunters](./IMG/logo.png)</div>
+<div style="width: 100px;">
+  <img src ="./IMG/logo.png" />
+</div>
 *Una plataforma para vivir experiencias inmersivas en Cataluña.*
 
 ---
