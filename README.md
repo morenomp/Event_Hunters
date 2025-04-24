@@ -33,21 +33,20 @@
 
 ## 📌 Perfiles
 <div align="center">
-  <a href="https://github.com/morenomp">
-    <img src="https://github.com/morenomp.png" width="100px;" alt="morenomp"/>
-    <br />
+
+  <a href="https://github.com/morenomp" style="display:inline-block; margin: 0 20px;">
+    <img src="https://github.com/morenomp.png" width="100px;" alt="morenomp"/><br/>
     <sub><b>@morenomp</b></sub>
   </a>
-  &nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/mauroserralvodev">
-    <img src="https://github.com/mauroserralvodev.png" width="100px;" alt="mauroserralvodev"/>
-    <br />
+
+  <a href="https://github.com/mauroserralvodev" style="display:inline-block; margin: 0 20px;">
+    <img src="https://github.com/mauroserralvodev.png" width="100px;" alt="mauroserralvodev"/><br/>
     <sub><b>@mauroserralvodev</b></sub>
   </a>
-  &nbsp;&nbsp;&nbsp;
-  <a href="https://github.com/AdrianPalmadev">
-    <img src="https://github.com/AdrianPalmadev.png" width="100px;" alt="AdrianPalmadev"/>
-    <br />
+
+  <a href="https://github.com/AdrianPalmadev" style="display:inline-block; margin: 0 20px;">
+    <img src="https://github.com/AdrianPalmadev.png" width="100px;" alt="AdrianPalmadev"/><br/>
     <sub><b>@AdrianPalmadev</b></sub>
   </a>
+
 </div>
