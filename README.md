@@ -32,6 +32,6 @@
 ---
 
 ## 📌 Perfiles
-| [![morenomp](https://github.com/morenomp.png?size=100)](https://github.com/morenomp) | [![mauroserralvodev](https://github.com/mauroserralvodev.png?size=100)](https://github.com/mauroserralvodev) | [![AdrianPalmadev](https://github.com/AdrianPalmadev.png?size=100)](https://github.com/AdrianPalmadev) |
+| [![morenomp](https://github.com/morenomp.png?size=100)](https://github.com/morenomp) | [![mauroserralvodev](https://github.com/mauroserralvodev.png?size=100)](https://github.com/mauroserralvodev) | [![AdrianPalmadev](https://github.com/AdrianPalmadev.png?size=50)](https://github.com/AdrianPalmadev) |
 |:--:|:--:|:--:|
 | [@morenomp](https://github.com/morenomp) | [@mauroserralvodev](https://github.com/mauroserralvodev) | [@AdrianPalmadev](https://github.com/AdrianPalmadev) |
