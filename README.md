@@ -29,3 +29,24 @@
 - **`Diseño`**: Figma (Wireframes), draw.io (Diagramas de flujo).
 - **`Herramientas`**: Google Analytics, Visual Studio Code.
 
+---
+
+<div align="center">
+  <a href="https://github.com/morenomp">
+    <img src="https://github.com/morenomp.png" width="100px;" alt="morenomp"/>
+    <br />
+    <sub><b>@morenomp</b></sub>
+  </a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/mauroserralvodev">
+    <img src="https://github.com/mauroserralvodev.png" width="100px;" alt="mauroserralvodev"/>
+    <br />
+    <sub><b>@mauroserralvodev</b></sub>
+  </a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/AdrianPalmadev">
+    <img src="https://github.com/AdrianPalmadev.png" width="100px;" alt="AdrianPalmadev"/>
+    <br />
+    <sub><b>@AdrianPalmadev</b></sub>
+  </a>
+</div>
