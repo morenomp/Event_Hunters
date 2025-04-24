@@ -11,21 +11,21 @@
 ---
 
 ## 🚀 Características Principales
-- **Calendario Interactivo**: Filtra eventos por fecha, ubicación y categoría.
-- **Reseñas y Ratings**: Opiniones de usuarios para ayudarte a elegir la mejor experiencia.
-- **Accesibilidad Universal**: Diseño adaptado para personas con discapacidades (daltonismo, epilepsia) y opciones de idioma.
-- **Diseño Responsive**: Compatible con dispositivos móviles, tablets y PC.
-- **Gestión de Grupos**: Crea grupos con amigos o únete a otros usuarios.
-- **Suscripciones Personalizadas**: Recibe notificaciones de eventos según tus intereses.
-- **Mapas Interactivos**: Ubicación precisa de cada evento.
-- **Herramientas SEO y Analytics**: Optimización para motores de búsqueda y análisis de tráfico.
+- **`Calendario Interactivo`**: Filtra eventos por fecha, ubicación y categoría.
+- **`Reseñas y Ratings`**: Opiniones de usuarios para ayudarte a elegir la mejor experiencia.
+- **`Accesibilidad Universal`**: Diseño adaptado para personas con discapacidades (daltonismo, epilepsia) y opciones de idioma.
+- **`Diseño Responsive`**: Compatible con dispositivos móviles, tablets y PC.
+- **`Gestión de Grupos`**: Crea grupos con amigos o únete a otros usuarios.
+- **`Suscripciones Personalizadas`**: Recibe notificaciones de eventos según tus intereses.
+- **`Mapas Interactivos`**: Ubicación precisa de cada evento.
+- **`Herramientas SEO y Analytics`**: Optimización para motores de búsqueda y análisis de tráfico.
 
 ---
 
 ## 🛠️ Tecnologías Utilizadas
-- **Frontend**: HTML5, CSS3, JavaScript.
-- **Backend**: PHP.
-- **Base de Datos**: MySQL.
-- **Diseño**: Figma (Wireframes), draw.io (Diagramas de flujo).
-- **Herramientas**: Google Analytics, Visual Studio Code.
+- **`Frontend`**: HTML5, CSS3, JavaScript.
+- **`Backend`**: PHP.
+- **`Base de Datos`**: MySQL.
+- **`Diseño`**: Figma (Wireframes), draw.io (Diagramas de flujo).
+- **`Herramientas`**: Google Analytics, Visual Studio Code.
 
