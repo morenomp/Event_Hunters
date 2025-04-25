@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/fonts.css">
     <!-- <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com"> -->
-    <!-- <link rel="icon" type="image/png" href="IMG/favicon.png"> -->
+    <link rel="icon" type="image/png" href="../IMG/favicon.svg">
 </head> 
 
 <!-- 
