@@ -112,7 +112,7 @@ no sabemos como implementarlo correctamente.
         <div class="contInitialFooter">
             <!-- Planificar/Organizar eventos -->
             <div class="contSubInitial">
-                <h2>Planificar eventos</h2>
+                <h3>Planificar eventos</h3>
                 
                 <!-- Enlace para organizadores que quieran publicar experiencias -->
                 <a href="#">Crea tu evento</a>
@@ -129,7 +129,7 @@ no sabemos como implementarlo correctamente.
 
             <!-- Síguenos/Redes -->
             <div class="contSubInitial">
-                <h2>Síguenos</h2>
+                <h3>Síguenos</h3>
 
                 <!-- Instagram -->
                 <a class="colRedesFooter" href="#">
@@ -158,7 +158,7 @@ no sabemos como implementarlo correctamente.
 
             <!-- Soporte/Ayuda -->
             <div class="contSubInitial">
-                <h2>Soporte 24/7</h2>
+                <h3>Soporte 24/7</h3>
 
                 <!-- Preguntas frecuentes y tutoriales -->
                 <a href="#">Centro de ayuda</a>

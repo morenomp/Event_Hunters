@@ -38,6 +38,7 @@ body{
     --cl-black: #1b1b1d;
     --cl-grey: #3a3a3b;
     --cl-selection: #a35cf8;
+    --cl-selection-oscure: #8f48e7;
     --cl-blue: #e1f0f9;
 }
 /*/////////////////////////////////////*/
@@ -84,6 +85,10 @@ body{
     color: var(--cl-white);
     background: var(--cl-selection);
     box-shadow: 3px 3px 10px #d9d9d9, -5px -5px 10px #ffffff;
+    transition: 250ms;
+}
+#contInputs button:hover{
+    background: var(--cl-selection-oscure);
 }
 
 .hrPadding{
@@ -91,7 +96,8 @@ body{
     margin: 25px;
 }
 
-#titleLogin h2{
+#titleLogin h2,
+#titleRegistro h2{
     font-weight: 600;
     font-size: 3.1em;
 }
@@ -103,7 +109,23 @@ body{
     width: 100px;
 }
 /*/////////////////////////////////////*/
-/*             BUTTONS             */
+/*               CUENTA                */
+/*/////////////////////////////////////*/
+#imgProfile{
+    width: 250px;
+    display: flex;
+    background: red;
+    height: 250px;
+    border-radius: 500px;
+    align-items: center;
+    justify-content: center;
+}
+#imgProfile img{
+    width: 150px;
+}
+
+/*/////////////////////////////////////*/
+/*               BUTTONS               */
 /*/////////////////////////////////////*/
 .btnLogin,
 .btnGoogle,
@@ -175,6 +197,7 @@ footer{
     gap: 15px;
 
     border-top: 1px solid var(--cl-black);
+    color: var(--cl-grey);
     padding: 25px;
 }
 .contFinalFooter div a{

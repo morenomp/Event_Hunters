@@ -41,13 +41,17 @@ OBJETIVO:
 
             <div id="contInputs">
 
+                <!-- <?php
+                    if ($name == "admin" && $mail == "admin@admin.com" && $passwd == "12345aA") {
+                ?> -->
+
                 <!-- IMG admin -->
                 <span id="imgProfile">
                     <img src="../IMG/mail.svg" alt="prueba de imagen">
                 </span>
 
                 <?php
-                        echo '<h1>Bienvenido!</h1>';
+                        echo '<h1>ERES EL ADMINISTRADOR!</h1>';
 
                         // Nombre de usuario con el que se le denominará
                         echo "Bienvenido " . $name . "." . '<br>';
@@ -57,6 +61,18 @@ OBJETIVO:
 
                         // Contraseña de la cuenta
                         echo "Contraseña: " . $passwd . ".";
+
+                    } else {
+
+                        // Nombre de usuario con el que se le denominará
+                        echo "Bienvenido " . $name . "." . '<br>';
+
+                        // Correo electrónico que usará para el registro
+                        echo "Email: " . $mail . "." . '<br>';
+
+                        // Contraseña de la cuenta
+                        echo "Contraseña: " . $passwd . ".";
+                    }
                 ?>
             </div>
         </div>

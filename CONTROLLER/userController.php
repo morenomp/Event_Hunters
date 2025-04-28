@@ -26,14 +26,21 @@ session_start();
 
 //--------------------------------------------------
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     $user = new userController;
+
     if (isset($_POST["btnLogin"])) {
+        
         echo "<p>Login button is clicked</p>";
         $user->login();
+
     } else if (isset($_POST["btnRegistro"])) {
+
         echo "<p>Register button is clicked</p>";
         $user->register();
+
     } else if (isset($_POST["logout"])) {
+
         echo "<p>Logout button is clicked</p>";
         $user->logout();
     }
@@ -75,10 +82,10 @@ class userController
 
         // Le pasamos la tabla que queremos crear, y comprobamos de nuevo si funciona correctamente,...
         $sql = "CREATE TABLE IF NOT EXISTS USUARIOS ( 
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name varchar(25), 
-    email varchar(50),
-    password varchar(50));";
+                id INT PRIMARY KEY AUTO_INCREMENT,
+                name varchar(25), 
+                email varchar(50),
+                password varchar(50));"; 
 
         //...y hacemos la comprobacion de que funciona correctamente,...
         if ($this->conn->query($sql) === TRUE) {
@@ -91,9 +98,7 @@ class userController
         }
     }
 
-    function login()
-    {
-
+    function login(){
         $mail = $_POST['mailLogin'];
         $password = $_POST['passwordLogin'];
 
@@ -125,11 +130,11 @@ class userController
         echo __LINE__;
     }
 
-    function register()
-    {
-        $user = $_POST['nameLogin'];
-        $mail = $_POST['mailLogin'];
-        $password = $_POST['passwordLogin'];
+    function register(){
+        var_dump($_POST);
+        $user = $_POST['nameRegistro'];
+        $mail = $_POST['mailRegistro'];
+        $password = $_POST['passwordRegistro'];
 
         $checkSql = "SELECT email FROM usuarios WHERE email = ?";
 
@@ -139,9 +144,11 @@ class userController
         $result = $checkStmt->get_result();
 
         if ($result->num_rows > 0) {
+
             echo "El correo ya está en uso.";
             echo __LINE__;
             return;
+
         } else {
 
             $sql = "INSERT INTO usuarios (name, email, password) VALUES (?, ?, ?)";
@@ -154,8 +161,7 @@ class userController
         }
     }
 
-    function logout()
-    {
+    function logout(){
 
         header("Location: ../VIEW/cuenta.php");
 
