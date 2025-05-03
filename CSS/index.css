@@ -1,4 +1,7 @@
 /*/////////////////////////////////////*/
+/* Aquí pondremos todo el código relacionado
+con la página de inicio */
+/*/////////////////////////////////////*/
 /*               PORTADA               */
 /*/////////////////////////////////////*/
 #contPortada{
@@ -9,8 +12,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     color: var(--cl-white);
-
     background-image: url(../IMG/fondoProvisional.jpg);
 }
 #contPortada h1{

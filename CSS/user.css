@@ -1,0 +1,222 @@
+/*/////////////////////////////////////*/
+/* Aquí pondremos todo el código relacionado
+con las páginas de registro, login y usuarios */
+/*/////////////////////////////////////*/
+/*           LOGIN/REGISTRO            */
+/*/////////////////////////////////////*/
+main{
+    margin: auto 0;
+}
+#contForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 50px 0;
+}
+
+#contTitle{
+    width: 45%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#contInputs{
+    width: 24em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#contInputs input,
+#contInputs button{
+    padding: 15px;
+    border-radius: 15px;
+}
+
+#contInputs input{
+    border: none;
+    background: #e0e0e0;
+    box-shadow: inset 2px 2px 7px #5a5a5a21, inset 0px -48px 9px var(--cl-white);
+}
+
+#contInputs button{
+    border: none;
+    font-family: 'Montserrat-Bold';
+    color: var(--cl-white);
+    background: var(--cl-selection);
+    box-shadow: 3px 3px 10px #d9d9d9, -5px -5px 10px var(--cl-white);
+    transition: 250ms;
+}
+#contInputs button:hover{
+    background: var(--cl-selection-oscure);
+    transform: translateY(-1px);
+}
+
+.hrPadding{
+    padding: 0 25%;
+    margin: 25px;
+}
+
+#titleLogin h2,
+#titleRegistro h2{
+    font-weight: 600;
+    font-size: 3.1em;
+}
+#titleLogin h2:nth-child(2){
+    text-align: end;
+}
+
+#imgProfile{
+    width: 100px;
+}
+/*/////////////////////////////////////*/
+/*               CUENTA                */
+/*/////////////////////////////////////*/
+#imgProfile{
+    width: 250px;
+    display: flex;
+    background: red;
+    height: 250px;
+    border-radius: 500px;
+    align-items: center;
+    justify-content: center;
+}
+#imgProfile img{
+    width: 150px;
+}
+
+/*/////////////////////////////////////*/
+/*               BUTTONS               */
+/*/////////////////////////////////////*/
+.btnLogin,
+.btnGoogle,
+.btnRegistro,
+.btnNext a{
+    cursor: pointer;
+}
+.btnNext,
+.btnNext a{
+    border: none;
+    background-color: #fff;
+    color: var(--cl-black);
+}
+#contSession{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.btnGoogle{
+    border-radius: 50px;
+    border: 3px solid #4285f4;
+    border: none;
+    background-color: var(--cl-white);
+
+    width: 30em;
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*/////////////////////////////////////*/
+/*                SIZE                 */
+/*/////////////////////////////////////*/
+.btnGoogle,
+.btnNext a{
+    font-size: .9em;
+}
+
+.imgSize{
+    width: 1.4em;
+    margin-right: 15px;
+    transition: 250ms;
+}
+.btnGoogle:hover .imgSize{
+    transform: rotateZ(-21deg);
+}
+
+/*/////////////////////////////////////*/
+/*               MEDIA                 */
+/*/////////////////////////////////////*/
+/*-------------------------------------*/
+/*               EXTRAS                */
+/*-------------------------------------*/
+@media only screen and (max-width: 1589px){
+    /* Login/Registro contenedor */
+    #contTitle {
+        justify-content: space-around;
+    }
+}
+@media only screen and (max-width: 1424px){
+    /* Login/Registro contenedor */
+    #contTitle {
+        width: 66%;
+    }
+    .hrPadding {
+        padding: 0 33%;
+    }
+}
+@media only screen and (max-width: 1080px){
+    /* Login/Registro contenedor */
+    #contTitle {
+        width: 72%;
+    }
+    .hrPadding {
+        padding: 0 42%;
+    }
+}
+
+/*-------------------------------------*/
+/*               TABLET                */
+/*-------------------------------------*/
+@media only screen and (max-width: 1000px){
+    /* Login/Registro contenedor */
+    #contTitle {
+        width: 85%;
+    }
+    .hrPadding {
+        padding: 0 44%;
+    }
+}
+/*-------------------------------------*/
+/*            MOVIL PEQUEÑO            */
+/*-------------------------------------*/
+@media only screen and (max-width: 795px){
+    /* Titulo  */
+    #contTitle{
+        flex-direction: column;
+        align-items: center;
+    }
+    #titleLogin{
+        display: flex;
+        gap: 20px;
+        padding: 0 20px 20px 20px;
+    }
+    #titleRegistro {
+        display: flex;
+        gap: 20px;
+        padding: 0 20px 20px 20px;
+    }
+    #titleLogin h2 {
+        font-size: 8.7vw;
+    }
+    #titleRegistro h2 {
+        font-size: 8.3vw;
+    }
+    /* Formulario */
+    #contInputs {
+        width: 100%;
+    }
+    /* Google */
+    #contSession {
+        width: 85%;
+    }
+    .btnGoogle {
+        width: 100%;
+    }
+}

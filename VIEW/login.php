@@ -10,6 +10,7 @@
     <meta name="copyright" content="propiedades del copyright Event Hunters">
     <title>Login - Event Hunters</title>
 
+    <link rel="stylesheet" href="../CSS/user.css">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/fonts.css">
     <!-- <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com"> -->
@@ -31,7 +32,7 @@ OBJETIVO:
     <!-- ////// -->
     <!-- HEADER -->
     <!-- ////// -->
-    <header class="sticky-header">
+    <header class="sticky-header notResponsiveH">
         <nav class="header-nav">
 
             <a id="logoHeader" href="#">
@@ -42,11 +43,11 @@ OBJETIVO:
                 </span>
             </a>
 
-            <div class="nav-items">
+            <ul class="nav-items">
                 <a href="../VIEW/index.php" class="nav-link">INICIO</a>
                 <a href="../VIEW/eventos.php" class="nav-link">EVENTOS</a>
                 <a href="../VIEW/about_us.php" class="nav-link">SOBRE NOSOTROS</a>
-            </div>
+            </ul>
 
             <div class="nav-items">
                 <span id="contTodoIdiomas">
@@ -55,12 +56,12 @@ OBJETIVO:
                     <a class="imgHeaderMenu" id="idioma" href="#">ES</a>
 
                     <!-- Idiomas disponibles -->
-                    <div id="contIdiomas">
+                    <ul id="contIdiomas">
 
                         <a id="selectIdioma" href="#">Español</a>
                         <a class="notSelectIdioma" href="#">Catalán</a>
                         <a class="notSelectIdioma" href="#">English</a>
-                    </div>
+                    </ul>
                 </span>
                 
                 <!-- Registro en la web -->
@@ -77,6 +78,66 @@ OBJETIVO:
                     </svg>
                 </a>
             </div>
+        </nav>
+    </header>
+    <!-- ////////// -->
+    <!--   HEADER   -->
+    <!-- RESPONSIVE -->
+    <!-- ////////// -->
+    <header class="sticky-header responsiveH">
+        <nav class="header-nav">
+
+            <a id="logoHeader" href="#">
+                <img src="../IMG/LogotipoMedioColor.svg" alt="Logotipo oficial de Event Hunters" class="logo">
+            </a>
+
+            <section id="contRespNav">
+
+                <input type="checkbox" id="toggleMenu" hidden>
+                <label for="toggleMenu" id="burguerButton">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+
+                <section id="cols">
+                    <ul class="nav-items">
+                        <a href="../VIEW/index.php" class="nav-link">INICIO</a>
+                        <a href="../VIEW/eventos.php" class="nav-link">EVENTOS</a>
+                        <a href="../VIEW/about_us.php" class="nav-link">SOBRE NOSOTROS</a>
+                    </ul>
+
+                    <div class="nav-items">
+                        <span id="contTodoIdiomas">
+
+                            <!-- Idioma seleccionado -->
+                            <a class="imgHeaderMenu" id="idioma" href="#">ES</a>
+
+                            <!-- Idiomas disponibles -->
+                            <ul id="contIdiomas">
+
+                                <a id="selectIdioma" href="#">Español</a>
+                                <a class="notSelectIdioma" href="#">Catalán</a>
+                                <a class="notSelectIdioma" href="#">English</a>
+                            </ul>
+                        </span>
+                        
+                        <!-- Registro en la web -->
+                        <a class="imgHeaderMenu cta-nav" href="../VIEW/registro.php">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path fill="#000000" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/>
+                            </svg>
+                        </a>
+                        
+                        <!-- Entradas del usuario -->
+                        <a class="imgHeaderMenu" href="../VIEW/entradas.php">
+                            <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path fill="#000000" d="M96 32l0 32L48 64C21.5 64 0 85.5 0 112l0 48 448 0 0-48c0-26.5-21.5-48-48-48l-48 0 0-32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 32L160 64l0-32c0-17.7-14.3-32-32-32S96 14.3 96 32zM448 192L0 192 0 464c0 26.5 21.5 48 48 48l352 0c26.5 0 48-21.5 48-48l0-272z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </section>
+            </section>
         </nav>
     </header>
     <!-- //// -->
