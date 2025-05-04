@@ -6,7 +6,8 @@ con la página de inicio */
 /*/////////////////////////////////////*/
 #contPortada{
     width: 100%;
-    height: 90vh;
+    min-height: 100vh;
+    position: relative;
 
     display: flex;
     flex-direction: column;
@@ -14,14 +15,106 @@ con la página de inicio */
     justify-content: center;
     text-align: center;
     color: var(--cl-white);
-    background-image: url(../IMG/fondoProvisional.jpg);
+    /* background-image: url(../IMG/fondoProvisional.jpg); */
+    background: linear-gradient(180deg, #ffffff, #a35cf8 95%);
+    background-size: cover;
 }
-#contPortada h1{
+.sphere1 h1{
     font-size: 3em;
     margin-bottom: 30px;
 }
-#contPortada p{
+.sphere1 p{
     font-size: 1.3em;
     font-weight: 100;
     font-family: Montserrat-Regular;
+    z-index: 2;
+}
+
+/* ---- */
+.sphere1{
+    /* background: red; */
+    width: 734px;
+    height: 734px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 100%;
+    background: linear-gradient(0deg, #ffffff, #a35cf8 95%);
+
+    animation: wiggle 11.1s infinite;
+}
+@keyframes wiggle {
+    0% { transform: translate(-51%, -51%) rotate(0deg); }
+    20% { transform: translate(-51%, -50%) rotate(1deg); }
+    40% { transform: translate(-50%, -51%) rotate(1deg); }
+    60% { transform: translate(-51%, -50%) rotate(0deg); }
+    80% { transform: translate(-51%, -51%) rotate(1deg); }
+    100% { transform: translate(-51%, -51%) rotate(0deg); }
+}
+.sphere2{
+    width: 134px;
+    height: 134px;
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    border-radius: 100%;
+    background: linear-gradient(0deg, #ffffff, #a35cf8 95%);
+    
+    animation: wiggle2 9.5s infinite;
+}
+@keyframes wiggle2 {
+    0% { transform: translate(-29%, -18%) rotate(0deg); }
+    20% { transform: translate(-28%, -13%) rotate(0deg); }
+    40% { transform: translate(-20%, -18%) rotate(1deg); }
+    60% { transform: translate(-28%, -13%) rotate(0deg); }
+    80% { transform: translate(-26%, -10%) rotate(1deg); }  
+    100% { transform: translate(-29%, -18%) rotate(0deg); }
+}
+.sphere3{
+    width: 77px;
+    height: 77px;
+    position: absolute;
+    top: 56%;
+    right: 20%;
+    border-radius: 100%;
+    background: linear-gradient(0deg, #ffffff, #a35cf8 95%);
+
+    animation: wiggle3 8.1s infinite;
+}
+@keyframes wiggle3 {
+    0% { transform: translate(-56%, -16%) rotate(0deg); }
+    20% { transform: translate(-57%, -20%) rotate(1deg); }
+    40% { transform: translate(-56%, -25%) rotate(1deg); }
+    60% { transform: translate(-58%, -20%) rotate(0deg); }
+    80% { transform: translate(-57%, -16%) rotate(1deg); }
+    90% { transform: translate(-57%, -23%) rotate(0deg); }
+    100% { transform: translate(-56%, -16%) rotate(0deg); }
+}
+.sphere4{
+    width: 27px;
+    height: 27px;
+    position: absolute;
+    top: 52%;
+    right: 18%;
+    border-radius: 100%;
+    background: linear-gradient(0deg, #ffffff, #a35cf8 95%);
+
+    animation: wiggle4 7.1s infinite;
+}
+@keyframes wiggle4 {
+    0% { transform: translate(-50%, -16%) rotate(0deg); }
+    10% { transform: translate(-56%, -25%) rotate(1deg); }
+    30% { transform: translate(-45%, -23%) rotate(0deg); }
+    40% { transform: translate(-50%, -14%) rotate(1deg); }
+    50% { transform: translate(-56%, -25%) rotate(0deg); }
+    60% { transform: translate(-56%, -25%) rotate(0deg); }
+    80% { transform: translate(-45%, -16%) rotate(1deg); }
+    100% { transform: translate(-50%, -16%) rotate(0deg); }
 }
