@@ -50,6 +50,9 @@ con la página de inicio */
 
     animation: wiggle 11.1s infinite;
 }
+.sphere1 video{
+    width: 100%;
+}
 @keyframes wiggle {
     0% { transform: translate(-51%, -51%) rotate(0deg); }
     20% { transform: translate(-51%, -50%) rotate(1deg); }
@@ -117,4 +120,35 @@ con la página de inicio */
     60% { transform: translate(-56%, -25%) rotate(0deg); }
     80% { transform: translate(-45%, -16%) rotate(1deg); }
     100% { transform: translate(-50%, -16%) rotate(0deg); }
+}
+
+/*/////////////////////////////////////*/
+/*               MEDIA                 */
+/*/////////////////////////////////////*/
+/*-------------------------------------*/
+/*               EXTRAS                */
+/*-------------------------------------*/
+@media only screen and (max-width: 1700px){
+    .sphere1 {
+        width: 570px;
+        height: 570px;
+    }
+}
+/*-------------------------------------*/
+/*               TABLET                */
+/*-------------------------------------*/
+@media only screen and (max-width: 1060px){
+    .sphere1 {
+        width: 500px;
+        height: 500px;
+    }
+}
+/*-------------------------------------*/
+/*                MOVIL                */
+/*-------------------------------------*/
+@media only screen and (max-width: 770px){
+    .sphere1 {
+        width: 434px;
+        height: 434px;
+    }
 }

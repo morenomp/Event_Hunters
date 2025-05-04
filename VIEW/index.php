@@ -135,14 +135,12 @@
     <main>
         <!-- Portada -->
         <section id="contPortada">
-            <div>
-                <span class="sphere1">
-                    <video class="GalleryVideo" src="../IMG/gafasPortadaInicio.webm" autoplay muted loop></video>
-                </span>
-                <span class="sphere2"></span>
-                <span class="sphere3"></span>
-                <span class="sphere4"></span>
-            </div>
+            <span class="sphere1">
+                <video src="../IMG/gafasPortadaInicio.webm" autoplay muted loop></video>
+            </span>
+            <span class="sphere2"></span>
+            <span class="sphere3"></span>
+            <span class="sphere4"></span>
         </section>
 
         <!-- QUE HACEMOS -->
