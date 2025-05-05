@@ -53,6 +53,106 @@ con la página de inicio */
 .sphere1 video{
     width: 100%;
 }
+
+/* Hero de la landing (es la seccion de sobrenosotros) */
+.hero {
+    padding: 80px 20px;
+    background-color: #f8f9fa;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.contenido-texto {
+    flex: 1;
+    max-width: 600px;
+}
+
+.contenedor-imagen {
+    flex: 1;
+    max-width: 500px;
+}
+
+.imagen {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.titulo {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.divisor {
+    width: 50px;
+    height: 2px;
+    background-color: #a35cf8;
+    border: none;
+    margin: 0 auto 2rem 0;
+}
+
+.texto {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #7f8c8d;
+    margin-bottom: 2.5rem;
+    font-weight: 100;
+    font-family: Montserrat-Regular;
+}
+
+.boton {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #a35cf8;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #a25cf8a8;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .divisor {
+        margin: 0 auto 2rem auto;
+    }
+    
+    .contenido-texto {
+        order: 2;
+    }
+    
+    .contenedor-imagen {
+        order: 1;
+        max-width: 400px;
+    }
+    
+    .titulo {
+        font-size: 2rem;
+    }
+    
+    .texto {
+        font-size: 1rem;
+    }
+}
+
 @keyframes wiggle {
     0% { transform: translate(-51%, -51%) rotate(0deg); }
     20% { transform: translate(-51%, -50%) rotate(1deg); }
