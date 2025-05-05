@@ -1,5 +1,5 @@
 # App Gestión de Eventos - Proyecto Transversal DAW 1 Stucom 2024/2025 - Marc, Adrian y Mauro
-<div align="center" filter="invert(1)">
+<div align="center">
   <img src ="./IMG/logo.png" width="300"/>
 </div>
 
