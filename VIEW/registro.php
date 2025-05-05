@@ -188,6 +188,9 @@ OBJETIVO:
                     <a href="../VIEW/login.php">
                         Iniciar sesión
                     </a>
+                    <a href="../VIEW/registroAdmin.php">
+                        Cuenta de Adminitrador
+                    </a>
                 </button>
             </div>
         </form>
