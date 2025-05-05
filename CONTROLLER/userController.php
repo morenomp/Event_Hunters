@@ -41,6 +41,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         echo "<p>Logout button is clicked</p>";
         $user->logout();
+    } else if (isset($_POST["btnRegistroAdmin"])) {
+
+        echo "<p>Register admin button is clicked</p>";
+        $user->registeradmin();
     }
 }
 
@@ -168,6 +172,26 @@ class userController
         $_SESSION["logged"] = false;
         header("Location: ../VIEW/cuenta.php");
         exit();
+    }
+
+    function registeradmin()
+    {
+
+        if (isset($_POST["btnRegistroAdmin"])) {
+
+            $target_dir = "upload/";    
+
+            var_dump($_FILES);
+
+        }
+
+
+
+        var_dump($_POST);
+        $user = $_POST['nameRegistro'];
+        $mail = $_POST['mailRegistro'];
+        $password = $_POST['passwordRegistro'];
+        $ruta = $_POST['fileToUpload'];
     }
 }
 ?>
