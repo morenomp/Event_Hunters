@@ -165,8 +165,7 @@ class userController
     function logout()
     {
 
-        session_destroy();
-        echo __LINE__;
+        $_SESSION["logged"] = false;
         header("Location: ../VIEW/cuenta.php");
         exit();
     }
