@@ -1,30 +1,14 @@
-<?php
-session_start();
-
-// Verificamos que el usuario haya iniciado sesión
-if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
-    $name = $_SESSION["name"];
-    $mail = $_SESSION["email"];
-    $passwd = $_SESSION["passwordLogin"];
-    // No deberías guardar ni mostrar la contraseña en sesión por seguridad
-} else {
-    // Si no ha iniciado sesión, redirigimos al login
-    header("Location: login.php");
-    exit();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cuenta del usuario de la gestora catalana Event Hunters">
+    <meta name="description" content="Cuenta del admin de la gestora catalana Event Hunters">
     <meta name="keywords" content="Event Hunters">
     <meta name="author" content="Marc Moreno y Adrian Palma">
     <meta name="copyright" content="propiedades del copyright Event Hunters">
-    <title>Cuenta usuario - Event Hunters</title>
+    <title>Cuenta administrador - Event Hunters</title>
 
     <link rel="stylesheet" href="../CSS/user.css">
     <link rel="stylesheet" href="../CSS/style.css">
@@ -39,7 +23,6 @@ OBJETIVO:
     · Admin tendrá una cosa diferente, y es que este tendrá la posibilidad
       de usar una imagen de perfil
 -->
-
 <body>
     <!-- ////// -->
     <!-- HEADER -->
@@ -156,36 +139,33 @@ OBJETIVO:
     <!-- MAIN -->
     <!-- //// -->
     <main>
-        <!-- Contenedor inicial de "crear una cuenta" -->
+        <!-- Contenedor inicial -->
         <form action="../CONTROLLER/userController.php" method="post" id="contForm">
 
             <div id="contTitle">
+                <!-- Título -->
+                <span id="titleRegistro">
+                    <h2>CREA</h2>
+                    <h2>UNA</h2>
+                    <h2>CUENTA</h2>
+                    <h3>Crear cuenta de administrador</h3>
+                </span>
 
-                <div id="contInputs2">
+                <div id="contInputs">
 
-                    <!-- IMG admin -->
-                    <span id="imgProfile">
-                        <img src="../IMG/mail.svg" alt="prueba de imagen">
-                    </span>
+                    <!-- Nombre de usuario con el que se le denominará -->
+                    <input type="text" name="nameRegistro" placeholder="Nombre & Apellido" pattern="^[A-Za-z]+$" required>
 
-                    <div id="contTextTodo">
-                        <?php
-                        echo '<h1>Bienvenido!</h1>';
-                        ?>
+                    <!-- Correo electrónico que usará para el registro -->
+                    <input type="email" name="mailRegistro" placeholder="Dirección de correo electrónico" pattern="^[A-Za-z0-9]+@[A-z0-9]+.[A-za-z0-9]{2,3}$" required>
 
-                        <div id="contTextInfo">
-                            <?php
-                                // Nombre de usuario con el que se le denominará
-                                echo "<span><b>Bienvenido</b><p> " . $name . '<br></p></span>';
+                    <!-- Contraseña de la cuenta -->
+                    <input type="password" name="passwordRegistro" placeholder="Contraseña" pattern="^[A-za-z0-9]{6,12}$" required>
 
-                                // Correo electrónico que usará para el registro
-                                echo "<span><b>Email:</b><p> " . $mail . '<br></p></span>';
-
-                                // Contraseña de la cuenta
-                                echo "<span><b>Contraseña:</b><p> " . $passwd . "</p></span>";
-                            ?>
-                        </div>
-                    </div>
+                    <!-- Guardar y continuar los datos introducidos-->
+                    <button class="btnRegistro" name="btnRegistro">
+                        Continuar
+                    </button>
                 </div>
             </div>
 
@@ -193,9 +173,17 @@ OBJETIVO:
             <hr class="hrPadding">
 
             <div id="contSession">
+                <!-- Continuar con Google, si el usuario tiene esa clase de correo -->
+                <button class="btnGoogle" name="btnGoogle">
+                    <img class="imgSize" src="../IMG/google-icon.svg" alt="logotipo identificativo de google">
+                    Continuar con Google
+                </button>
+
                 <!-- Iniciar sesión, si el usuario ya tiene cuenta registrada -->
-                <button class="btnNext" name="logout">
-                    Cerrar sesión
+                <button class="btnNext" name="btnNext">
+                    <a href="../VIEW/login.php">
+                        Iniciar sesión
+                    </a>
                 </button>
             </div>
         </form>
