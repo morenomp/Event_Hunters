@@ -39,7 +39,7 @@ OBJETIVO:
             </a>
 
             <div class="nav-items">
-                <a href="../VIEW/index.php" class="nav-link cta-nav">INICIO</a>
+                <a href="../VIEW/index.php" class="nav-link">INICIO</a>
                 <a href="../VIEW/eventos.php" class="nav-link">EVENTOS</a>
                 <a href="../VIEW/about_us.php" class="nav-link">SOBRE NOSOTROS</a>
             </div>
@@ -60,7 +60,7 @@ OBJETIVO:
                 </span>
 
                 <!-- Registro en la web -->
-                <a class="imgHeaderMenu" href="../VIEW/login.php">
+                <a class="imgHeaderMenu cta-nav" href="../VIEW/login.php">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                         <path fill="#000000" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
                     </svg>
@@ -145,10 +145,12 @@ OBJETIVO:
             <div id="contTitle">
                 <!-- Título -->
                 <span id="titleRegistro">
-                    <h2>CREA</h2>
-                    <h2>UNA</h2>
-                    <h2>CUENTA</h2>
-                    <h3>Crear cuenta de administrador</h3>
+                    <div>
+                        <h2>CREA</h2>
+                        <h2>UNA</h2>
+                        <h2>CUENTA</h2>
+                    </div>
+                    <h3>DE ADMINISTRADOR</h3>
                 </span>
 
                 <div id="contInputs">

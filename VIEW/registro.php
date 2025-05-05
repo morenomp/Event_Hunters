@@ -150,9 +150,11 @@ OBJETIVO:
             <div id="contTitle">
                 <!-- Título -->
                 <span id="titleRegistro">
-                    <h2>CREA</h2>
-                    <h2>UNA</h2>
-                    <h2>CUENTA</h2>
+                    <div>
+                        <h2>CREA</h2>
+                        <h2>UNA</h2>
+                        <h2>CUENTA</h2>
+                    </div>
                 </span>
 
                 <div id="contInputs">
