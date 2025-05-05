@@ -93,6 +93,11 @@ main{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    font-family: 'Montserrat-Regular';
+}
+#contTextInfo span{
+    display: flex;
+    gap: 10px;
 }
 
 /*/////////////////////////////////////*/
@@ -232,8 +237,15 @@ main{
         font-size: 8.3vw;
     }
     /* Formulario */
-    #contInputs {
+    #contInputs,
+    #contInputs2 {
         width: 100%;
+    }
+    #contInputs2 {
+        flex-direction: column;
+    }
+    #contTextTodo {
+        gap: 15px;
     }
     /* Google */
     #contSession {
