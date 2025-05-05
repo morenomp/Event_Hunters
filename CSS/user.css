@@ -2,7 +2,7 @@
 /* Aquí pondremos todo el código relacionado
 con las páginas de registro, login y usuarios */
 /*/////////////////////////////////////*/
-/*           LOGIN/REGISTRO            */
+/*        LOGIN/REGISTRO/CUENTA        */
 /*/////////////////////////////////////*/
 main{
     margin: auto 0;
@@ -22,7 +22,7 @@ main{
 }
 
 #contInputs{
-    width: 24em;
+    width: 24rem;
 
     display: flex;
     flex-direction: column;
@@ -30,19 +30,30 @@ main{
     gap: 20px;
 }
 
+#contInputs2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
 #contInputs input,
-#contInputs button{
+#contInputs button,
+#contInputs2 input,
+#contInputs2 button{
     padding: 15px;
     border-radius: 15px;
 }
 
-#contInputs input{
+#contInputs input,
+#contInputs2 input{
     border: none;
     background: #e0e0e0;
     box-shadow: inset 2px 2px 7px #5a5a5a21, inset 0px -48px 9px var(--cl-white);
 }
 
-#contInputs button{
+#contInputs button,
+#contInputs2 button{
     border: none;
     font-family: 'Montserrat-Bold';
     color: var(--cl-white);
@@ -50,7 +61,8 @@ main{
     box-shadow: 3px 3px 10px #d9d9d9, -5px -5px 10px var(--cl-white);
     transition: 250ms;
 }
-#contInputs button:hover{
+#contInputs button:hover,
+#contInputs2 button:hover{
     background: var(--cl-selection-oscure);
     transform: translateY(-1px);
 }
@@ -72,6 +84,17 @@ main{
 #imgProfile{
     width: 100px;
 }
+#contTextTodo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#contTextInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 /*/////////////////////////////////////*/
 /*               CUENTA                */
 /*/////////////////////////////////////*/

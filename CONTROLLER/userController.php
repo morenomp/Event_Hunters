@@ -30,15 +30,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = new userController;
 
     if (isset($_POST["btnLogin"])) {
-        
+
         echo "<p>Login button is clicked</p>";
         $user->login();
-
     } else if (isset($_POST["btnRegistro"])) {
 
         echo "<p>Register button is clicked</p>";
         $user->register();
-
     } else if (isset($_POST["logout"])) {
 
         echo "<p>Logout button is clicked</p>";
@@ -85,7 +83,7 @@ class userController
                 id INT PRIMARY KEY AUTO_INCREMENT,
                 name varchar(25), 
                 email varchar(50),
-                password varchar(50));"; 
+                password varchar(50));";
 
         //...y hacemos la comprobacion de que funciona correctamente,...
         if ($this->conn->query($sql) === TRUE) {
@@ -98,7 +96,8 @@ class userController
         }
     }
 
-    function login(){
+    function login()
+    {
         $mail = $_POST['mailLogin'];
         $password = $_POST['passwordLogin'];
 
@@ -113,6 +112,7 @@ class userController
             $_SESSION["logged"] = true;
             $_SESSION["email"] = $row['email'];
             $_SESSION["name"] = $row['name'];
+            $_SESSION["passwordLogin"] = $row['password'];
 
             $this->conn->close();
 
@@ -122,6 +122,7 @@ class userController
             $_SESSION["logged"] = false;
             $_SESSION["email"] = null;
             $_SESSION["name"] = null;
+            $_SESSION["passwordLogin"] = null;
 
             echo "Login failed";
         }
@@ -130,7 +131,8 @@ class userController
         echo __LINE__;
     }
 
-    function register(){
+    function register()
+    {
         var_dump($_POST);
         $user = $_POST['nameRegistro'];
         $mail = $_POST['mailRegistro'];
@@ -148,7 +150,6 @@ class userController
             echo "El correo ya está en uso.";
             echo __LINE__;
             return;
-
         } else {
 
             $sql = "INSERT INTO usuarios (name, email, password) VALUES (?, ?, ?)";
@@ -161,7 +162,8 @@ class userController
         }
     }
 
-    function logout(){
+    function logout()
+    {
 
         header("Location: ../VIEW/cuenta.php");
 

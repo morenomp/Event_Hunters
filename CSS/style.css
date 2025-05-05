@@ -302,6 +302,8 @@ footer{
     font-family: 'Montserrat-Regular';
     background-color: var(--cl-black);
     color: var(--cl-white);
+    position: relative;
+    z-index: 4;
 }
 .contInitialFooter{
     display: flex;
