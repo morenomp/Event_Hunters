@@ -84,10 +84,13 @@ class userController
 
         // Le pasamos la tabla que queremos crear, y comprobamos de nuevo si funciona correctamente,...
         $sql = "CREATE TABLE IF NOT EXISTS USUARIOS ( 
-                id INT PRIMARY KEY AUTO_INCREMENT,
-                name varchar(25), 
-                email varchar(50),
-                password varchar(50));";
+            id INT PRIMARY KEY AUTO_INCREMENT,
+            name VARCHAR(25), 
+            email VARCHAR(50),
+            password VARCHAR(255),
+            foto VARCHAR(255),
+            rol ENUM('admin', 'user') DEFAULT 'user');";
+        
 
         //...y hacemos la comprobacion de que funciona correctamente,...
         if ($this->conn->query($sql) === TRUE) {
@@ -105,9 +108,18 @@ class userController
         $mail = $_POST['mailLogin'];
         $password = $_POST['passwordLogin'];
 
-        $sql = "SELECT email, name, password FROM USUARIOS WHERE email = ? AND password = ?";
+        //Dato importante:
+        //Los usuarios normales no tienen foto (el campo de foto tendrá null).
+        //En cambio los administradores sí tienen una imagen subida, por ende, si
+        //que saldrá la imagen.
+        $sql = "SELECT email, name, password, rol, foto FROM USUARIOS WHERE email = ? AND password = ?";
 
         $stmt = $this->conn->prepare($sql);
+
+        //Que hace bind_param?
+        //Está pasando cuatro variables ($user, $mail, $password, $rol) a 
+        //la consulta, y las "s" le dicen al SQL de qué tipo es cada valor.
+        //En este caso son "s" de String, si fueran "i" sería de Integer, etc.
         $stmt->bind_param("ss", $mail, $password);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -117,16 +129,25 @@ class userController
             $_SESSION["email"] = $row['email'];
             $_SESSION["name"] = $row['name'];
             $_SESSION["passwordLogin"] = $row['password'];
+            $_SESSION["foto"] = $row['foto'];
+            $_SESSION["rol"] = $row['rol'];
 
             $this->conn->close();
 
-            header("Location: ../VIEW/cuenta.php");
+            //REDIRECCIÓN SEGÚN EL ROL
+            if ($row['rol'] === 'admin') {
+                header("Location: ../VIEW/cuentaAdmin.php");
+            } else if ($row['rol'] === 'user'){
+                header("Location: ../VIEW/cuenta.php");
+            }
             exit();
         } else {
             $_SESSION["logged"] = false;
             $_SESSION["email"] = null;
             $_SESSION["name"] = null;
             $_SESSION["passwordLogin"] = null;
+            $_SESSION["foto"] = null;
+            $_SESSION["rol"] = null;
 
             echo "Login failed";
         }
@@ -141,28 +162,33 @@ class userController
         $user = $_POST['nameRegistro'];
         $mail = $_POST['mailRegistro'];
         $password = $_POST['passwordRegistro'];
+        $rol = 'user';
 
         $checkSql = "SELECT email FROM usuarios WHERE email = ?";
 
         $checkStmt = $this->conn->prepare($checkSql);
-        $checkStmt->bind_param("s", $mail);
-        $checkStmt->execute();
+        $checkStmt->bind_param("s", $mail);//Enlaza el email como parámetro
+        $checkStmt->execute(); //Ejecuta la consulta
         $result = $checkStmt->get_result();
 
+        //SI el correo ya existe, muestra mensaje y termina
         if ($result->num_rows > 0) {
 
             echo "El correo ya está en uso.";
             echo __LINE__;
             return;
+
+        //SI NO existe, inserta un nuevo usuario
         } else {
 
-            $sql = "INSERT INTO usuarios (name, email, password) VALUES (?, ?, ?)";
+            $sql = "INSERT INTO usuarios (name, email, password, rol) VALUES (?, ?, ?, ?)";
 
             $stmt = $this->conn->prepare($sql);
-            $stmt->bind_param("sss", $user, $mail, $password);
+            $stmt->bind_param("ssss", $user, $mail, $password, $rol);
             $stmt->execute();
 
-            echo __LINE__;
+            header("Location: ../VIEW/cuenta.php");  // O la página que desees
+            exit();
         }
     }
 
@@ -176,22 +202,43 @@ class userController
 
     function registeradmin()
     {
-
         if (isset($_POST["btnRegistroAdmin"])) {
 
-            $target_dir = "upload/";    
+            $target_dir = "../upload/";
+            $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 
-            var_dump($_FILES);
+            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+                echo "La imagen " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " ha sido subida.";
+            } else {
+                echo "Error al subir la imagen.";
+                return;
+            }
 
+            $user = $_POST['nameRegistro'];
+            $mail = $_POST['mailRegistro'];
+            $password = $_POST['passwordRegistro'];
+            $ruta = "../upload/" . basename($_FILES["fileToUpload"]["name"]);
+            $rol = 'admin';
+
+            $sql = "INSERT INTO usuarios (name, email, password, foto, rol) VALUES (?, ?, ?, ?, ?)";
+            $stmt = $this->conn->prepare($sql);
+
+            if ($stmt === false) {
+                die('Error preparando la consulta: ' . $this->conn->error);
+            }
+
+            $stmt->bind_param("sssss", $user, $mail, $password, $ruta, $rol);
+
+            if ($stmt->execute()) {
+                echo "Administrador registrado correctamente.";
+                header("Location: ../VIEW/cuentaAdmin.php"); // Redirigimos tras éxito
+                exit();
+            } else {
+                echo "Error al registrar el administrador: " . $stmt->error;
+                header("Location: ../VIEW/cuentaAdmin.php");
+                exit();
+            }
         }
-
-
-
-        var_dump($_POST);
-        $user = $_POST['nameRegistro'];
-        $mail = $_POST['mailRegistro'];
-        $password = $_POST['passwordRegistro'];
-        $ruta = $_POST['fileToUpload'];
     }
 }
 ?>

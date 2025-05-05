@@ -135,6 +135,7 @@
     <main>
         <!-- Portada (Hero) -->
         <section id="contPortada">
+            <span class="sphere0"></span>
             <span class="sphere1">
                 <video src="../IMG/gafasPortadaInicio.webm" autoplay muted loop></video>
             </span>

@@ -1,12 +1,23 @@
 <?php
 session_start();
 
+if (isset($_SESSION["error"])) {
+    echo '<p style="color:red;">' . $_SESSION["error"] . '</p>';
+    unset($_SESSION["error"]);
+}
+
+if (isset($_SESSION["success"])) {
+    echo '<p style="color:green;">' . $_SESSION["success"] . '</p>';
+    unset($_SESSION["success"]);
+}
+
 // Verificamos que el usuario haya iniciado sesión
 if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
     $name = $_SESSION["name"];
     $mail = $_SESSION["email"];
     $passwd = $_SESSION["passwordLogin"];
-    // No deberías guardar ni mostrar la contraseña en sesión por seguridad
+    $rol = $_SESSION["rol"];
+
 } else {
     // Si no ha iniciado sesión, redirigimos al login
     header("Location: login.php");
@@ -24,7 +35,7 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
     <meta name="keywords" content="Event Hunters">
     <meta name="author" content="Marc Moreno y Adrian Palma">
     <meta name="copyright" content="propiedades del copyright Event Hunters">
-    <title>Cuenta usuario - Event Hunters</title>
+    <title>Cuenta Usuario - Event Hunters</title>
 
     <link rel="stylesheet" href="../CSS/user.css">
     <link rel="stylesheet" href="../CSS/style.css">
@@ -56,7 +67,7 @@ OBJETIVO:
             </a>
 
             <div class="nav-items">
-                <a href="../VIEW/index.php" class="nav-link cta-nav">INICIO</a>
+                <a href="../VIEW/index.php" class="nav-link">INICIO</a>
                 <a href="../VIEW/eventos.php" class="nav-link">EVENTOS</a>
                 <a href="../VIEW/about_us.php" class="nav-link">SOBRE NOSOTROS</a>
             </div>
@@ -77,7 +88,7 @@ OBJETIVO:
                 </span>
 
                 <!-- Registro en la web -->
-                <a class="imgHeaderMenu" href="../VIEW/login.php">
+                <a class="imgHeaderMenu cta-nav" href="../VIEW/login.php">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                         <path fill="#000000" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
                     </svg>
@@ -163,14 +174,14 @@ OBJETIVO:
 
                 <div id="contInputs2">
 
-                    <!-- IMG admin -->
+                    <!-- IMG user -->
                     <span id="imgProfile">
-                        <img src="../IMG/mail.svg" alt="prueba de imagen">
+                        <img src="../IMG/favicon.svg" alt="Foto por defecto para todos los usuarios">
                     </span>
 
                     <div id="contTextTodo">
                         <?php
-                        echo '<h1>Bienvenido!</h1>';
+                        echo '<h1>Tu perfil</h1>';
                         ?>
 
                         <div id="contTextInfo">
@@ -182,7 +193,16 @@ OBJETIVO:
                                 echo "<span><b>Email:</b><p> " . $mail . '<br></p></span>';
 
                                 // Contraseña de la cuenta
-                                echo "<span><b>Contraseña:</b><p> " . $passwd . "</p></span>";
+                                echo "<span><b>Contraseña:</b><p> " . str_repeat("•", strlen($passwd)) . "</p>";
+                            ?>   
+    
+                                <img class="notVisible" src="../IMG/eye-visible.svg" alt="Contraseña no visible para el usuario">
+                                
+                            <?php
+                                echo "</span>";
+                                
+                                // Rol 
+                                echo "<span><b>Usted es un:</b><p> " . $rol . "</p></span>";
                             ?>
                         </div>
                     </div>
@@ -194,7 +214,7 @@ OBJETIVO:
 
             <div id="contSession">
                 <!-- Iniciar sesión, si el usuario ya tiene cuenta registrada -->
-                <button class="btnNext" name="logout">
+                <button class="btnNext cPointer" name="logout">
                     Cerrar sesión
                 </button>
             </div>
