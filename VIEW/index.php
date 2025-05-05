@@ -133,7 +133,7 @@
     <!-- MAIN -->
     <!-- //// -->
     <main>
-        <!-- Portada -->
+        <!-- Portada (Hero) -->
         <section id="contPortada">
             <span class="sphere1">
                 <video src="../IMG/gafasPortadaInicio.webm" autoplay muted loop></video>
@@ -143,11 +143,10 @@
             <span class="sphere4"></span>
         </section>
 
-        <!-- QUE HACEMOS -->
-        <!-- <section id="contQHacemos">
-            <h2>¿QUE</h2>
-            <h2>HACEMOS?</h2>
-        </section> -->
+        <!-- Que Hacemos? (Sobre Nosotros) -->
+
+        <!-- Crea un -->
+
     </main>
     <!-- ////// -->
     <!-- FOOTER -->
