@@ -12,7 +12,6 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
     header("Location: login.php");
     exit();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -40,6 +39,7 @@ OBJETIVO:
     · Admin tendrá una cosa diferente, y es que este tendrá la posibilidad
       de usar una imagen de perfil
 -->
+
 <body>
     <!-- ////// -->
     <!-- HEADER -->
