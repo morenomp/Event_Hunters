@@ -101,7 +101,7 @@ class userController
         $mail = $_POST['mailLogin'];
         $password = $_POST['passwordLogin'];
 
-        $sql = "SELECT email, name FROM USUARIOS WHERE email = ? AND password = ?";
+        $sql = "SELECT email, name, password FROM USUARIOS WHERE email = ? AND password = ?";
 
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("ss", $mail, $password);
@@ -165,10 +165,9 @@ class userController
     function logout()
     {
 
+        $_SESSION["logged"] = false;
         header("Location: ../VIEW/cuenta.php");
-
-        session_destroy();
-        echo __LINE__;
+        exit();
     }
 }
 ?>
