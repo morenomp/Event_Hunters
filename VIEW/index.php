@@ -161,14 +161,54 @@
             </div>
         </section>
 
-        <!-- Crea un -->
+        <!-- Segunda S-->
+
+        <section class="eventos-disponibles">
+            <h2 class="eventos-disponibles__titulo">EVENTOS <br /> DISPONIBLES</h2>
+
+            <h3 class="eventos-disponibles__subtitulo">Lo más buscado</h3>
+
+            <div class="eventos-disponibles__grid">
+                <div class="evento-card">
+                <div class="evento-card__img">IMG</div> <!-- Aquí irá la imagen cuando tengamos -->
+                <div class="evento-card__info">
+                    <p class="evento-card__texto">TEXTO</p>
+                    <button class="evento-card__boton">BOTÓN</button>
+                </div>
+                </div>
+                <div class="evento-card">
+                <div class="evento-card__img">IMG</div> <!-- Aquí irá la imagen cuando tengamos -->
+                <div class="evento-card__info">
+                    <p class="evento-card__texto">TEXTO</p>
+                    <button class="evento-card__boton">BOTÓN</button>
+                </div>
+                </div>
+                <div class="evento-card">
+                <div class="evento-card__img">IMG</div> <!-- Aquí irá la imagen cuando tengamos -->
+                <div class="evento-card__info">
+                    <p class="evento-card__texto">TEXTO</p>
+                    <button class="evento-card__boton">BOTÓN</button>
+                </div>
+                </div>
+                <div class="evento-card">
+                <div class="evento-card__img">IMG</div> <!-- Aquí irá la imagen cuando tengamos -->
+                <div class="evento-card__info">
+                    <p class="evento-card__texto">TEXTO</p>
+                    <button class="evento-card__boton">BOTÓN</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="eventos-disponibles__vermas-container">
+            <button class="eventos-disponibles__vermas">Ver más →</button>
+        </div>
+        </section>
 
     </main>
     <!-- ////// -->
     <!-- FOOTER -->
     <!-- ////// -->
     <footer>
-        <!e de arriba del footer -->
         <div class="contInitialFooter">
             <!-- Planificar/Organizar eventos -->
             <div class="contSubInitial">

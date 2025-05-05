@@ -161,6 +161,104 @@ main{
 
     animation: wiggle 11.1s infinite;
 }
+/* Seccion2 */
+
+.eventos-disponibles {
+    padding: 120px 20px;
+    background-color: #ffffff;
+    color: #2c3e50;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+  }
+  
+  .eventos-disponibles__titulo {
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+  }
+  
+  .eventos-disponibles__subtitulo {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .eventos-disponibles__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .evento-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .evento-card__img {
+    background-color: #a35cf8;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #d0cbe9;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .evento-card__info {
+    background-color: #c6c6c6;
+    width: 100%;
+    padding: 1rem 0;
+    border-radius: 15px;
+    text-align: center;
+  }
+  
+  .evento-card__texto {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .evento-card__boton {
+    background-color: #a35cf8;
+    color: white;
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .evento-card__boton:hover {
+    background-color: #1b2f6d;
+  }
+  
+  .eventos-disponibles__vermas-container {
+    text-align: center;
+  }
+  
+  .eventos-disponibles__vermas {
+    background-color: #a35cf8;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 999px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .eventos-disponibles__vermas:hover {
+    background-color: #1b2f6d;
+  }
+  
+
 @keyframes wiggle {
     0% { transform: translate(-51%, -51%) rotate(0deg); }
     20% { transform: translate(-51%, -50%) rotate(1deg); }
