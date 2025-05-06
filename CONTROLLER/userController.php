@@ -200,8 +200,8 @@ class userController
 
     function logout()
     {
-
-        $_SESSION["logged"] = false;
+        session_unset();
+        session_destroy();
         header("Location: ../VIEW/cuenta.php");
         exit();
     }
@@ -226,21 +226,30 @@ class userController
             $ruta = "../upload/" . basename($_FILES["fileToUpload"]["name"]);
             $rol = 'admin';
 
-            $sql = "INSERT INTO usuarios (name, email, password, foto, rol) VALUES (?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO usuarios (name, email, password, foto, rol) VALUES (:name, :email, :password, :foto, :rol)";
             $stmt = $this->conn->prepare(query: $sql);
 
-            if ($stmt === false) {
-                die('Error preparando la consulta: ' . $this->conn->error);
+            try {
+                $stmt = $this->conn->prepare($sql);
+            } catch (PDOException $e) {
+                die('Error preparando la consulta: ' . $e->getMessage());
             }
 
-            $stmt->bind_param("sssss", $user, $mail, $password, $ruta, $rol);
+            try {
+                $stmt = $this->conn->prepare($sql);
+                $stmt->execute([
+                    ':name' => $user,
+                    ':email' => $mail,
+                    ':password' => $password,
+                    ':foto' => $ruta,
+                    ':rol' => $rol
+                ]);
 
-            if ($stmt->execute()) {
                 echo "Administrador registrado correctamente.";
                 header("Location: ../VIEW/cuentaAdmin.php"); // Redirigimos tras éxito
                 exit();
-            } else {
-                echo "Error al registrar el administrador: " . $stmt->error;
+            } catch (PDOException $e) {
+                echo "Error al registrar el administrador: " . $e->getMessage();
                 header("Location: ../VIEW/cuentaAdmin.php");
                 exit();
             }
