@@ -161,7 +161,9 @@ main{
 
     animation: wiggle 11.1s infinite;
 }
+
 /* Seccion2 */
+/* Eventos disponibles */
 
 .eventos-disponibles {
     padding: 120px 20px;
@@ -170,35 +172,34 @@ main{
     max-width: 1200px;
     margin: 0 auto;
     
-  }
+}
   
-  .eventos-disponibles__titulo {
+.eventos-disponibles__titulo {
     font-size: 3rem;
     font-weight: bold;
     line-height: 1.1;
     margin-bottom: 2rem;
-  }
+}
   
-  .eventos-disponibles__subtitulo {
+.eventos-disponibles__subtitulo {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
-  }
+}
   
-  .eventos-disponibles__grid {
+.eventos-disponibles__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.5rem;
     margin-bottom: 2rem;
-  }
+}
   
-  .evento-card {
+.evento-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+}
   
-  .evento-card__img {
-    background-color: #a35cf8;
+.evento-card__img {
     width: 100%;
     aspect-ratio: 1 / 1;
     display: flex;
@@ -209,22 +210,39 @@ main{
     font-size: 1.2rem;
     border-radius: 15px;
     margin-bottom: 0.5rem;
-  }
+}
+/* Portadas */
+.card__img1 {
+    background-image: url(../IMG/Exp_inm_Ikono_Bcn.jpg);
+    background-size: cover;
+}
+.card__img2 {
+    background-image: url(../IMG/Exp_inm_Candelight.jpg);
+    background-size: cover;
+}
+.card__img3 {
+    background-image: url(../IMG/Exp_inm_Goya.jpg);
+    background-size: cover;
+}
+.card__img4 {
+    background-image: url(../IMG/Exp_inm_Zoo.jpg);
+    background-size: cover;
+}
   
-  .evento-card__info {
+.evento-card__info {
     background-color: #c6c6c6;
     width: 100%;
     padding: 1rem 0;
     border-radius: 15px;
     text-align: center;
-  }
+}
   
-  .evento-card__texto {
+.evento-card__texto {
     font-weight: bold;
     margin-bottom: 0.5rem;
-  }
+}
   
-  .evento-card__boton {
+.evento-card__boton {
     background-color: #a35cf8;
     color: white;
     border: none;
@@ -233,17 +251,17 @@ main{
     font-weight: bold;
     cursor: pointer;
     transition: 0.2s;
-  }
+}
   
-  .evento-card__boton:hover {
+.evento-card__boton:hover {
     background-color: #1b2f6d;
-  }
+}
   
-  .eventos-disponibles__vermas-container {
+.eventos-disponibles__vermas-container {
     text-align: center;
-  }
+}
   
-  .eventos-disponibles__vermas {
+.eventos-disponibles__vermas {
     background-color: #a35cf8;
     color: white;
     border: none;
@@ -252,11 +270,11 @@ main{
     font-weight: bold;
     font-size: 1rem;
     cursor: pointer;
-  }
+}
   
-  .eventos-disponibles__vermas:hover {
+.eventos-disponibles__vermas:hover {
     background-color: #1b2f6d;
-  }
+}
   
 
 @keyframes wiggle {
