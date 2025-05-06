@@ -55,32 +55,27 @@ class userController
     public function __construct()
     {
         // Le pasamos los datos que vamos a usar para crear la base de datos:
-        $server = "localhost";
+        $server = "mysql:host=localhost";
         $user = "root";
         $password = "";
-        $dbname = "event_hunters";
+        $dbname = "dbname=event_hunters";
 
         // Iniciamos la conexion a traves de un objeto que iremos llamando en el código.
         // A este objeto le pasaremos el server, user y la password, ya que nos servirá de conexión.
-        $this->conn = new mysqli($server, $user, $password);
+        $this->conn = new PDO($server, $user, $password);
 
         // Creamos la base de datos,...
         $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
 
         //...y hacemos la comprobacion de que funciona correctamente,...
-        if ($this->conn->query($sql) === TRUE) {
-
+        try {
+            $this->conn->exec($sql);
             echo "Base de datos creada o ya existente.<br>";
-        } else {
-
-            // ...en el caso de que no funcione, no sigue leyendo el script.
-            // Usaremos la propiedad "die", la cual se utiliza para finalizar inmediatamente 
-            // la ejecución de un script y mostrar un mensaje
-            die("Error creando la base de datos: " . $this->conn->error);
+        } catch (PDOException $e) {
+            die("Error creando la base de datos: " . $e->getMessage());
         }
 
         // Seleccionaremos la base de datos que vamos a usar.
-        $this->conn->select_db($dbname);
 
         // Le pasamos la tabla que queremos crear, y comprobamos de nuevo si funciona correctamente,...
         $sql = "CREATE TABLE IF NOT EXISTS USUARIOS ( 
@@ -90,16 +85,15 @@ class userController
             password VARCHAR(255),
             foto VARCHAR(255),
             rol ENUM('admin', 'user') DEFAULT 'user');";
-        
+
 
         //...y hacemos la comprobacion de que funciona correctamente,...
-        if ($this->conn->query($sql) === TRUE) {
 
-            echo "Tabla creada o ya existente.<br>";
-        } else {
-
-            // ...si no pasamos un die al script.
-            die("Error creando la tabla: " . $this->conn->error);
+        try {
+            $this->conn->exec($sql);
+            echo "Tabla usuarios creada o ya existente.<br>";
+        } catch (PDOException $e) {
+            die("Error creando la tabla usuarios: " . $e->getMessage());
         }
     }
 
@@ -137,7 +131,7 @@ class userController
             //REDIRECCIÓN SEGÚN EL ROL
             if ($row['rol'] === 'admin') {
                 header("Location: ../VIEW/cuentaAdmin.php");
-            } else if ($row['rol'] === 'user'){
+            } else if ($row['rol'] === 'user') {
                 header("Location: ../VIEW/cuenta.php");
             }
             exit();
@@ -167,7 +161,7 @@ class userController
         $checkSql = "SELECT email FROM usuarios WHERE email = ?";
 
         $checkStmt = $this->conn->prepare($checkSql);
-        $checkStmt->bind_param("s", $mail);//Enlaza el email como parámetro
+        $checkStmt->bind_param("s", $mail); //Enlaza el email como parámetro
         $checkStmt->execute(); //Ejecuta la consulta
         $result = $checkStmt->get_result();
 
@@ -178,7 +172,7 @@ class userController
             echo __LINE__;
             return;
 
-        //SI NO existe, inserta un nuevo usuario
+            //SI NO existe, inserta un nuevo usuario
         } else {
 
             $sql = "INSERT INTO usuarios (name, email, password, rol) VALUES (?, ?, ?, ?)";
