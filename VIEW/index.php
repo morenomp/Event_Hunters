@@ -148,7 +148,7 @@
         <section class="hero">
             <div class="contenedor">
                 <div class="contenido-texto">
-                    <h1 class="titulo">Sobre Nosotros</h1>
+                    <h1 class="eventos-disponibles__titulo">SOBRE NOSOTROS</h1>
                     <hr class="divisor">
                     <p class="texto">
                         Event Hunters es una aplicación web diseñada para descubrir, comparar y reservar eventos de experiencias inmersivas en Cataluña. Nuestro objetivo es ofrecer a los usuarios las mejores ofertas, reseñas transparentes y la posibilidad de crear grupos para disfrutar de aventuras únicas.
