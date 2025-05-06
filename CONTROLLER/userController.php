@@ -106,7 +106,7 @@ class userController
         //Los usuarios normales no tienen foto (el campo de foto tendrá null).
         //En cambio los administradores sí tienen una imagen subida, por ende, si
         //que saldrá la imagen.
-        $sql = "SELECT email, name, password, rol, foto FROM USUARIOS WHERE email = ? AND password = ?";
+        $sql = "SELECT email, name, password, rol, foto FROM USUARIOS WHERE email = :email AND password = :password";
 
         $stmt = $this->conn->prepare($sql);
 
@@ -114,11 +114,15 @@ class userController
         //Está pasando cuatro variables ($user, $mail, $password, $rol) a 
         //la consulta, y las "s" le dicen al SQL de qué tipo es cada valor.
         //En este caso son "s" de String, si fueran "i" sería de Integer, etc.
-        $stmt->bind_param("ss", $mail, $password);
-        $stmt->execute();
-        $result = $stmt->get_result();
+        $stmt->execute([
+            ':email' => $mail,
+            ':password' => $password
+        ]);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        if ($row = $result->fetch_assoc()) {
+        $row = $result[0] ?? null;
+
+        if ($row) {
             $_SESSION["logged"] = true;
             $_SESSION["email"] = $row['email'];
             $_SESSION["name"] = $row['name'];
@@ -126,7 +130,8 @@ class userController
             $_SESSION["foto"] = $row['foto'];
             $_SESSION["rol"] = $row['rol'];
 
-            $this->conn->close();
+            $this->conn = null; // En PDO, así se "cierra" la conexión
+
 
             //REDIRECCIÓN SEGÚN EL ROL
             if ($row['rol'] === 'admin') {
