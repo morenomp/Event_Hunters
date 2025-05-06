@@ -163,15 +163,18 @@ class userController
         $password = $_POST['passwordRegistro'];
         $rol = 'user';
 
-        $checkSql = "SELECT email FROM usuarios WHERE email = ?";
+        $checkSql = "SELECT email FROM usuarios WHERE email = :email";
 
         $checkStmt = $this->conn->prepare($checkSql);
-        $checkStmt->bind_param("s", $mail); //Enlaza el email como parámetro
-        $checkStmt->execute(); //Ejecuta la consulta
-        $result = $checkStmt->get_result();
+        $checkStmt->execute([
+            ':email' => $mail
+        ]); //Ejecuta la consulta
+        $result = $checkStmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $row = $result[0] ?? null;
 
         //SI el correo ya existe, muestra mensaje y termina
-        if ($result->num_rows > 0) {
+        if ($result[0] != null) {
 
             echo "El correo ya está en uso.";
             echo __LINE__;
@@ -180,11 +183,15 @@ class userController
             //SI NO existe, inserta un nuevo usuario
         } else {
 
-            $sql = "INSERT INTO usuarios (name, email, password, rol) VALUES (?, ?, ?, ?)";
+            $sql = "INSERT INTO usuarios (name, email, password, rol) VALUES (:name, :email, :password, :rol)";
 
             $stmt = $this->conn->prepare($sql);
-            $stmt->bind_param("ssss", $user, $mail, $password, $rol);
-            $stmt->execute();
+            $stmt->execute([
+                ':name' => $user,
+                ':email' => $mail,
+                ':password' => $password,
+                ':rol' => $rol
+            ]);
 
             header("Location: ../VIEW/cuenta.php");  // O la página que desees
             exit();
