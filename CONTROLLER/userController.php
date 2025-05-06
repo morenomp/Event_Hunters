@@ -221,7 +221,7 @@ class userController
             $rol = 'admin';
 
             $sql = "INSERT INTO usuarios (name, email, password, foto, rol) VALUES (?, ?, ?, ?, ?)";
-            $stmt = $this->conn->prepare($sql);
+            $stmt = $this->conn->prepare(query: $sql);
 
             if ($stmt === false) {
                 die('Error preparando la consulta: ' . $this->conn->error);

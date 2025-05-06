@@ -8,7 +8,7 @@
     <meta name="keywords" content="Event Hunters">
     <meta name="author" content="Marc Moreno y Adrian Palma">
     <meta name="copyright" content="propiedades del copyright Event Hunters">
-    <title>Cuenta administrador - Event Hunters</title>
+    <title>Registro administrador - Event Hunters</title>
 
     <link rel="stylesheet" href="../CSS/user.css">
     <link rel="stylesheet" href="../CSS/style.css">
