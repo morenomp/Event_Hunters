@@ -165,42 +165,45 @@
 
         <section class="eventos-disponibles">
             <h2 class="eventos-disponibles__titulo">EVENTOS <br /> DISPONIBLES</h2>
-
+            <hr class="divisor">
             <h3 class="eventos-disponibles__subtitulo">Lo más buscado</h3>
 
             <div class="eventos-disponibles__grid">
                 <a class="evento-card" href="#">
                     <div class="evento-card__img card__img1"></div>
                     <div class="evento-card__info">
-                        <p class="evento-card__texto">TEXTO</p>
+                        <p class="evento-card__texto">Candlelight: <br> Tributo a ABBA</p>
                         <button class="evento-card__boton">Ver evento</button>
                     </div>
                 </a>
                 <a class="evento-card" href="#">
                     <div class="evento-card__img card__img2"></div>
                     <div class="evento-card__info">
-                        <p class="evento-card__texto">TEXTO</p>
+                        <p class="evento-card__texto">Candlelight: <br> Tributo a ABBA</p>
                         <button class="evento-card__boton">Ver evento</button>
                     </div>
                 </a>
                 <a class="evento-card" href="#">
                     <div class="evento-card__img card__img3"></div>
                     <div class="evento-card__info">
-                        <p class="evento-card__texto">TEXTO</p>
+                        <p class="evento-card__texto">UNIVERSO GOYA. ENTRE LA LUZ Y LA OSCURIDAD</p>
                         <button class="evento-card__boton">Ver evento</button>
                     </div>
                 </a>
                 <a class="evento-card" href="#">
                     <div class="evento-card__img card__img4"></div>
                     <div class="evento-card__info">
-                        <p class="evento-card__texto">TEXTO</p>
+                        <p class="evento-card__texto">VR World Lab: experiencia de realidad virtual</p>
                         <button class="evento-card__boton">Ver evento</button>
                     </div>
                 </a>
             </div>
 
             <div class="eventos-disponibles__vermas-container">
-                <button class="eventos-disponibles__vermas">Ver más →</button>
+                <button class="eventos-disponibles__vermas">
+                    Ver más 
+                    <span>→</span>
+                </button>
             </div>
         </section>
 

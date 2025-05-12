@@ -47,13 +47,14 @@ main{
 /* Hero de la landing (es la seccion de sobrenosotros) */
 .hero {
     padding: 80px 20px;
-    background-color: #f8f9fa;
+    background-color: var(--cl-white);
 }
 
 .contenedor {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
+    justify-content: space-around;
     align-items: center;
     gap: 40px;
 }
@@ -168,7 +169,6 @@ main{
 .eventos-disponibles {
     padding: 120px 20px;
     background-color: #ffffff;
-    color: #2c3e50;
     max-width: 1200px;
     margin: 0 auto;
     
@@ -184,6 +184,7 @@ main{
 .eventos-disponibles__subtitulo {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
+    font-family: 'Montserrat-Regular';
 }
   
 .eventos-disponibles__grid {
@@ -225,25 +226,26 @@ main{
     background-size: cover;
 }
 .card__img4 {
-    background-image: url(../IMG/Exp_inm_Zoo.jpg);
+    background-image: url(../IMG/Exp_VR_World_Lab.jpg);
     background-size: cover;
 }
-  
+
 .evento-card__info {
-    background-color: #c6c6c6;
+    background-color: var(--cl-white);
     width: 100%;
     padding: 1rem 0;
     border-radius: 15px;
     text-align: center;
 }
-  
+
 .evento-card__texto {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
+    font-family: 'Montserrat-Regular';
+    font-weight: 900;
+    margin: 0 10px 16px 10px;
 }
-  
+
 .evento-card__boton {
-    background-color: #a35cf8;
+    background-color: var(--cl-white-oscure);
     color: white;
     border: none;
     padding: 0.4rem 1rem;
@@ -254,11 +256,12 @@ main{
 }
   
 .evento-card__boton:hover {
-    background-color: #1b2f6d;
+    background-color: var(--cl-selection);
 }
   
 .eventos-disponibles__vermas-container {
     text-align: center;
+    float: right;
 }
   
 .eventos-disponibles__vermas {
@@ -269,13 +272,17 @@ main{
     border-radius: 999px;
     font-weight: bold;
     font-size: 1rem;
+    transition: 0.2s;
     cursor: pointer;
 }
   
 .eventos-disponibles__vermas:hover {
-    background-color: #1b2f6d;
+    background-color: var(--cl-selection-oscure);
 }
-  
+.eventos-disponibles__vermas:hover span {
+    position: relative;
+    left: 5px;
+}
 
 @keyframes wiggle {
     0% { transform: translate(-51%, -51%) rotate(0deg); }
@@ -390,6 +397,17 @@ main{
     .sphere1 {
         width: 434px;
         height: 434px;
+    }
+    /* Eventos */
+    .eventos-disponibles__titulo,
+    .eventos-disponibles__subtitulo{
+        text-align: center;
+    }    
+    .eventos-disponibles__vermas-container{
+        float: none;
+    }
+    .eventos-disponibles__grid {
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     }
 }
 @media only screen and (max-width: 510px){
