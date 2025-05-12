@@ -33,18 +33,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         echo "<p>Login button is clicked</p>";
         $user->login();
-    } else if (isset($_POST["btnRegistro"])) {
+    } else if (isset($_POST["btnRegistro"]) || isset($_POST["btnRegistroAdmin"])) {
+
 
         echo "<p>Register button is clicked</p>";
-        $user->register();
+        if (isset($_POST["btnRegistro"])) {
+
+            echo "<p>Is NOT admin</p>";
+            $admin = false;
+            $user->register($admin);
+        } else {
+
+            echo "<p>Is admin</p>";
+            $admin = true;
+            $user->register($admin);
+        }
     } else if (isset($_POST["logout"])) {
 
         echo "<p>Logout button is clicked</p>";
         $user->logout();
-    } else if (isset($_POST["btnRegistroAdmin"])) {
+    } else if (isset($_POST["btnBorrarUsuario"])) {
 
-        echo "<p>Register admin button is clicked</p>";
-        $user->registeradmin();
+        echo "<p>Delete user button is clicked</p>";
+        $user->delete();
     }
 }
 
@@ -54,48 +65,42 @@ class userController
 
     public function __construct()
     {
-        // Le pasamos los datos que vamos a usar para crear la base de datos:
-        $server = "mysql:host=localhost";
+        $host = "localhost";
         $user = "root";
         $password = "";
-        $dbname = "dbname=event_hunters";
+        $dbname = "event_hunters";
 
-        // Iniciamos la conexion a traves de un objeto que iremos llamando en el código.
-        // A este objeto le pasaremos el server, user y la password, ya que nos servirá de conexión.
-        $this->conn = new PDO($server, $user, $password);
-
-        // Creamos la base de datos,...
-        $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
-
-        //...y hacemos la comprobacion de que funciona correctamente,...
         try {
+            // Conexión sin base de datos para crearla
+            $this->conn = new PDO("mysql:host=$host", $user, $password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            // Crear la base de datos si no existe
+            $sql = "CREATE DATABASE IF NOT EXISTS $dbname CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci";
             $this->conn->exec($sql);
             echo "Base de datos creada o ya existente.<br>";
-        } catch (PDOException $e) {
-            die("Error creando la base de datos: " . $e->getMessage());
-        }
 
-        // Seleccionaremos la base de datos que vamos a usar.
+            // Ahora conectamos directamente a la base de datos
+            $this->conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $user, $password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        // Le pasamos la tabla que queremos crear, y comprobamos de nuevo si funciona correctamente,...
-        $sql = "CREATE TABLE IF NOT EXISTS USUARIOS ( 
-            id INT PRIMARY KEY AUTO_INCREMENT,
-            name VARCHAR(25), 
-            email VARCHAR(50),
-            password VARCHAR(255),
-            foto VARCHAR(255),
-            rol ENUM('admin', 'user') DEFAULT 'user');";
+            // Crear la tabla USUARIOS
+            $sql = "CREATE TABLE IF NOT EXISTS USUARIOS ( 
+                id INT PRIMARY KEY AUTO_INCREMENT,
+                name VARCHAR(25), 
+                email VARCHAR(50),
+                password VARCHAR(255),
+                foto VARCHAR(255),
+                rol ENUM('admin', 'user') DEFAULT 'user'
+            )";
 
-
-        //...y hacemos la comprobacion de que funciona correctamente,...
-
-        try {
             $this->conn->exec($sql);
             echo "Tabla usuarios creada o ya existente.<br>";
         } catch (PDOException $e) {
-            die("Error creando la tabla usuarios: " . $e->getMessage());
+            die("Error: " . $e->getMessage());
         }
     }
+
 
     function login()
     {
@@ -155,60 +160,10 @@ class userController
         echo __LINE__;
     }
 
-    function register()
+    function register($admin)
     {
-        var_dump($_POST);
-        $user = $_POST['nameRegistro'];
-        $mail = $_POST['mailRegistro'];
-        $password = $_POST['passwordRegistro'];
-        $rol = 'user';
+        if ($admin) {
 
-        $checkSql = "SELECT email FROM usuarios WHERE email = :email";
-
-        $checkStmt = $this->conn->prepare($checkSql);
-        $checkStmt->execute([
-            ':email' => $mail
-        ]); //Ejecuta la consulta
-        $result = $checkStmt->fetchAll(PDO::FETCH_ASSOC);
-
-        $row = $result[0] ?? null;
-
-        //SI el correo ya existe, muestra mensaje y termina
-        if ($result[0] != null) {
-
-            echo "El correo ya está en uso.";
-            echo __LINE__;
-            return;
-
-            //SI NO existe, inserta un nuevo usuario
-        } else {
-
-            $sql = "INSERT INTO usuarios (name, email, password, rol) VALUES (:name, :email, :password, :rol)";
-
-            $stmt = $this->conn->prepare($sql);
-            $stmt->execute([
-                ':name' => $user,
-                ':email' => $mail,
-                ':password' => $password,
-                ':rol' => $rol
-            ]);
-
-            header("Location: ../VIEW/cuenta.php");  // O la página que desees
-            exit();
-        }
-    }
-
-    function logout()
-    {
-        session_unset();
-        session_destroy();
-        header("Location: ../VIEW/cuenta.php");
-        exit();
-    }
-
-    function registeradmin()
-    {
-        if (isset($_POST["btnRegistroAdmin"])) {
 
             $target_dir = "../upload/";
             $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -253,7 +208,58 @@ class userController
                 header("Location: ../VIEW/cuentaAdmin.php");
                 exit();
             }
+        } else {
+
+            var_dump($_POST);
+            $user = $_POST['nameRegistro'];
+            $mail = $_POST['mailRegistro'];
+            $password = $_POST['passwordRegistro'];
+            $rol = 'user';
+
+            $checkSql = "SELECT email FROM usuarios WHERE email = :email";
+
+            $checkStmt = $this->conn->prepare($checkSql);
+            $checkStmt->execute([
+                ':email' => $mail
+            ]); //Ejecuta la consulta
+            $result = $checkStmt->fetchAll(PDO::FETCH_ASSOC);
+
+            $row = $result[0] ?? null;
+
+            //SI el correo ya existe, muestra mensaje y termina
+            if ($result[0] != null) {
+
+                echo "El correo ya está en uso.";
+                echo __LINE__;
+                return;
+
+                //SI NO existe, inserta un nuevo usuario
+            } else {
+
+                $sql = "INSERT INTO usuarios (name, email, password, rol) VALUES (:name, :email, :password, :rol)";
+
+                $stmt = $this->conn->prepare($sql);
+                $stmt->execute([
+                    ':name' => $user,
+                    ':email' => $mail,
+                    ':password' => $password,
+                    ':rol' => $rol
+                ]);
+
+                header("Location: ../VIEW/cuenta.php");  // O la página que desees
+                exit();
+            }
         }
     }
+
+    function logout()
+    {
+        session_unset();
+        session_destroy();
+        header("Location: ../VIEW/cuenta.php");
+        exit();
+    }
+
+    function delete() {}
 }
 ?>
