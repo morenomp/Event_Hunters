@@ -70,7 +70,7 @@ OBJETIVO:
             <div class="nav-items">
                 <a href="../VIEW/index.php" class="nav-link">INICIO</a>
                 <a href="../VIEW/eventos.php" class="nav-link">EVENTOS</a>
-                <a href="../VIEW/about_us.php" class="nav-link">SOBRE NOSOTROS</a>
+                <a href="../VIEW/about_us.php" class="nav-link">TRAYECTORIA</a>
             </div>
 
             <div class="nav-items">
@@ -128,7 +128,7 @@ OBJETIVO:
                     <ul class="nav-items">
                         <a href="../VIEW/index.php" class="nav-link">INICIO</a>
                         <a href="../VIEW/eventos.php" class="nav-link">EVENTOS</a>
-                        <a href="../VIEW/about_us.php" class="nav-link">SOBRE NOSOTROS</a>
+                        <a href="../VIEW/about_us.php" class="nav-link">TRAYECTORIA</a>
                     </ul>
 
                     <div class="nav-items">
