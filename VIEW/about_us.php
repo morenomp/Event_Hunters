@@ -228,9 +228,8 @@
                             <img src="../IMG/persona.jpg" alt="Mauro Serratvo">
                         </div>
                         <div class="founder-info">
-                            <h3>Mauro Serratvo</h3>
+                            <h3>Mauro Serralvo</h3>
                             <div class="founder-links">
-                                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
                                 <a href="#" target="_blank"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
