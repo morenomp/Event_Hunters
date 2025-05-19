@@ -4,38 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Login de la gestora catalana Event Hunters">
+    <meta name="description" content="Inicio de la gestora catalana Event Hunters">
     <meta name="keywords" content="Event Hunters">
     <meta name="author" content="Marc Moreno y Adrian Palma">
     <meta name="copyright" content="propiedades del copyright Event Hunters">
-    <title>Login - Event Hunters</title>
+    <title>Event Hunters</title>
 
-    <link rel="stylesheet" href="../CSS/user.css">
+    <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="../CSS/events.css">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/fonts.css">
-    <!-- <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com"> -->
+
     <link rel="icon" type="image/png" href="../IMG/favicon.svg">
 </head>
-
-<!-- 
-OBJETIVO: 
-
-· Maquetació responsive del front-end amb tècniques SEO.
-    · Utilitzar marques estructurals correctament en tot el codi.
-    · Utilitzar atributs per informar del contingut de les imatges.
-    · Utilitzar atributs per informar del contingut dels links.
-    · Validar formularis amb codi HTML.
-· Codificar un disseny responsiu amb CSS.
--->
-<?php
-session_start();
-if (isset($_SESSION["logged"])) {
-    if ($_SESSION["logged"] === true) {
-        header("Location: ../VIEW/cuenta.php");
-        exit();
-    }
-}
-?>
 
 <body>
     <!-- ////// -->
@@ -52,29 +33,29 @@ if (isset($_SESSION["logged"])) {
                 </span>
             </a>
 
-            <ul class="nav-items">
+            <div class="nav-items">
                 <a href="../VIEW/index.php" class="nav-link">INICIO</a>
-                <a href="../VIEW/eventos.php" class="nav-link">EVENTOS</a>
+                <a href="../VIEW/eventos.php" class="nav-link cta-nav">EVENTOS</a>
                 <a href="../VIEW/about_us.php" class="nav-link">TRAYECTORIA</a>
-            </ul>
+            </div>
 
             <div class="nav-items">
                 <span id="contTodoIdiomas">
 
                     <!-- Idioma seleccionado -->
-                    <a class="imgHeaderMenu" id="idioma" href="../VIEW/index.php">ES</a>
+                    <a class="imgHeaderMenu" id="idioma" href="#">ES</a>
 
                     <!-- Idiomas disponibles -->
-                    <ul id="contIdiomas">
+                    <div id="contIdiomas">
 
                         <a id="selectIdioma" href="#">Español</a>
                         <a class="notSelectIdioma" href="#">Catalán</a>
                         <a class="notSelectIdioma" href="#">English</a>
-                    </ul>
+                    </div>
                 </span>
 
                 <!-- Registro en la web -->
-                <a class="imgHeaderMenu cta-nav" href="../VIEW/login.php">
+                <a class="imgHeaderMenu" href="../VIEW/login.php">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                         <path fill="#000000" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
                     </svg>
@@ -112,7 +93,7 @@ if (isset($_SESSION["logged"])) {
                 <section id="cols">
                     <ul class="nav-items">
                         <a href="../VIEW/index.php" class="nav-link">INICIO</a>
-                        <a href="../VIEW/eventos.php" class="nav-link">EVENTOS</a>
+                        <a href="../VIEW/eventos.php" class="nav-link cta-nav">EVENTOS</a>
                         <a href="../VIEW/about_us.php" class="nav-link">TRAYECTORIA</a>
                     </ul>
 
@@ -132,7 +113,7 @@ if (isset($_SESSION["logged"])) {
                         </span>
 
                         <!-- Registro en la web -->
-                        <a class="imgHeaderMenu cta-nav" href="../VIEW/login.php">
+                        <a class="imgHeaderMenu" href="../VIEW/login.php">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                 <path fill="#000000" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
                             </svg>
@@ -153,89 +134,141 @@ if (isset($_SESSION["logged"])) {
     <!-- MAIN -->
     <!-- //// -->
     <main>
-        <!-- Contenedor inicial de "crear una cuenta" -->
-        <!-- <form action="../VIEW/cuenta.php" method="post" id="contForm"> -->
-        <form action="../CONTROLLER/userController.php" method="post" id="contForm">
+        <!-- Eventos -->
 
-            <div id="contTitle">
-                <!-- Título -->
-                <span id="titleLogin">
-                    <h2>INICIO</h2>
-                    <h2>DE</h2>
-                    <h2>SESIÓN</h2>
-                </span>
+        <section class="eventos-disponibles">
+            <h2 class="eventos-disponibles__titulo">EVENTOS <br /> DISPONIBLES</h2>
+            <hr class="divisor">
+            <h3 class="eventos-disponibles__subtitulo">Lo más buscado</h3>
 
-                <div id="contInputs">
-
-                    <!-- Correo electrónico que usará para el registro -->
-                    <input type="email" name="mailLogin" placeholder="Dirección de correo electrónico" pattern="^[A-Za-z0-9]+@[A-z0-9]+.[A-za-z0-9]{2,3}$" required>
-
-                    <!-- Contraseña de la cuenta -->
-                    <input type="password" name="passwordLogin" placeholder="Contraseña" pattern="^[A-za-z0-9]{6,12}$" required>
-
-                    <!-- Guardar y continuar los datos introducidos-->
-                    <button class="btnLogin" name="btnLogin">
-                        Continuar
-                    </button>
-                </div>
+            <div class="eventos-disponibles__grid">
+                <a class="evento-card" href="#">
+                    <div class="evento-card__img card__img1"></div>
+                    <div class="evento-card__info">
+                        <p class="evento-card__texto">Candlelight: <br> Tributo a ABBA</p>
+                        <button class="evento-card__boton">Ver evento</button>
+                    </div>
+                </a>
+                <a class="evento-card" href="#">
+                    <div class="evento-card__img card__img2"></div>
+                    <div class="evento-card__info">
+                        <p class="evento-card__texto">Candlelight: <br> Tributo a ABBA</p>
+                        <button class="evento-card__boton">Ver evento</button>
+                    </div>
+                </a>
+                <a class="evento-card" href="#">
+                    <div class="evento-card__img card__img3"></div>
+                    <div class="evento-card__info">
+                        <p class="evento-card__texto">UNIVERSO GOYA. ENTRE LA LUZ Y LA OSCURIDAD</p>
+                        <button class="evento-card__boton">Ver evento</button>
+                    </div>
+                </a>
+                <a class="evento-card" href="#">
+                    <div class="evento-card__img card__img4"></div>
+                    <div class="evento-card__info">
+                        <p class="evento-card__texto">VR World Lab: experiencia de realidad virtual</p>
+                        <button class="evento-card__boton">Ver evento</button>
+                    </div>
+                </a>
             </div>
 
-            <!-- ------------------- -->
-            <hr class="hrPadding">
-
-            <div id="contSession">
-                <!-- Continuar con Google, si el usuario tiene esa clase de correo -->
-                <button class="btnGoogle" name="btnGoogle">
-                    <img class="imgSize" src="../IMG/google-icon.svg" alt="logotipo identificativo de google">
-                    Continuar con Google
-                </button>
-
-                <!-- Iniciar sesión, si el usuario ya tiene cuenta registrada -->
-                <button class="btnNext" name="btnNext">
-                    <a href="../VIEW/registro.php">
-                        Crear cuenta
-                    </a>
+            <div class="eventos-disponibles__vermas-container">
+                <button class="eventos-disponibles__vermas">
+                    Ver más 
+                    <span>→</span>
                 </button>
             </div>
-        </form>
+        </section>
+
+        <section class="eventos-disponibles">
+            <h3 class="eventos-disponibles__subtitulo">Eventos gratuitos</h3>
+
+            <div class="eventos-disponibles__grid">
+                <a class="evento-card" href="#">
+                    <div class="evento-card__img card__img5"></div>
+                    <div class="evento-card__info">
+                        <p class="evento-card__texto">Candlelight: <br> Tributo a ABBA</p>
+                        <button class="evento-card__boton">Ver evento</button>
+                    </div>
+                </a>
+                <a class="evento-card" href="#">
+                    <div class="evento-card__img card__img6"></div>
+                    <div class="evento-card__info">
+                        <p class="evento-card__texto">Candlelight: <br> Tributo a ABBA</p>
+                        <button class="evento-card__boton">Ver evento</button>
+                    </div>
+                </a>
+                <a class="evento-card" href="#">
+                    <div class="evento-card__img card__img7"></div>
+                    <div class="evento-card__info">
+                        <p class="evento-card__texto">UNIVERSO GOYA. ENTRE LA LUZ Y LA OSCURIDAD</p>
+                        <button class="evento-card__boton">Ver evento</button>
+                    </div>
+                </a>
+                <a class="evento-card" href="#">
+                    <div class="evento-card__img card__img8"></div>
+                    <div class="evento-card__info">
+                        <p class="evento-card__texto">VR World Lab: experiencia de realidad virtual</p>
+                        <button class="evento-card__boton">Ver evento</button>
+                    </div>
+                </a>
+            </div>
+
+            <div class="eventos-disponibles__vermas-container">
+                <button class="eventos-disponibles__vermas">
+                    Ver más 
+                    <span>→</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="eventos-disponibles">
+            <h3 class="eventos-disponibles__subtitulo">Mejores precios</h3>
+
+            <div class="eventos-disponibles__grid">
+                <a class="evento-card" href="#">
+                    <div class="evento-card__img card__img9"></div>
+                    <div class="evento-card__info">
+                        <p class="evento-card__texto">Candlelight: <br> Tributo a ABBA</p>
+                        <button class="evento-card__boton">Ver evento</button>
+                    </div>
+                </a>
+                <a class="evento-card" href="#">
+                    <div class="evento-card__img card__img10"></div>
+                    <div class="evento-card__info">
+                        <p class="evento-card__texto">Candlelight: <br> Tributo a ABBA</p>
+                        <button class="evento-card__boton">Ver evento</button>
+                    </div>
+                </a>
+                <a class="evento-card" href="#">
+                    <div class="evento-card__img card__img11"></div>
+                    <div class="evento-card__info">
+                        <p class="evento-card__texto">UNIVERSO GOYA. ENTRE LA LUZ Y LA OSCURIDAD</p>
+                        <button class="evento-card__boton">Ver evento</button>
+                    </div>
+                </a>
+                <a class="evento-card" href="#">
+                    <div class="evento-card__img card__img12"></div>
+                    <div class="evento-card__info">
+                        <p class="evento-card__texto">VR World Lab: experiencia de realidad virtual</p>
+                        <button class="evento-card__boton">Ver evento</button>
+                    </div>
+                </a>
+            </div>
+
+            <div class="eventos-disponibles__vermas-container">
+                <button class="eventos-disponibles__vermas">
+                    Ver más 
+                    <span>→</span>
+                </button>
+            </div>
+        </section>
+
     </main>
-
-    <!-- 
-Prueba "Continuar con Google"
-
-Hemos añadido el script para iniciar sesion con google, pero 
-no sabemos como implementarlo correctamente.
--->
-    <!--    <div id="my-signin2"></div>
-     <script>
-        function onSuccess(googleUser) {
-            console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-        }
-
-        function onFailure(error) {
-            console.log(error);
-        }
-
-        function renderButton() {
-            gapi.signin2.render('my-signin2', {
-                'scope': 'profile email',
-                'width': 240,
-                'height': 50,
-                'longtitle': true,
-                'theme': 'dark',
-                'onsuccess': onSuccess,
-                'onfailure': onFailure
-            });
-        }
-    </script>
-
-    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script> -->
-
     <!-- ////// -->
     <!-- FOOTER -->
     <!-- ////// -->
     <footer>
-        <!-- Parte de arriba del footer -->
         <div class="contInitialFooter">
             <!-- Planificar/Organizar eventos -->
             <div class="contSubInitial">
@@ -314,6 +347,5 @@ no sabemos como implementarlo correctamente.
         </div>
     </footer>
 </body>
-
 
 </html>

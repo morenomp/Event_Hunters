@@ -301,6 +301,7 @@ footer{
     font-family: 'Montserrat-Regular';
     background-color: var(--cl-black);
     color: var(--cl-white);
+    margin-top: 25px;
     position: relative;
     z-index: 4;
 }

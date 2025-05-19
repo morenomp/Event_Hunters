@@ -4,38 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Login de la gestora catalana Event Hunters">
+    <meta name="description" content="Inicio de la gestora catalana Event Hunters">
     <meta name="keywords" content="Event Hunters">
     <meta name="author" content="Marc Moreno y Adrian Palma">
     <meta name="copyright" content="propiedades del copyright Event Hunters">
-    <title>Login - Event Hunters</title>
+    <title>Event Hunters</title>
 
-    <link rel="stylesheet" href="../CSS/user.css">
+    <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="../CSS/about_us.css">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/fonts.css">
-    <!-- <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com"> -->
+
     <link rel="icon" type="image/png" href="../IMG/favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
-<!-- 
-OBJETIVO: 
-
-· Maquetació responsive del front-end amb tècniques SEO.
-    · Utilitzar marques estructurals correctament en tot el codi.
-    · Utilitzar atributs per informar del contingut de les imatges.
-    · Utilitzar atributs per informar del contingut dels links.
-    · Validar formularis amb codi HTML.
-· Codificar un disseny responsiu amb CSS.
--->
-<?php
-session_start();
-if (isset($_SESSION["logged"])) {
-    if ($_SESSION["logged"] === true) {
-        header("Location: ../VIEW/cuenta.php");
-        exit();
-    }
-}
-?>
 
 <body>
     <!-- ////// -->
@@ -52,29 +34,29 @@ if (isset($_SESSION["logged"])) {
                 </span>
             </a>
 
-            <ul class="nav-items">
+            <div class="nav-items">
                 <a href="../VIEW/index.php" class="nav-link">INICIO</a>
                 <a href="../VIEW/eventos.php" class="nav-link">EVENTOS</a>
-                <a href="../VIEW/about_us.php" class="nav-link">TRAYECTORIA</a>
-            </ul>
+                <a href="../VIEW/about_us.php" class="nav-link cta-nav">TRAYECTORIA</a>
+            </div>
 
             <div class="nav-items">
                 <span id="contTodoIdiomas">
 
                     <!-- Idioma seleccionado -->
-                    <a class="imgHeaderMenu" id="idioma" href="../VIEW/index.php">ES</a>
+                    <a class="imgHeaderMenu" id="idioma" href="#">ES</a>
 
                     <!-- Idiomas disponibles -->
-                    <ul id="contIdiomas">
+                    <div id="contIdiomas">
 
                         <a id="selectIdioma" href="#">Español</a>
                         <a class="notSelectIdioma" href="#">Catalán</a>
                         <a class="notSelectIdioma" href="#">English</a>
-                    </ul>
+                    </div>
                 </span>
 
                 <!-- Registro en la web -->
-                <a class="imgHeaderMenu cta-nav" href="../VIEW/login.php">
+                <a class="imgHeaderMenu" href="../VIEW/login.php">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                         <path fill="#000000" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
                     </svg>
@@ -112,7 +94,7 @@ if (isset($_SESSION["logged"])) {
                 <section id="cols">
                     <ul class="nav-items">
                         <a href="../VIEW/index.php" class="nav-link">INICIO</a>
-                        <a href="../VIEW/eventos.php" class="nav-link">EVENTOS</a>
+                        <a href="../VIEW/eventos.php" class="nav-link cta-nav">EVENTOS</a>
                         <a href="../VIEW/about_us.php" class="nav-link">TRAYECTORIA</a>
                     </ul>
 
@@ -132,7 +114,7 @@ if (isset($_SESSION["logged"])) {
                         </span>
 
                         <!-- Registro en la web -->
-                        <a class="imgHeaderMenu cta-nav" href="../VIEW/login.php">
+                        <a class="imgHeaderMenu" href="../VIEW/login.php">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                 <path fill="#000000" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
                             </svg>
@@ -153,89 +135,114 @@ if (isset($_SESSION["logged"])) {
     <!-- MAIN -->
     <!-- //// -->
     <main>
-        <!-- Contenedor inicial de "crear una cuenta" -->
-        <!-- <form action="../VIEW/cuenta.php" method="post" id="contForm"> -->
-        <form action="../CONTROLLER/userController.php" method="post" id="contForm">
+        <!-- About Us -->
+        <section class="qs-section">
+            <div class="qs-container">
+                <div class="qs-content">
+                    <h2 class="qs-main-title">Descubre el alma de<br><span>Event Hunters</span></h2>
+                    
+                    <div class="qs-grid">
+                        <div class="qs-card">
+                            <div class="qs-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h3>Nuestra Misión</h3>
+                            <p>Crear experiencias memorables que conecten comunidades a través de eventos únicos</p>
+                        </div>
 
-            <div id="contTitle">
-                <!-- Título -->
-                <span id="titleLogin">
-                    <h2>INICIO</h2>
-                    <h2>DE</h2>
-                    <h2>SESIÓN</h2>
-                </span>
+                        <div class="qs-card highlight">
+                            <div class="qs-main-image">
+                                <img src="../IMG/nosotros.jpg" alt="Equipo Event Hunters">
+                            </div>
+                        </div>
 
-                <div id="contInputs">
+                        <div class="qs-card">
+                            <div class="qs-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3>Nuestros Valores</h3>
+                            <p>Innovación, pasión y compromiso con la excelencia en cada detalle</p>
+                        </div>
+                    </div>
 
-                    <!-- Correo electrónico que usará para el registro -->
-                    <input type="email" name="mailLogin" placeholder="Dirección de correo electrónico" pattern="^[A-Za-z0-9]+@[A-z0-9]+.[A-za-z0-9]{2,3}$" required>
-
-                    <!-- Contraseña de la cuenta -->
-                    <input type="password" name="passwordLogin" placeholder="Contraseña" pattern="^[A-za-z0-9]{6,12}$" required>
-
-                    <!-- Guardar y continuar los datos introducidos-->
-                    <button class="btnLogin" name="btnLogin">
-                        Continuar
-                    </button>
+                    <div class="qs-text-content">
+                        <p class="qs-main-text">Somos pioneros en la creación de experiencias inmersivas. Con más de una década de trayectoria, hemos transformado la industria de eventos en Cataluña mediante:</p>
+                        
+                        <div class="qs-stats">
+                            <div class="qs-stat">
+                                <div class="qs-stat-number">50+</div>
+                                <div class="qs-stat-label">Eventos realizados</div>
+                            </div>
+                            <div class="qs-stat">
+                                <div class="qs-stat-number">99%</div>
+                                <div class="qs-stat-label">Satisfacción clientes</div>
+                            </div>
+                            <div class="qs-stat">
+                                <div class="qs-stat-number">3</div>
+                                <div class="qs-stat-label">Asistentes anuales</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- ------------------- -->
-            <hr class="hrPadding">
+        <!-- Fundadores -->
 
-            <div id="contSession">
-                <!-- Continuar con Google, si el usuario tiene esa clase de correo -->
-                <button class="btnGoogle" name="btnGoogle">
-                    <img class="imgSize" src="../IMG/google-icon.svg" alt="logotipo identificativo de google">
-                    Continuar con Google
-                </button>
+        <section class="founders-section">
+            <div class="founders-container">
+                <h2>FUNDADORES</h2>
+                
+                <div class="founders-grid">
+                    <!-- Tarjeta 1 -->
+                    <div class="founder-card">
+                        <div class="founder-image">
+                            <img src="../IMG/persona.jpg" alt="Adri Palma">
+                        </div>
+                        <div class="founder-info">
+                            <h3>Adri Palma</h3>
+                            <div class="founder-links">
+                                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
 
-                <!-- Iniciar sesión, si el usuario ya tiene cuenta registrada -->
-                <button class="btnNext" name="btnNext">
-                    <a href="../VIEW/registro.php">
-                        Crear cuenta
-                    </a>
-                </button>
+                    <!-- Tarjeta 2 -->
+                    <div class="founder-card">
+                        <div class="founder-image">
+                            <img src="../IMG/persona.jpg" alt="Marc Moreno">
+                        </div>
+                        <div class="founder-info">
+                            <h3>Marc Moreno</h3>
+                            <div class="founder-links">
+                                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 3 -->
+                    <div class="founder-card">
+                        <div class="founder-image">
+                            <img src="../IMG/persona.jpg" alt="Mauro Serratvo">
+                        </div>
+                        <div class="founder-info">
+                            <h3>Mauro Serralvo</h3>
+                            <div class="founder-links">
+                                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </form>
+        </section>
+
     </main>
-
-    <!-- 
-Prueba "Continuar con Google"
-
-Hemos añadido el script para iniciar sesion con google, pero 
-no sabemos como implementarlo correctamente.
--->
-    <!--    <div id="my-signin2"></div>
-     <script>
-        function onSuccess(googleUser) {
-            console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-        }
-
-        function onFailure(error) {
-            console.log(error);
-        }
-
-        function renderButton() {
-            gapi.signin2.render('my-signin2', {
-                'scope': 'profile email',
-                'width': 240,
-                'height': 50,
-                'longtitle': true,
-                'theme': 'dark',
-                'onsuccess': onSuccess,
-                'onfailure': onFailure
-            });
-        }
-    </script>
-
-    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script> -->
-
     <!-- ////// -->
     <!-- FOOTER -->
     <!-- ////// -->
     <footer>
-        <!-- Parte de arriba del footer -->
         <div class="contInitialFooter">
             <!-- Planificar/Organizar eventos -->
             <div class="contSubInitial">
@@ -314,6 +321,5 @@ no sabemos como implementarlo correctamente.
         </div>
     </footer>
 </body>
-
 
 </html>

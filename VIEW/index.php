@@ -11,6 +11,7 @@
     <title>Event Hunters</title>
 
     <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="../CSS/events.css">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/fonts.css">
 
@@ -35,7 +36,7 @@
             <div class="nav-items">
                 <a href="../VIEW/index.php" class="nav-link cta-nav">INICIO</a>
                 <a href="../VIEW/eventos.php" class="nav-link">EVENTOS</a>
-                <a href="../VIEW/about_us.php" class="nav-link">SOBRE NOSOTROS</a>
+                <a href="../VIEW/about_us.php" class="nav-link">TRAYECTORIA</a>
             </div>
 
             <div class="nav-items">
@@ -91,9 +92,9 @@
 
                 <section id="cols">
                     <ul class="nav-items">
-                        <a href="../VIEW/index.php" class="nav-link">INICIO</a>
+                        <a href="../VIEW/index.php" class="nav-link cta-nav">INICIO</a>
                         <a href="../VIEW/eventos.php" class="nav-link">EVENTOS</a>
-                        <a href="../VIEW/about_us.php" class="nav-link">SOBRE NOSOTROS</a>
+                        <a href="../VIEW/about_us.php" class="nav-link">TRAYECTORIA</a>
                     </ul>
 
                     <div class="nav-items">
@@ -112,7 +113,7 @@
                         </span>
 
                         <!-- Registro en la web -->
-                        <a class="imgHeaderMenu cta-nav" href="../VIEW/login.php">
+                        <a class="imgHeaderMenu" href="../VIEW/login.php">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                 <path fill="#000000" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
                             </svg>
@@ -143,8 +144,23 @@
             <span class="sphere3"></span>
             <span class="sphere4"></span>
         </section>
+        
+        <!-- Separador -->
+        <div id="contSep">
+            <span></span>
+            <span></span>
+            <span></span>
 
-        <!-- Que Hacemos? (Sobre Nosotros) -->
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Que Hacemos? (Sobre Nosotros/Trayectoria) -->
         <section class="hero">
             <div class="contenedor">
                 <div class="contenido-texto">
@@ -156,7 +172,7 @@
                     <a href="/sobre-nosotros" class="boton">Ver mas</a>
                 </div>
                 <div class="contenedor-imagen">
-                    <img src="../IMG/sobre-nosotros.jpg" alt="Sobre Nosotros" class="imagen">
+                    <img src="../IMG/sobre-nosotros.jpg" alt="TRAYECTORIA" class="imagen">
                 </div>
             </div>
         </section>
@@ -165,42 +181,45 @@
 
         <section class="eventos-disponibles">
             <h2 class="eventos-disponibles__titulo">EVENTOS <br /> DISPONIBLES</h2>
-
+            <hr class="divisor">
             <h3 class="eventos-disponibles__subtitulo">Lo más buscado</h3>
 
             <div class="eventos-disponibles__grid">
                 <a class="evento-card" href="#">
                     <div class="evento-card__img card__img1"></div>
                     <div class="evento-card__info">
-                        <p class="evento-card__texto">TEXTO</p>
+                        <p class="evento-card__texto">Candlelight: <br> Tributo a ABBA</p>
                         <button class="evento-card__boton">Ver evento</button>
                     </div>
                 </a>
                 <a class="evento-card" href="#">
                     <div class="evento-card__img card__img2"></div>
                     <div class="evento-card__info">
-                        <p class="evento-card__texto">TEXTO</p>
+                        <p class="evento-card__texto">Candlelight: <br> Tributo a ABBA</p>
                         <button class="evento-card__boton">Ver evento</button>
                     </div>
                 </a>
-                <a class="evento-card" href="#">
+                <a class="evento-card notResponsiveH" href="#">
                     <div class="evento-card__img card__img3"></div>
                     <div class="evento-card__info">
-                        <p class="evento-card__texto">TEXTO</p>
+                        <p class="evento-card__texto">UNIVERSO GOYA. ENTRE LA LUZ Y LA OSCURIDAD</p>
                         <button class="evento-card__boton">Ver evento</button>
                     </div>
                 </a>
-                <a class="evento-card" href="#">
+                <a class="evento-card notResponsiveH" href="#">
                     <div class="evento-card__img card__img4"></div>
                     <div class="evento-card__info">
-                        <p class="evento-card__texto">TEXTO</p>
+                        <p class="evento-card__texto">VR World Lab: experiencia de realidad virtual</p>
                         <button class="evento-card__boton">Ver evento</button>
                     </div>
                 </a>
             </div>
 
             <div class="eventos-disponibles__vermas-container">
-                <button class="eventos-disponibles__vermas">Ver más →</button>
+                <a href="./eventos.php" class="eventos-disponibles__vermas">
+                    Ver más 
+                    <span>→</span>
+                </a>
             </div>
         </section>
 
