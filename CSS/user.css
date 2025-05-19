@@ -121,6 +121,14 @@ main{
 /*/////////////////////////////////////*/
 /*               CUENTA                */
 /*/////////////////////////////////////*/
+#widthCenter{
+    align-items: center;
+}
+.verifyMod{
+    background-color: #fff;
+    border: none;
+    color: var(--cl-green);
+}
 #imgProfile{
     width: 250px;
     height: 250px;
@@ -209,6 +217,27 @@ main{
     width: 20px;
     height: 20px;
 }
+
+/* /////////////////////////////////// */
+/*           INPUTS MODIFY             */
+/*/////////////////////////////////////*/
+.inputMod,
+.inputMod_enable{
+    background: #fff !important;
+    border-bottom: 1px var(--cl-black) !important;
+    border-radius: 0px !important;
+    padding: 0px 0px 3px 10px !important;
+    margin-bottom: 9px;
+}
+.inputMod{
+    box-shadow: inset 0px -1px 0px 0px var(--cl-grey), 
+                inset 0px 0px 0px #fff !important;
+}
+.inputMod_enable{
+    box-shadow: inset 0px -1px 0px 0px var(--cl-white), 
+                inset 0px 0px 0px #fff !important;
+}
+
 /*/////////////////////////////////////*/
 /*               MEDIA                 */
 /*/////////////////////////////////////*/

@@ -165,7 +165,7 @@ OBJETIVO:
     <!-- //// -->
     <!-- MAIN -->
     <!-- //// -->
-    <main>
+    <main id="widthCenter">
         <!-- Contenedor inicial de "crear una cuenta" -->
         <div id="contTitle">
 
@@ -186,38 +186,43 @@ OBJETIVO:
 
                     <div id="contTextInfo">
                         <form action="../CONTROLLER/eventsController.php" method="post">
-                            <label for="name">Tu nombre:</label>
-                            <input type="text" id="name" name="name" value="<?php echo $name; ?>" required>
+                            <label for="name"><b>Tu nombre:</b></label>
+                            <input class="inputMod" type="text" id="name" name="name" value="<?php echo $name; ?>" required>
 
                             <br>
 
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" value="<?php echo $mail; ?>" disabled>
+                            <label for="email"><b>Email:</b></label>
+                            <input class="inputMod_enable" type="email" id="email" name="email" value="<?php echo $mail; ?>" disabled>
 
                             <br>
 
-                            <label for="password">Contraseña:</label>
-                            <input type="password" id="password" name="password" required>
+                            <label for="password"><b>Contraseña:</b></label>
+                            <input class="inputMod" type="password" id="password" name="password" required>
 
                             <br>
 
                             <?php
                             echo "</span>";
-
-                            // Rol 
-                            echo "<span><b>Usted es un:</b><p> " . $rol . "</p></span>";
                             ?>
-
-                            <input type="submit" name="btnModify" value="Enviar">
-
+                        </form>
                     </div>
-                    </form>
                 </div>
             </div>
         </div>
 
         <!-- ------------------- -->
         <hr class="hrPadding">
+
+        <div id="contSessionCount">
+
+            <!-- Guardar cambios tras editarlos -->
+            <input class="verifyMod cPointer" type="submit" name="btnModify" value="Guardar cambios">
+
+            <!-- Cerrar sesión -->
+            <button class="btnNext cPointer" name="logout">
+                <a href="./login.php">Cancelar</a>
+            </button>
+        </div>
     </main>
     <!-- ////// -->
     <!-- FOOTER -->
