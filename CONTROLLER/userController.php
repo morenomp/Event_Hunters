@@ -17,9 +17,6 @@ OBJETIVOS:
 · Se debe usar un único php llamado userController, que hará registro, login y logout
 · Añadir validaciones
 -->
-<!-- 
-Este php no se usará todavía, ya que es el controlador que haremos con Jose
--->
 
 <?php
 session_start();
@@ -56,6 +53,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         echo "<p>Delete user button is clicked</p>";
         $user->delete();
+    } else if (isset($_POST["btnModificar"])) {
+
+        echo "<p>Modify button is clicked</p>";
+        $user->modify();
     }
 }
 
@@ -260,6 +261,40 @@ class userController
         exit();
     }
 
-    function delete() {}
+    function delete()
+    {
+        if ($_SESSION["logged"]) {
+            try {
+                $sql = "DELETE FROM USUARIOS WHERE email = :email";
+                $stmt = $this->conn->prepare($sql);
+                $stmt->execute([
+                    ':email' => $_SESSION["email"]
+                ]);
+                session_unset();
+                session_destroy();
+            } catch (PDOException $e) {
+                echo "Error al borrar el usuario: " . $e->getMessage();
+                header("Location: ../VIEW/index.php");
+                exit();
+            }
+        } else {
+            echo "The user is not logged";
+        }
+    }
+
+    function modify()
+    {
+        if ($_SESSION["logged"]) {
+            try {
+                // codigo aqui
+            } catch (PDOException $e) {
+                echo "Error al modificar el usuario: " . $e->getMessage();
+                header("Location: ../VIEW/index.php");
+                exit();
+            }
+        } else {
+            echo "The user is not logged";
+        }
+    }
 }
 ?>
