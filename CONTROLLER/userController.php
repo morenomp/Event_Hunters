@@ -225,13 +225,10 @@ class userController
             ]); //Ejecuta la consulta
             $result = $checkStmt->fetchAll(PDO::FETCH_ASSOC);
 
-            $row = $result[0] ?? null;
-
             //SI el correo ya existe, muestra mensaje y termina
             if ($result[0] != null) {
 
                 echo "El correo ya está en uso.";
-                echo __LINE__;
                 return;
 
                 //SI NO existe, inserta un nuevo usuario
@@ -288,7 +285,22 @@ class userController
     {
         if ($_SESSION["logged"]) {
             try {
-                // codigo aqui
+                $name = $_POST["name"] ?? null;
+                $pswd = $_POST["password"] ?? null;
+                if ($pswd == null) {
+                    $pswd = $_SESSION["password"];
+                }
+                if ($name == null) {
+                    $name = $_SESSION["name"];
+                }
+                $sql = "UPDATE USUARIOS SET name = :name, password = :password WHERE email = :email";
+                $stmt = $this->conn->prepare($sql);
+                $stmt->execute([
+                    ':email' => $_SESSION["email"],
+                    ':name' => $name,
+                    ':password' => $pswd
+                ]);
+                echo "modificado correctamente";
             } catch (PDOException $e) {
                 echo "Error al modificar el usuario: " . $e->getMessage();
                 header("Location: ../VIEW/index.php");
