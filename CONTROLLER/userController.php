@@ -76,12 +76,12 @@ class userController
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Crear la base de datos si no existe
-            $sql = "CREATE DATABASE IF NOT EXISTS $dbname CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci";
+            $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
             $this->conn->exec($sql);
             echo "Base de datos creada o ya existente.<br>";
 
             // Ahora conectamos directamente a la base de datos
-            $this->conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $user, $password);
+            $this->conn = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Crear la tabla USUARIOS
