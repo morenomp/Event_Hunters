@@ -212,8 +212,13 @@ OBJETIVO:
             <!-- ------------------- -->
             <hr class="hrPadding">
 
-            <div id="contSession">
-                <!-- Iniciar sesión, si el usuario ya tiene cuenta registrada -->
+            <div id="contSessionCount">
+                <!-- Borrar cuenta -->
+                <button class="btnNext btnDelete cPointer" name="btnBorrarUsuario">
+                    Eliminar cuenta
+                </button>
+
+                <!-- Cerrar sesión -->
                 <button class="btnNext cPointer" name="logout">
                     Cerrar sesión
                 </button>

@@ -56,7 +56,7 @@ main{
 #contInputs input,
 #contInputs button,
 #contInputs2 input,
-#contInputs2 button,
+/* #contInputs2 button, */
 .buttonImage{
     padding: 15px;
     border-radius: 15px;
@@ -69,7 +69,7 @@ main{
     box-shadow: inset 2px 2px 7px #5a5a5a21, inset 0px -48px 9px var(--cl-white);
 }
 #contInputs button,
-#contInputs2 button,
+/* #contInputs2 button, */
 .buttonImage{
     border: none;
     font-family: 'Montserrat-Bold';
@@ -80,7 +80,7 @@ main{
     transition: 250ms;
 }
 #contInputs button:hover,
-#contInputs2 button:hover,
+/* #contInputs2 button:hover, */
 .buttonImage:hover{
     background: var(--cl-selection-oscure);
     transform: translateY(-1px);
@@ -149,13 +149,29 @@ main{
 .btnNext a{
     border: none;
     background-color: #fff;
-    color: var(--cl-black);
+    color: var(--cl-grey);
+}
+.btnDelete{
+    color: var(--cl-red);
 }
 #contSession{
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 25px;
+}
+#contSessionCount{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+#contModifyButton{
+    display: flex;
+    gap: 15px;
+}
+.btnModify{
+    border: none;
+    background-color: #fff;
 }
 .btnGoogle{
     border-radius: 50px;
@@ -170,10 +186,6 @@ main{
     align-items: center;
     justify-content: center;
 }
-.notVisible{
-    width: 20px;
-    height: 20px;
-}
 .cPointer{
     cursor: pointer;
 }
@@ -184,7 +196,6 @@ main{
 .btnNext a{
     font-size: .9em;
 }
-
 .imgSize{
     width: 1.4em;
     margin-right: 15px;
@@ -193,7 +204,11 @@ main{
 .btnGoogle:hover .imgSize{
     transform: rotateZ(-21deg);
 }
-
+.notVisible,
+.btnModify svg{
+    width: 20px;
+    height: 20px;
+}
 /*/////////////////////////////////////*/
 /*               MEDIA                 */
 /*/////////////////////////////////////*/
