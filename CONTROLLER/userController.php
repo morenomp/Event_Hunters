@@ -225,13 +225,10 @@ class userController
             ]); //Ejecuta la consulta
             $result = $checkStmt->fetchAll(PDO::FETCH_ASSOC);
 
-            $row = $result[0] ?? null;
-
             //SI el correo ya existe, muestra mensaje y termina
             if ($result[0] != null) {
 
                 echo "El correo ya está en uso.";
-                echo __LINE__;
                 return;
 
                 //SI NO existe, inserta un nuevo usuario
