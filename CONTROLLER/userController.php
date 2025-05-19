@@ -265,13 +265,15 @@ class userController
     {
         if ($_SESSION["logged"]) { // si no esta loggeado, directamente hace un echo
             try { // intenta borrar el usuario, si no pasa al catch que muestra un error
-                $sql = "DELETE FROM USUARIOS WHERE email = :email"; 
+                $sql = "DELETE FROM USUARIOS WHERE email = :email";
                 $stmt = $this->conn->prepare($sql);
                 $stmt->execute([
                     ':email' => $_SESSION["email"] // preparamos la sentencia sql
                 ]);
                 session_unset();
                 session_destroy(); // eliminamos la session entera para que no hayan conflictos mas adelante
+                header("Location: ../VIEW/cuentaAdmin.php");
+                exit();
             } catch (PDOException $e) {
                 echo "Error al borrar el usuario: " . $e->getMessage();
                 header("Location: ../VIEW/index.php");
