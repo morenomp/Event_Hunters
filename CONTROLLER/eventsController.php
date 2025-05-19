@@ -58,18 +58,37 @@ class eventController
             $date = $_POST["date"];
             $price = $_POST["price"];
 
-            $sql = "INSERT INTO EVENTOS (name, place, date, price) VALUES (:name, :place, :date, :price)";
 
-            $stmt = $this->conn->prepare($sql);
+            $checkSql = "SELECT name FROM EVENTOS WHERE name = :name";
 
-            $stmt->execute([
-                ':name' => $name,
-                ':place' => $place,
-                ':date' => $date,
-                ':price' => $price
-            ]);
+            $checkStmt = $this->conn->prepare($checkSql);
+            $checkStmt->execute([
+                ':name' => $name
+            ]); //Ejecuta la consulta
+            $result = $checkStmt->fetchAll(PDO::FETCH_ASSOC);
 
-            echo "Valores insertados correctamente.";
+            //SI el evento ya existe, muestra mensaje y termina
+            if ($result[0] != null) {
+
+                echo "El correo ya está en uso.";
+                return;
+
+                //SI NO existe, inserta un nuevo evento
+            } else {
+
+                $sql = "INSERT INTO EVENTOS (name, place, date, price) VALUES (:name, :place, :date, :price)";
+
+                $stmt = $this->conn->prepare($sql);
+
+                $stmt->execute([
+                    ':name' => $name,
+                    ':place' => $place,
+                    ':date' => $date,
+                    ':price' => $price
+                ]);
+
+                echo "Valores insertados correctamente.";
+            }
         } catch (PDOException $e) {
             echo "Error al crear el evento: " . $e->getMessage();
             header("Location: ../VIEW/index.php");
