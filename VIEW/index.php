@@ -223,6 +223,34 @@
             </div>
         </section>
 
+        <!-- Botoncito de accesibilidad -->
+		<div class="button_master">
+			<div id="button">
+				<button id="buttonAccFixed" class="arrow_bg">
+					<img class="flechita" id="flechitaId" src="IMG/iconos/plus-solid.svg" alt="">
+				</button>
+			</div>
+
+			<div id="button_2">
+				<a href="pag_error.html" id="buttonAccFixed_2" class="arrow_bg_2" target="_blank">
+					<img class="flechita" src="IMG/iconos/person-solid.svg" alt="">
+
+					<h2 class="hoverH1">Botón de accesibilidad <span></span></h2>
+				</a>
+			</div>
+
+			<div id="button_3">
+
+				<a href="pag_error.html" id="buttonAccFixed_3" class="arrow_bg_3" target="_blank">
+					<img class="flechita" src="IMG/iconos/question-solid.svg" alt="">
+
+					<h2 class="hoverH2">Botón de ayuda <span></span></h2>
+				</a>
+			</div>
+
+			<script src="JS/accesibilidad.js"></script>
+		</div>
+
     </main>
     <!-- ////// -->
     <!-- FOOTER -->
