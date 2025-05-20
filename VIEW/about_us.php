@@ -139,7 +139,7 @@
         <section class="qs-section">
             <div class="qs-container">
                 <div class="qs-content">
-                    <h2 class="qs-main-title">Descubre el alma de<br><span>Event Hunters</span></h2>
+                    <h2 class="qs-main-title">DESCUBRE EL ALMA DE<br><span>event hunters</span></h2>
                     
                     <div class="qs-grid">
                         <div class="qs-card">
@@ -187,6 +187,17 @@
             </div>
         </section>
 
+        <!-- Nuestra Misión -->
+
+        <section class="founders-section">
+            <div class="founders-container">
+                <h2>NUESTRA MISIÓN</h2>
+
+                <!-- Video explicativo -->
+
+            </div>
+        </section>
+
         <!-- Fundadores -->
 
         <section class="founders-section">
@@ -197,13 +208,13 @@
                     <!-- Tarjeta 1 -->
                     <div class="founder-card">
                         <div class="founder-image">
-                            <img src="../IMG/persona.jpg" alt="Adri Palma">
+                            <img class="filterFounders" src="../IMG/adri.png" alt="Adri Palma">
                         </div>
                         <div class="founder-info">
                             <h3>Adri Palma</h3>
                             <div class="founder-links">
-                                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/adri%C3%A1n-palma-r%C3%B3denas-a6284b33b/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://github.com/AdrianPalmadev" target="_blank"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                     </div>
@@ -211,13 +222,13 @@
                     <!-- Tarjeta 2 -->
                     <div class="founder-card">
                         <div class="founder-image">
-                            <img src="../IMG/persona.jpg" alt="Marc Moreno">
+                            <img class="filterFounders" src="../IMG/marc.png" alt="Marc Moreno">
                         </div>
                         <div class="founder-info">
                             <h3>Marc Moreno</h3>
                             <div class="founder-links">
-                                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/marc-moreno-pineda/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://github.com/morenomp" target="_blank"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                     </div>
@@ -225,19 +236,19 @@
                     <!-- Tarjeta 3 -->
                     <div class="founder-card">
                         <div class="founder-image">
-                            <img src="../IMG/persona.jpg" alt="Mauro Serratvo">
+                            <img class="filterFounders" src="../IMG/mauro.png" alt="Mauro Serratvo">
                         </div>
                         <div class="founder-info">
                             <h3>Mauro Serralvo</h3>
                             <div class="founder-links">
-                                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="https://github.com/mauroserralvodev" target="_blank"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
+        
     </main>
     <!-- ////// -->
     <!-- FOOTER -->

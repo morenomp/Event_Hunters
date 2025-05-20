@@ -3,7 +3,7 @@
 /* ////////////////// */
 
 .qs-section {
-    padding: 6rem 0;
+    padding: 6rem 0 2rem 0;
     background: #FFFF;
     position: relative;
     overflow: hidden;
@@ -21,13 +21,15 @@
     color: #2a2a2a;
     margin-bottom: 4rem;
     line-height: 1.2;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 
 .qs-main-title span {
     color: #a35cf8;
     position: relative;
     display: inline-block;
+    font-family: 'Moderna';
+    font-size: 1.15em;
 }
 
 .qs-main-title span::after {
@@ -177,6 +179,9 @@
 .founder-card:hover {
     transform: translateY(-5px);
 }
+.founder-card:hover .filterFounders{
+    filter: grayscale(0);
+}
 
 .founder-image {
     width: 100%;
@@ -189,6 +194,12 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    background-color: #fff;
+}
+
+.filterFounders{
+    filter: grayscale(.8);
+    transition: 650ms;
 }
 
 .founder-info {

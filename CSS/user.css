@@ -17,7 +17,7 @@ main{
     flex-direction: column;
     align-items: center;
 
-    margin: 50px 0;
+    /* margin: 50px 0; */
 }
 #contTitle{
     width: 45%;
@@ -86,8 +86,11 @@ main{
     transform: translateY(-1px);
 }
 .hrPadding{
+    /* padding: 0 25%;
+    margin: 25px; */
+    width: 45%;
     padding: 0 25%;
-    margin: 25px;
+    margin: 25px auto;
 }
 #titleLogin h2,
 #titleRegistro h2{
@@ -105,6 +108,7 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: flex-start;
     gap: 20px;
 }
 #contTextInfo{
@@ -171,6 +175,7 @@ main{
 #contSessionCount{
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 25px;
 }
 #contModifyButton{
@@ -234,7 +239,7 @@ main{
                 inset 0px 0px 0px #fff !important;
 }
 .inputMod_enable{
-    box-shadow: inset 0px -1px 0px 0px var(--cl-white), 
+    box-shadow: inset 0px -1px 0px 0px var(--cl-grey-opac), 
                 inset 0px 0px 0px #fff !important;
 }
 

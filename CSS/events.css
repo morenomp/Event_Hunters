@@ -32,6 +32,7 @@ con las páginas de eventos y sus subpáginas */
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: 250ms;
 }
 .evento-card__img {
     width: 100%;
@@ -49,14 +50,19 @@ con las páginas de eventos y sus subpáginas */
 .evento-card__info {
     background-color: var(--cl-white);
     width: 100%;
-    padding: 1rem 0;
     border-radius: 15px;
     text-align: center;
+    overflow: hidden;
+    transition: 250ms;
+    opacity: .8;
 }
 .evento-card__texto {
     font-family: 'Montserrat-Regular';
     font-weight: 900;
     margin: 0 10px 16px 10px;
+    transition: 250ms;
+    color: var(--cl-selection);
+    transform: translateY(20px);
 }
 .evento-card__boton {
     background-color: var(--cl-white-oscure);
@@ -66,8 +72,21 @@ con las páginas de eventos y sus subpáginas */
     border-radius: 999px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 450ms;
+    transform: translateY(20px);
+    opacity: 0;
 }
+/* ---- */
+.evento-card:hover .evento-card__info {
+    padding: 1rem 0;
+    opacity: 1;
+}
+.evento-card:hover .evento-card__texto,
+.evento-card:hover .evento-card__boton {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
 .evento-card__boton:hover {
     background-color: var(--cl-selection);
 }
@@ -82,6 +101,7 @@ con las páginas de eventos y sus subpáginas */
     padding: 0.6rem 1.5rem;
     border-radius: 999px;
     font-weight: bold;
+    font-family: 'Montserrat-Regular';
     font-size: 1rem;
     transition: 0.2s;
     cursor: pointer;
