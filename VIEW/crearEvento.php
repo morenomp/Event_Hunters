@@ -165,7 +165,7 @@
                         pattern="^[A-za-z0-9]{6,12}$" required>
 
                     <!-- Precio de las entradas -->
-                    <input type="text" name="dateEvent" placeholder="Precio de las entradas"
+                    <input type="text" name="priceEvent" placeholder="Precio de las entradas"
                         pattern="^[0-9]{1,4}$" required>
 
                     <!-- Guardar y continuar los datos introducidos-->
