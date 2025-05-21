@@ -54,10 +54,10 @@ class eventController
     function createEvent()
     {
         try {
-            $name = $_POST["name"];
-            $place = $_POST["place"];
-            $date = $_POST["date"];
-            $price = $_POST["price"];
+            $name = $_POST["nameEvent"];
+            $place = $_POST["placeEvent"];
+            $date = $_POST["dateEvent"];
+            $price = $_POST["priceEvent"];
 
 
             $checkSql = "SELECT name FROM EVENTOS WHERE name = :name";
