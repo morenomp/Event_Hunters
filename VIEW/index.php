@@ -224,7 +224,7 @@
         </section>
 
         <!-- Botoncito de accesibilidad -->
-		<div class="button_master">
+		<!-- <div class="button_master">
 			<div id="button">
 				<button id="buttonAccFixed" class="arrow_bg">
 					<img class="flechita" id="flechitaId" src="IMG/iconos/plus-solid.svg" alt="">
@@ -249,7 +249,7 @@
 			</div>
 
 			<script src="JS/accesibilidad.js"></script>
-		</div>
+		</div> -->
 
     </main>
     <!-- ////// -->
