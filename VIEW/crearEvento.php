@@ -138,7 +138,7 @@
     <!-- //// -->
     <main>
         <!-- Contenedor inicial -->
-        <form action="../CONTROLLER/userController.php" method="post" id="contForm">
+        <form action="../CONTROLLER/eventsController.php" method="post" id="contForm">
 
             <div id="contTitle">
                 <!-- Título -->
@@ -169,7 +169,7 @@
                         pattern="^[0-9]{1,4}$" required>
 
                     <!-- Guardar y continuar los datos introducidos-->
-                    <button class="btnRegistro" name="btnCrearEvent">
+                    <button class="btnRegistro" name="btnCreateEvent">
                         Crear
                     </button>
                 </div>
