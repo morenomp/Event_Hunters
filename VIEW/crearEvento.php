@@ -180,7 +180,7 @@
 
             <div id="contSession">
                 <button class="btnNext" name="btnNext">
-                    <a href="../VIEW/login.php">
+                    <a href="../VIEW/cuentaAdmin.php">
                         Volver al perfil
                     </a>
                 </button>

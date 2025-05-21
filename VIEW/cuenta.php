@@ -236,9 +236,9 @@ OBJETIVO:
             </div>
 
             <!-- Crear evento -->
-            <button class="btnNext btnCrEvent cPointer" name="btnBorrarUsuario">
+            <!-- <button class="btnNext btnCrEvent cPointer" name="btnBorrarUsuario">
                 <a href="../VIEW/crearEvento.php">Crear evento</a>
-            </button>
+            </button> -->
 
         </form>
     </main>
