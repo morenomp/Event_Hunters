@@ -166,6 +166,9 @@ main{
 .btnDelete{
     color: var(--cl-red);
 }
+.btnCrEvent{
+    margin-top: 15px;
+}
 #contSession{
     display: flex;
     align-items: center;

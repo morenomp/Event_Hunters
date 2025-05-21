@@ -195,45 +195,51 @@ OBJETIVO:
             </div>
         </form>
         <form action="../CONTROLLER/userController.php" method="post" id="contForm">
-        <div id="contTextInfo">
-            <?php
-            // Nombre de usuario con el que se le denominará
-            echo "<span><b>Bienvenido</b><p> " . $name . '<br></p></span>';
+            <div id="contTextInfo">
+                <?php
+                // Nombre de usuario con el que se le denominará
+                echo "<span><b>Bienvenido</b><p> " . $name . '<br></p></span>';
 
-            // Correo electrónico que usará para el registro
-            echo "<span><b>Email:</b><p> " . $mail . '<br></p></span>';
+                // Correo electrónico que usará para el registro
+                echo "<span><b>Email:</b><p> " . $mail . '<br></p></span>';
 
-            // Contraseña de la cuenta
-            echo "<span><b>Contraseña:</b><p> " . str_repeat("•", strlen($passwd)) . "</p>";
-            ?>
+                // Contraseña de la cuenta
+                echo "<span><b>Contraseña:</b><p> " . str_repeat("•", strlen($passwd)) . "</p>";
+                ?>
 
-            <img class="notVisible" src="../IMG/eye-visible.svg" alt="Contraseña no visible para el usuario">
+                <img class="notVisible" src="../IMG/eye-visible.svg" alt="Contraseña no visible para el usuario">
 
-            <?php
-            echo "</span>";
+                <?php
+                echo "</span>";
 
-            // Rol 
-            echo "<span><b>Usted es un:</b><p> " . $rol . "</p></span>";
-            ?>
-        </div>
-        </div>
-        </div>
-        </div>
+                // Rol 
+                echo "<span><b>Usted es un:</b><p> " . $rol . "</p></span>";
+                ?>
+            </div>
+            </div>
+            </div>
+            </div>
 
-        <!-- ------------------- -->
-        <hr class="hrPadding">
+            <!-- ------------------- -->
+            <hr class="hrPadding">
 
-        <div id="contSessionCount">
-            <!-- Borrar cuenta -->
-            <button class="btnNext btnDelete cPointer" name="btnBorrarUsuario">
-                Eliminar cuenta
+            <div id="contSessionCount">
+                <!-- Borrar cuenta -->
+                <button class="btnNext btnDelete cPointer" name="btnBorrarUsuario">
+                    Eliminar cuenta
+                </button>
+
+                <!-- Cerrar sesión -->
+                <button class="btnNext cPointer" name="logout">
+                    Cerrar sesión
+                </button>
+            </div>
+
+            <!-- Crear evento -->
+            <button class="btnNext btnCrEvent cPointer" name="btnBorrarUsuario">
+                <a href="../VIEW/crearEvento.php">Crear evento</a>
             </button>
 
-            <!-- Cerrar sesión -->
-            <button class="btnNext cPointer" name="logout">
-                Cerrar sesión
-            </button>
-        </div>
         </form>
     </main>
     <!-- ////// -->

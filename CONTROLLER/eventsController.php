@@ -35,6 +35,7 @@ class eventController
             $this->conn = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+            // contenido de la creación de un evento
             $sql = "CREATE TABLE IF NOT EXISTS EVENTOS ( 
                 id INT PRIMARY KEY AUTO_INCREMENT,
                 name VARCHAR(50), 
