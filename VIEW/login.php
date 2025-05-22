@@ -29,11 +29,13 @@ OBJETIVO:
 -->
 <?php
 session_start();
-if (isset($_SESSION["logged"])) {
-    if ($_SESSION["logged"] === true) {
+if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
+    if (isset($_SESSION["rol"]) && $_SESSION["rol"] === "admin") {
+        header("Location: ../VIEW/cuentaAdmin.php");
+    } else {
         header("Location: ../VIEW/cuenta.php");
-        exit();
     }
+    exit();
 }
 ?>
 

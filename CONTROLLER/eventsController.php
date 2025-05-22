@@ -1,12 +1,21 @@
 <!-- . -->
 <?php
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $event = new eventController;
+    session_start();
+    if (isset($_SESSION["rol"]) && $_SESSION["rol"] == "admin") {
+        $event = new eventController;
 
-    if (isset($_POST["btnCreateEvent"])) {
+        if (isset($_POST["btnCreateEvent"])) {
 
-        echo "<p>Create event button clicked</p>";
-        $event->createEvent();
+            echo "<p>Create event button clicked</p>";
+            $event->createEvent();
+        } else if (isset($_POST["btnModifyEvent"])) {
+
+            echo "<p>Modify event button clicked</p>";
+            $event->editEvent();
+        }
+    } else {
+        echo "You must be an administrator to create a event.";
     }
 }
 
@@ -41,7 +50,8 @@ class eventController
                 name VARCHAR(50), 
                 place VARCHAR(50),
                 date DATE,
-                price int
+                price int,
+                usermail VARCHAR(50)
             )";
 
             $this->conn->exec($sql);
@@ -77,7 +87,7 @@ class eventController
                 //SI NO existe, inserta un nuevo evento
             } else {
 
-                $sql = "INSERT INTO EVENTOS (name, place, date, price) VALUES (:name, :place, :date, :price)";
+                $sql = "INSERT INTO EVENTOS (name, place, date, price, usermail) VALUES (:name, :place, :date, :price, :usermail)";
 
                 $stmt = $this->conn->prepare($sql);
 
@@ -85,13 +95,41 @@ class eventController
                     ':name' => $name,
                     ':place' => $place,
                     ':date' => $date,
-                    ':price' => $price
+                    ':price' => $price,
+                    ':usermail' => $_SESSION["email"]
                 ]);
 
                 echo "Valores insertados correctamente.";
             }
         } catch (PDOException $e) {
             echo "Error al crear el evento: " . $e->getMessage();
+            header("Location: ../VIEW/index.php");
+            exit();
+        }
+    }
+
+    function editEvent()
+    {
+        try {
+
+            $id = $_SESSION["eventid"];
+            $name = $_POST["name"] ?? null;
+            $price = $_POST["name"] ?? null;
+            $date = $_POST["name"] ?? null;
+            $place = $_POST["name"] ?? null;
+
+            //ACABAR CODIGO CUANDO VISTA ESTE LISTA
+            $sql = "UPDATE EVENTOS SET name = :name, price = :price, date = :date, place = :place WHERE id = :id";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                ':name' => $name,
+                ':price' => $price,
+                ':date' => $date,
+                ':place' => $place
+            ]);
+            echo "Evento modificado correctamente";
+        } catch (PDOException $e) {
+            echo "Error al editar el evento: " . $e->getMessage();
             header("Location: ../VIEW/index.php");
             exit();
         }
