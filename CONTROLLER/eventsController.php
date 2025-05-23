@@ -69,7 +69,6 @@ class eventController
             $date = $_POST["dateEvent"];
             $price = $_POST["priceEvent"];
 
-
             $checkSql = "SELECT name FROM EVENTOS WHERE name = :name";
 
             $checkStmt = $this->conn->prepare($checkSql);
@@ -79,10 +78,12 @@ class eventController
             $result = $checkStmt->fetchAll(PDO::FETCH_ASSOC);
 
             //SI el evento ya existe, muestra mensaje y termina
-            if ($result[0] != null) {
+            if ($result) {
 
-                echo "El correo ya está en uso.";
-                return;
+                $_SESSION['mensaje_error'] = "Ya existe un evento con ese nombre.";
+                error_log("Evento ya existe"); // Esto se verá en los logs de PHP
+                header("Location: ../VIEW/crearEvento.php");
+                exit();
 
                 //SI NO existe, inserta un nuevo evento
             } else {

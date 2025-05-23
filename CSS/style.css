@@ -509,6 +509,26 @@ input:focus {
     transform: rotate(-45deg);
     top: -6px;
 }
+/*/////////////////////////////////////*/
+/*            ERROR MESSAGE            */
+/*/////////////////////////////////////*/
+.error-message {
+    width: 25%;
+    position: relative;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, -10%);
+
+    background-color: #f8d7da;
+    color: #842029;
+    padding: 10px;
+    border: 1px solid #f5c2c7;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-family: "Montserrat-Regular";
+}
 
 /*/////////////////////////////////////*/
 /*               FOOTER                */

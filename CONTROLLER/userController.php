@@ -155,10 +155,11 @@ class userController
             $_SESSION["rol"] = null;
 
             echo "Login failed";
+
+            $_SESSION["error"] = "Correo o contraseña incorrectos.";
+            header("Location: ../VIEW/login.php");
+            exit();
         }
-
-
-        echo __LINE__;
     }
 
     function register($admin)
