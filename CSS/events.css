@@ -114,22 +114,50 @@ con las páginas de eventos y sus subpáginas */
     left: 5px;
 }
 
-/* Portadas */
+.card__img{
+    background-size: cover;
+    background-position: center;
+}
+/* Portadas Lo más buscado */
 .card__img1 {
     background-image: url(../IMG/Exp_inm_Ikono_Bcn.jpg);
-    background-size: cover;
 }
 .card__img2 {
     background-image: url(../IMG/Exp_inm_Candelight.jpg);
-    background-size: cover;
 }
 .card__img3 {
     background-image: url(../IMG/Exp_inm_Goya.jpg);
-    background-size: cover;
 }
 .card__img4 {
     background-image: url(../IMG/Exp_VR_World_Lab.jpg);
-    background-size: cover;
+}
+
+/* Portadas Eventos gratuitos */
+.card__img5 {
+    background-image: url(../IMG/Exp_dinos.jpg);
+}
+.card__img6 {
+    background-image: url(../IMG/Exp_antartida.jpg);
+}
+.card__img7 {
+    background-image: url(../IMG/Exp_petra.jpg);
+}
+.card__img8 {
+    background-image: url(../IMG/Exp_leonardo.jpg);
+}
+
+/* Portadas Mejores precios */
+.card__img9 {
+    background-image: url(../IMG/Exp_aventurico_tetuan.jpg);
+}
+.card__img10 {
+    background-image: url(../IMG/Exp_titanic.jpg);
+}
+.card__img11 {
+    background-image: url(../IMG/Exp_simracing.jpg);
+}
+.card__img12 {
+    background-image: url(../IMG/Exp_magia.jpg);
 }
 
 /*/////////////////////////////////////*/

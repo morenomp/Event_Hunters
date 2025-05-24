@@ -152,7 +152,7 @@
 
                         <div class="qs-card highlight">
                             <div class="qs-main-image">
-                                <img src="../IMG/nosotros.jpg" alt="Equipo Event Hunters">
+                                <img src="../IMG/imgAboutUs.jpg" alt="Equipo Event Hunters">
                             </div>
                         </div>
 
@@ -193,8 +193,11 @@
             <div class="founders-container">
                 <h2>NUESTRA MISIÓN</h2>
 
-                <!-- Video explicativo -->
-
+                <div class="redimension">
+                    <!-- Video explicativo -->
+                    <iframe width="1250" height="703" src="https://www.youtube.com/embed/xteWIrncMxs" title="Event Hunters | Video de Presentación" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
             </div>
         </section>
 
