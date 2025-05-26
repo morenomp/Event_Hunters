@@ -185,9 +185,9 @@ OBJETIVO:
                     </div>
 
                     <div id="contTextInfo">
-                        <form action="../CONTROLLER/eventsController.php" method="post">
+                        <form action="../CONTROLLER/userController.php" method="post">
                             <label for="name"><b>Tu nombre:</b></label>
-                            <input class="inputMod" type="text" id="name" name="name" value="<?php echo $name; ?>" required>
+                            <input class="inputMod" type="text" id="name" name="name" value="<?php echo $name; ?>">
 
                             <br>
 
@@ -197,7 +197,10 @@ OBJETIVO:
                             <br>
 
                             <label for="password"><b>Contraseña:</b></label>
-                            <input class="inputMod" type="password" id="password" name="password" required>
+                            <input class="inputMod" type="password" id="password" name="password">
+
+                            <!-- Guardar cambios tras editarlos -->
+                            <input class="verifyMod cPointer" type="submit" name="btnModify" value="Guardar cambios">
 
                             <br>
 
@@ -215,8 +218,6 @@ OBJETIVO:
 
         <div id="contSessionCount">
 
-            <!-- Guardar cambios tras editarlos -->
-            <input class="verifyMod cPointer" type="submit" name="btnModify" value="Guardar cambios">
 
             <!-- Cerrar sesión -->
             <button class="btnNext cPointer" name="logout">
