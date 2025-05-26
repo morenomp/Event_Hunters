@@ -129,9 +129,10 @@ main{
     align-items: center;
 }
 .verifyMod{
-    background-color: #fff;
-    border: none;
+    background-color: #fff !important;
+    border: none !important;
     color: var(--cl-green);
+    padding: 0px;
 }
 #imgProfile{
     width: 250px;
@@ -172,6 +173,9 @@ main{
 .btnCrEvent{
     margin-top: 15px;
 }
+#email{
+    opacity: .5;
+}
 #contSession{
     display: flex;
     align-items: center;
@@ -183,6 +187,16 @@ main{
     align-items: center;
     justify-content: center;
     gap: 25px;
+}
+.contSessionCount{
+    justify-content: flex-start !important;
+}
+#contSessionCount input{
+    background-color: #fff !important;
+    border: none !important;
+    color: var(--cl-green);
+    padding: 0px;
+    box-shadow: inset 2px 2px 7px #ffffff21, inset 0px -48px 9px #ffffff;
 }
 #contModifyButton{
     display: flex;

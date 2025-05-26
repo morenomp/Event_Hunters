@@ -191,7 +191,7 @@ OBJETIVO:
 
                             <br>
 
-                            <label for="email"><b>Email:</b></label>
+                            <label for="email" id="email"><b>Email:</b></label>
                             <input class="inputMod_enable" type="email" id="email" name="email" value="<?php echo $mail; ?>" disabled>
 
                             <br>
@@ -199,31 +199,25 @@ OBJETIVO:
                             <label for="password"><b>Contraseña:</b></label>
                             <input class="inputMod" type="password" id="password" name="password">
 
-                            <!-- Guardar cambios tras editarlos -->
-                            <input class="verifyMod cPointer" type="submit" name="btnModify" value="Guardar cambios">
+                            <!-- ------------------- -->
 
-                            <br>
+                            <div id="contSessionCount" class="contSessionCount">
 
-                            <?php
-                            echo "</span>";
-                            ?>
+                                <!-- Guardar cambios tras editarlos -->
+                                <input class="verifyMod cPointer" type="submit" name="btnModify" value="Guardar cambios">
+
+                                <!-- Cerrar sesión -->
+                                <button class="btnNext cPointer" name="logout">
+                                    <a href="./login.php">Cancelar</a>
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- ------------------- -->
-        <hr class="hrPadding">
 
-        <div id="contSessionCount">
-
-
-            <!-- Cerrar sesión -->
-            <button class="btnNext cPointer" name="logout">
-                <a href="./login.php">Cancelar</a>
-            </button>
-        </div>
     </main>
     <!-- ////// -->
     <!-- FOOTER -->
