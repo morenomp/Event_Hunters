@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         echo "<p>Delete user button is clicked</p>";
         $user->delete();
-    } else if (isset($_POST["btnModificar"])) {
+    } else if (isset($_POST["btnModify"])) {
 
         echo "<p>Modify button is clicked</p>";
         $user->modify();
@@ -289,10 +289,14 @@ class userController
                 $name = $_POST["name"] ?? null;
                 $pswd = $_POST["password"] ?? null;
                 if ($pswd == null) {
-                    $pswd = $_SESSION["password"];
+                    $pswd = $_SESSION["passwordLogin"];
+                } else {
+                    $_SESSION["password"] = $pswd;
                 }
                 if ($name == null) {
                     $name = $_SESSION["name"];
+                } else {
+                    $_SESSION["name"] = $name;
                 }
                 $sql = "UPDATE USUARIOS SET name = :name, password = :password WHERE email = :email";
                 $stmt = $this->conn->prepare($sql);
@@ -301,7 +305,16 @@ class userController
                     ':name' => $name,
                     ':password' => $pswd
                 ]);
-                echo "modificado correctamente";
+                echo '<br><br>' .  "modificado correctamente";
+
+
+                //REDIRECCIÓN SEGÚN EL ROL
+                if ($_SESSION['rol'] === 'admin') {
+                    header("Location: ../VIEW/cuentaAdmin.php");
+                } else if ($_SESSION['rol'] === 'user') {
+                    header("Location: ../VIEW/cuenta.php");
+                }
+                exit();
             } catch (PDOException $e) {
                 echo "Error al modificar el usuario: " . $e->getMessage();
                 header("Location: ../VIEW/index.php");
