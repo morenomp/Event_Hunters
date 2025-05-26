@@ -205,6 +205,20 @@ main{
 .cPointer{
     cursor: pointer;
 }
+.contVolver{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: 250ms;
+}
+.arrowVolver{
+    width: 9px;
+    fill: var(--cl-black);
+    position: relative;
+}
+.contVolver:hover .arrowVolver{
+    right: 5px;
+}
 /*/////////////////////////////////////*/
 /*                SIZE                 */
 /*/////////////////////////////////////*/

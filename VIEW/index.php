@@ -186,28 +186,28 @@
 
             <div class="eventos-disponibles__grid">
                 <a class="evento-card" href="#">
-                    <div class="evento-card__img card__img1"></div>
+                    <div class="evento-card__img card__img1 card__img"></div>
                     <div class="evento-card__info">
-                        <p class="evento-card__texto">Candlelight: <br> Tributo a ABBA</p>
+                        <p class="evento-card__texto">Experiencia inmersiva IKONO Barcelona</p>
                         <button class="evento-card__boton">Ver evento</button>
                     </div>
                 </a>
                 <a class="evento-card" href="#">
-                    <div class="evento-card__img card__img2"></div>
+                    <div class="evento-card__img card__img2 card__img"></div>
                     <div class="evento-card__info">
                         <p class="evento-card__texto">Candlelight: <br> Tributo a ABBA</p>
                         <button class="evento-card__boton">Ver evento</button>
                     </div>
                 </a>
                 <a class="evento-card notResponsiveH" href="#">
-                    <div class="evento-card__img card__img3"></div>
+                    <div class="evento-card__img card__img3 card__img"></div>
                     <div class="evento-card__info">
                         <p class="evento-card__texto">UNIVERSO GOYA. ENTRE LA LUZ Y LA OSCURIDAD</p>
                         <button class="evento-card__boton">Ver evento</button>
                     </div>
                 </a>
                 <a class="evento-card notResponsiveH" href="#">
-                    <div class="evento-card__img card__img4"></div>
+                    <div class="evento-card__img card__img4 card__img"></div>
                     <div class="evento-card__info">
                         <p class="evento-card__texto">VR World Lab: experiencia de realidad virtual</p>
                         <button class="evento-card__boton">Ver evento</button>

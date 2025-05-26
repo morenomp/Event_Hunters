@@ -134,8 +134,8 @@
     <!-- MAIN -->
     <!-- //// -->
     <main>
-        <!-- Eventos -->
 
+        <!-- Lo más buscado -->
         <section class="eventos-disponibles">
             <h2 class="eventos-disponibles__titulo">EVENTOS <br /> DISPONIBLES</h2>
             <hr class="divisor">
@@ -143,28 +143,28 @@
 
             <div class="eventos-disponibles__grid">
                 <a class="evento-card" href="#">
-                    <div class="evento-card__img card__img1"></div>
+                    <div class="evento-card__img card__img1 card__img"></div>
+                    <div class="evento-card__info">
+                        <p class="evento-card__texto">Experiencia inmersiva IKONO Barcelona</p>
+                        <button class="evento-card__boton">Ver evento</button>
+                    </div>
+                </a>
+                <a class="evento-card" href="#">
+                    <div class="evento-card__img card__img2 card__img"></div>
                     <div class="evento-card__info">
                         <p class="evento-card__texto">Candlelight: <br> Tributo a ABBA</p>
                         <button class="evento-card__boton">Ver evento</button>
                     </div>
                 </a>
                 <a class="evento-card" href="#">
-                    <div class="evento-card__img card__img2"></div>
-                    <div class="evento-card__info">
-                        <p class="evento-card__texto">Candlelight: <br> Tributo a ABBA</p>
-                        <button class="evento-card__boton">Ver evento</button>
-                    </div>
-                </a>
-                <a class="evento-card" href="#">
-                    <div class="evento-card__img card__img3"></div>
+                    <div class="evento-card__img card__img3 card__img"></div>
                     <div class="evento-card__info">
                         <p class="evento-card__texto">UNIVERSO GOYA. ENTRE LA LUZ Y LA OSCURIDAD</p>
                         <button class="evento-card__boton">Ver evento</button>
                     </div>
                 </a>
                 <a class="evento-card" href="#">
-                    <div class="evento-card__img card__img4"></div>
+                    <div class="evento-card__img card__img4 card__img"></div>
                     <div class="evento-card__info">
                         <p class="evento-card__texto">VR World Lab: experiencia de realidad virtual</p>
                         <button class="evento-card__boton">Ver evento</button>
@@ -180,6 +180,7 @@
             </div>
         </section>
 
+        <!-- Eventos gratuitos -->
         <section class="eventos-disponibles">
             <h3 class="eventos-disponibles__subtitulo">Eventos gratuitos</h3>
 
@@ -187,28 +188,28 @@
                 <a class="evento-card" href="#">
                     <div class="evento-card__img card__img5"></div>
                     <div class="evento-card__info">
-                        <p class="evento-card__texto">Candlelight: <br> Tributo a ABBA</p>
+                        <p class="evento-card__texto">Dinos Alive: una experiencia inmersiva</p>
                         <button class="evento-card__boton">Ver evento</button>
                     </div>
                 </a>
                 <a class="evento-card" href="#">
-                    <div class="evento-card__img card__img6"></div>
+                    <div class="evento-card__img card__img6 card__img"></div>
                     <div class="evento-card__info">
-                        <p class="evento-card__texto">Candlelight: <br> Tributo a ABBA</p>
+                        <p class="evento-card__texto">Exposición interactiva sobre Antártida por Sergei Potetiunin</p>
                         <button class="evento-card__boton">Ver evento</button>
                     </div>
                 </a>
                 <a class="evento-card" href="#">
-                    <div class="evento-card__img card__img7"></div>
+                    <div class="evento-card__img card__img7 card__img"></div>
                     <div class="evento-card__info">
-                        <p class="evento-card__texto">UNIVERSO GOYA. ENTRE LA LUZ Y LA OSCURIDAD</p>
+                        <p class="evento-card__texto">Petra: La Gloria de Los Nabateos</p>
                         <button class="evento-card__boton">Ver evento</button>
                     </div>
                 </a>
                 <a class="evento-card" href="#">
-                    <div class="evento-card__img card__img8"></div>
+                    <div class="evento-card__img card__img8 card__img"></div>
                     <div class="evento-card__info">
-                        <p class="evento-card__texto">VR World Lab: experiencia de realidad virtual</p>
+                        <p class="evento-card__texto">LEONARDO VERSUS MICHELANGELO</p>
                         <button class="evento-card__boton">Ver evento</button>
                     </div>
                 </a>
@@ -222,35 +223,36 @@
             </div>
         </section>
 
+        <!-- Mejores precios -->
         <section class="eventos-disponibles">
             <h3 class="eventos-disponibles__subtitulo">Mejores precios</h3>
 
             <div class="eventos-disponibles__grid">
                 <a class="evento-card" href="#">
-                    <div class="evento-card__img card__img9"></div>
+                    <div class="evento-card__img card__img9 card__img"></div>
                     <div class="evento-card__info">
-                        <p class="evento-card__texto">Candlelight: <br> Tributo a ABBA</p>
+                        <p class="evento-card__texto">Experiencia de Realidad Virtual en Aventurico Tetuan</p>
                         <button class="evento-card__boton">Ver evento</button>
                     </div>
                 </a>
                 <a class="evento-card" href="#">
-                    <div class="evento-card__img card__img10"></div>
+                    <div class="evento-card__img card__img10 card__img"></div>
                     <div class="evento-card__info">
-                        <p class="evento-card__texto">Candlelight: <br> Tributo a ABBA</p>
+                        <p class="evento-card__texto">TITANIC: THE OFFICIAL EXHIBITION</p>
                         <button class="evento-card__boton">Ver evento</button>
                     </div>
                 </a>
                 <a class="evento-card" href="#">
-                    <div class="evento-card__img card__img11"></div>
+                    <div class="evento-card__img card__img11 card__img"></div>
                     <div class="evento-card__info">
-                        <p class="evento-card__texto">UNIVERSO GOYA. ENTRE LA LUZ Y LA OSCURIDAD</p>
+                        <p class="evento-card__texto">Simracing - El horizonte del circuito</p>
                         <button class="evento-card__boton">Ver evento</button>
                     </div>
                 </a>
                 <a class="evento-card" href="#">
-                    <div class="evento-card__img card__img12"></div>
+                    <div class="evento-card__img card__img12 card__img"></div>
                     <div class="evento-card__info">
-                        <p class="evento-card__texto">VR World Lab: experiencia de realidad virtual</p>
+                        <p class="evento-card__texto">Magia y Comedia en el Bosc de les Fades</p>
                         <button class="evento-card__boton">Ver evento</button>
                     </div>
                 </a>

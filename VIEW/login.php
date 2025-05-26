@@ -29,10 +29,16 @@ OBJETIVO:
 -->
 <?php
 session_start();
+$error = $_SESSION["error"] ?? null;
+unset($_SESSION["error"]);
+
 if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
+
     if (isset($_SESSION["rol"]) && $_SESSION["rol"] === "admin") {
+
         header("Location: ../VIEW/cuentaAdmin.php");
     } else {
+
         header("Location: ../VIEW/cuenta.php");
     }
     exit();
@@ -155,6 +161,14 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
     <!-- MAIN -->
     <!-- //// -->
     <main>
+
+        <!-- Mensaje/pop up de error -->
+        <?php if ($error): ?>
+            <div class="error-message">
+                <?= htmlspecialchars($error) ?>
+            </div>
+        <?php endif; ?>
+
         <!-- Contenedor inicial de "crear una cuenta" -->
         <!-- <form action="../VIEW/cuenta.php" method="post" id="contForm"> -->
         <form action="../CONTROLLER/userController.php" method="post" id="contForm">

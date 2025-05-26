@@ -3,7 +3,7 @@
 /* ////////////////// */
 
 .qs-section {
-    padding: 6rem 0 2rem 0;
+    padding: 2rem 0 2rem 0;
     background: #FFFF;
     position: relative;
     overflow: hidden;
@@ -144,7 +144,7 @@
 /* Sección Fundadores */
 
 .founders-section {
-    padding: 4rem 0;
+    padding: 3rem 0 2rem 0;
     background-color: #fff;
 }
 
@@ -153,7 +153,29 @@
     margin: 0 auto;
     padding: 0 1.5rem;
 }
-
+.redimension{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.redimension {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+.redimension iframe {
+    position: absolute;
+    top: 0;
+    /* left: 0; */
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+iframe{
+    margin: 0 20px;
+}
 .founders-section h2 {
     text-align: center;
     font-size: 2.5rem;
