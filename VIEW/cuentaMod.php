@@ -172,7 +172,7 @@ OBJETIVO:
             <div id="contInputs2">
 
                 <!-- IMG user -->
-                <span id="imgProfile">
+                <span id="imgProfile" class="opacityImg">
                     <img src="../IMG/favicon.svg" alt="Foto por defecto para todos los usuarios">
                 </span>
 

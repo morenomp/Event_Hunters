@@ -147,6 +147,9 @@ main{
 #imgProfile img{
     width: 150px;
 }
+.opacityImg{
+    opacity: .6;
+}
 
 /*/////////////////////////////////////*/
 /*               BUTTONS               */

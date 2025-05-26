@@ -512,6 +512,10 @@ input:focus {
 /*/////////////////////////////////////*/
 /*            ERROR MESSAGE            */
 /*/////////////////////////////////////*/
+#contError{
+    width: 100%;
+    display: flex;
+}
 .error-message {
     width: 25%;
     position: relative;

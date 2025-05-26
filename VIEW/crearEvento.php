@@ -145,12 +145,14 @@ session_start();
         <form action="../CONTROLLER/eventsController.php" method="post" id="contForm">
 
             <!-- Mensaje de error -->
-            <?php
-            if (isset($_SESSION['mensaje_error'])) {
-                echo "<p class='error-message'>" . $_SESSION['mensaje_error'] . "</p>";
-                unset($_SESSION['mensaje_error']);
-            }
-            ?>
+            <div id="contError">
+                <?php
+                if (isset($_SESSION['mensaje_error'])) {
+                    echo "<p class='error-message'>" . $_SESSION['mensaje_error'] . "</p>";
+                    unset($_SESSION['mensaje_error']);
+                }
+                ?>
+            </div>
 
             <div id="contTitle">
                 <!-- Título -->
