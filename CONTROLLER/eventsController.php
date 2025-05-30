@@ -14,6 +14,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             echo "<p>Modify event button clicked</p>";
             $event->editEvent();
         }
+    } else if (isset($_POST["btnDeleteEvent"])) {
+
+        echo "<p>Delete event button clicked</p>";
+        $event->deleteEvent();
+    } else if (isset($_POST["btnViewEventByEmail"])) {
+
+        echo "<p>Modify event button clicked</p>";
+        $event->viewEventByEmail();
     } else {
         echo "You must be an administrator to create a event.";
     }
@@ -122,7 +130,6 @@ class eventController
             // Obtener los resultados
             $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $resultados;
-            
         } catch (PDOException $e) {
             echo "Error al ver el evento: " . $e->getMessage();
             header("Location: ../VIEW/index.php");
@@ -151,6 +158,37 @@ class eventController
             echo "Evento modificado correctamente";
         } catch (PDOException $e) {
             echo "Error al editar el evento: " . $e->getMessage();
+            header("Location: ../VIEW/index.php");
+            exit();
+        }
+    }
+
+    function deleteEvent()
+    {
+        try {
+            session_start();
+
+            if (isset($_SESSION['eventName'])) {
+                $name = $_SESSION['eventName'];
+
+                $sql = "DELETE FROM EVENTOS WHERE name = :name";
+                $stmt = $this->conn->prepare($sql);
+                $stmt->execute([
+                    ':name' => $name
+                ]);
+
+                unset($_SESSION['eventName']);
+
+                echo "Evento eliminado correctamente.";
+                header("Location: ../VIEW/cuentaAdmin.php");
+                exit();
+            } else {
+                echo "Nombre del evento no encontrado en la sesión.";
+                header("Location: ../VIEW/cuentaAdmin.php");
+                exit();
+            }
+        } catch (PDOException $e) {
+            echo "Error al borrar el evento: " . $e->getMessage();
             header("Location: ../VIEW/index.php");
             exit();
         }
