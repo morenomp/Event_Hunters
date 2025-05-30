@@ -243,11 +243,17 @@ OBJETIVO:
                 </button>
             </div>
 
-            <!-- Crear evento -->
-            <button class="btnNext btnCrEvent cPointer" name="btnBorrarUsuario">
-                <a href="../VIEW/crearEvento.php">Crear evento</a>
-            </button>
+            <div id="contSessionCount">
+                <!-- Crear evento -->
+                <button class="btnNext btnCrEvent cPointer" name="btnBorrarUsuario">
+                    <a href="../VIEW/crearEvento.php">Crear evento</a>
+                </button>
 
+                <!-- Ver evento -->
+                <button class="btnNext btnCrEvent cPointer" name="btnBorrarUsuario">
+                    <a href="../VIEW/pagEventos.php">Ver evento</a>
+                </button>
+            </div>
         </form>
     </main>
     <!-- ////// -->
