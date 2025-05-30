@@ -14,6 +14,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             echo "<p>Modify event button clicked</p>";
             $event->editEvent();
         }
+    } else if (isset($_POST["btnDeleteEvent"])) {
+
+        echo "<p>Delete event button clicked</p>";
+        $event->deleteEvent();
+    } else if (isset($_POST["btnViewEventByEmail"])) {
+
+        echo "<p>Modify event button clicked</p>";
+        $event->viewEventByEmail();
     } else {
         echo "You must be an administrator to create a event.";
     }
@@ -162,7 +170,7 @@ class eventController
     function deleteEvent()
     {
         try {
-            session_start(); 
+            session_start();
 
             if (isset($_SESSION['eventName'])) {
                 $name = $_SESSION['eventName'];
