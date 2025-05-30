@@ -46,7 +46,7 @@ class eventController
 
             // contenido de la creación de un evento
             $sql = "CREATE TABLE IF NOT EXISTS EVENTOS ( 
-                name PRIMARY KEY VARCHAR(50), 
+                name VARCHAR(50) PRIMARY KEY, 
                 place VARCHAR(50),
                 date DATE,
                 price int,
@@ -123,7 +123,6 @@ class eventController
             $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             return $resultados;
-            
         } catch (PDOException $e) {
             echo "Error al ver el evento: " . $e->getMessage();
             header("Location: ../VIEW/index.php");
