@@ -100,6 +100,8 @@ class eventController
                 ]);
 
                 echo "Valores insertados correctamente.";
+                header("Location: ../VIEW/cuentaAdmin.php");
+                exit();
             }
         } catch (PDOException $e) {
             echo "Error al crear el evento: " . $e->getMessage();
