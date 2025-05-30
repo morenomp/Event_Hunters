@@ -38,7 +38,6 @@ class eventController
 
             $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
             $this->conn->exec($sql);
-            echo "Base de datos creada o ya existente.<br>";
 
             // Ahora conectamos directamente a la base de datos
             $this->conn = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
@@ -54,7 +53,6 @@ class eventController
             )";
 
             $this->conn->exec($sql);
-            echo "Tabla usuarios creada o ya existente.<br>";
         } catch (PDOException $e) {
             die("Error: " . $e->getMessage());
         }
@@ -114,17 +112,15 @@ class eventController
     function viewEventByEmail()
     {
         try {
-
             // Preparar y ejecutar la consulta
             $sql = "SELECT * FROM EVENTOS WHERE usermail = :usermail";
-            $stmt = $this->conn->prepare($sql);
-            $stmt->bindParam(':usermail', $user, PDO::PARAM_STR);
-            $stmt->execute();
+            $stmt = $this->conn->prepare(query: $sql);
+            $stmt->execute([
+                ':usermail' => $_SESSION['email']
+            ]);
 
             // Obtener los resultados
             $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            var_dump($resultados);
-
             return $resultados;
             
         } catch (PDOException $e) {
