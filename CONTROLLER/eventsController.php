@@ -46,8 +46,7 @@ class eventController
 
             // contenido de la creación de un evento
             $sql = "CREATE TABLE IF NOT EXISTS EVENTOS ( 
-                id INT PRIMARY KEY AUTO_INCREMENT,
-                name VARCHAR(50), 
+                name PRIMARY KEY VARCHAR(50), 
                 place VARCHAR(50),
                 date DATE,
                 price int,
@@ -109,15 +108,37 @@ class eventController
         }
     }
 
+
+    function viewEventByEmail()
+    {
+        try {
+
+            // Preparar y ejecutar la consulta
+            $sql = "SELECT * FROM EVENTOS WHERE usermail = :usermail";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(':usermail', $user, PDO::PARAM_STR);
+            $stmt->execute();
+
+            // Obtener los resultados
+            $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            return $resultados;
+            
+        } catch (PDOException $e) {
+            echo "Error al ver el evento: " . $e->getMessage();
+            header("Location: ../VIEW/index.php");
+            exit();
+        }
+    }
+
     function editEvent()
     {
         try {
 
-            $id = $_SESSION["eventid"];
-            $name = $_POST["name"] ?? null;
-            $price = $_POST["name"] ?? null;
-            $date = $_POST["name"] ?? null;
-            $place = $_POST["name"] ?? null;
+            $name = $_POST["evname"];
+            $price = $_POST["evprice"] ?? null;
+            $date = $_POST["evdate"] ?? null;
+            $place = $_POST["evname"] ?? null;
 
             //ACABAR CODIGO CUANDO VISTA ESTE LISTA
             $sql = "UPDATE EVENTOS SET name = :name, price = :price, date = :date, place = :place WHERE id = :id";
