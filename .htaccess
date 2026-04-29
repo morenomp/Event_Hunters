@@ -4,5 +4,4 @@ RewriteCond %{REQUEST_FILENAME} -d [OR]
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^ - [L]
 
-RewriteRule ^$ index.php [L]
-RewriteRule ^([A-Za-z0-9_-]+)/?$ $1.php [L,QSA]
+RewriteRule ^ index.php [L,QSA]
