@@ -35,7 +35,7 @@ OBJETIVO:
 <body>
 
     <!-- Contenedor inicial de "crear una cuenta" -->
-    <form action="../VIEW/cuenta.php" method="post" id="contForm">
+    <form action="/cuenta" method="post" id="contForm">
 
         <div id="contTitle">
 

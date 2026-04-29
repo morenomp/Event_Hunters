@@ -20,7 +20,7 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
     $rol = $_SESSION["rol"];
 } else {
     // Si no ha iniciado sesión, redirigimos al login
-    header("Location: login.php");
+    header("Location: /login");
     exit();
 }
 ?>
@@ -58,7 +58,7 @@ OBJETIVO:
     <header class="sticky-header notResponsiveH">
         <nav class="header-nav">
 
-            <a id="logoHeader" href="../VIEW/index.php">
+            <a id="logoHeader" href="/">
                 <img src="../IMG/LogotipoMedioColor.svg" alt="Logotipo oficial de Event Hunters" class="logo">
                 <span id="hoverLogo">
                     <h2>event</h2>
@@ -67,9 +67,9 @@ OBJETIVO:
             </a>
 
             <div class="nav-items">
-                <a href="../VIEW/index.php" class="nav-link">INICIO</a>
-                <a href="../VIEW/eventos.php" class="nav-link">EVENTOS</a>
-                <a href="../VIEW/about_us.php" class="nav-link">TRAYECTORIA</a>
+                <a href="/" class="nav-link">INICIO</a>
+                <a href="/eventos" class="nav-link">EVENTOS</a>
+                <a href="/about_us" class="nav-link">TRAYECTORIA</a>
             </div>
 
             <div class="nav-items">
@@ -88,14 +88,14 @@ OBJETIVO:
                 </span>
 
                 <!-- Registro en la web -->
-                <a class="imgHeaderMenu cta-nav" href="../VIEW/login.php">
+                <a class="imgHeaderMenu cta-nav" href="/login">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                         <path fill="#000000" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
                     </svg>
                 </a>
 
                 <!-- Entradas del usuario -->
-                <a class="imgHeaderMenu" href="../VIEW/entradas.php">
+                <a class="imgHeaderMenu" href="/entradas">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                         <path fill="#000000" d="M96 32l0 32L48 64C21.5 64 0 85.5 0 112l0 48 448 0 0-48c0-26.5-21.5-48-48-48l-48 0 0-32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 32L160 64l0-32c0-17.7-14.3-32-32-32S96 14.3 96 32zM448 192L0 192 0 464c0 26.5 21.5 48 48 48l352 0c26.5 0 48-21.5 48-48l0-272z" />
                     </svg>
@@ -110,7 +110,7 @@ OBJETIVO:
     <header class="sticky-header responsiveH">
         <nav class="header-nav">
 
-            <a id="logoHeader" href="../VIEW/index.php">
+            <a id="logoHeader" href="/">
                 <img src="../IMG/LogotipoMedioColor.svg" alt="Logotipo oficial de Event Hunters" class="logo">
             </a>
 
@@ -125,9 +125,9 @@ OBJETIVO:
 
                 <section id="cols">
                     <ul class="nav-items">
-                        <a href="../VIEW/index.php" class="nav-link">INICIO</a>
-                        <a href="../VIEW/eventos.php" class="nav-link">EVENTOS</a>
-                        <a href="../VIEW/about_us.php" class="nav-link">TRAYECTORIA</a>
+                        <a href="/" class="nav-link">INICIO</a>
+                        <a href="/eventos" class="nav-link">EVENTOS</a>
+                        <a href="/about_us" class="nav-link">TRAYECTORIA</a>
                     </ul>
 
                     <div class="nav-items">
@@ -146,14 +146,14 @@ OBJETIVO:
                         </span>
 
                         <!-- Registro en la web -->
-                        <a class="imgHeaderMenu cta-nav" href="../VIEW/login.php">
+                        <a class="imgHeaderMenu cta-nav" href="/login">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                 <path fill="#000000" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
                             </svg>
                         </a>
 
                         <!-- Entradas del usuario -->
-                        <a class="imgHeaderMenu" href="../VIEW/entradas.php">
+                        <a class="imgHeaderMenu" href="/entradas">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                 <path fill="#000000" d="M96 32l0 32L48 64C21.5 64 0 85.5 0 112l0 48 448 0 0-48c0-26.5-21.5-48-48-48l-48 0 0-32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 32L160 64l0-32c0-17.7-14.3-32-32-32S96 14.3 96 32zM448 192L0 192 0 464c0 26.5 21.5 48 48 48l352 0c26.5 0 48-21.5 48-48l0-272z" />
                             </svg>
@@ -168,7 +168,7 @@ OBJETIVO:
     <!-- //// -->
     <main>
         <!-- Contenedor inicial de "crear una cuenta" -->
-        <form action="../CONTROLLER/userController.php" method="post" id="contForm">
+        <form action="/CONTROLLER/userController.php" method="post" id="contForm">
 
             <div id="contTitle">
 
@@ -187,13 +187,13 @@ OBJETIVO:
 
                     <div id="contTextTodo">
         </form>
-        <form action="../VIEW/cuentaMod.php" method="post" id="contForm">
+        <form action="/cuentaMod" method="post" id="contForm">
 
             <div id="contModifyButton">
                 <?php
                 echo '<h1>Tu perfil</h1>';
                 ?>
-                <a href="./cuentaMod.php">
+                <a href="/cuentaMod">
                     <button class="btnModify cPointer" name="btnModifyProfile">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                             <path fill="#000000" d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160L0 416c0 53 43 96 96 96l256 0c53 0 96-43 96-96l0-96c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 96c0 17.7-14.3 32-32 32L96 448c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 64z" />
@@ -202,7 +202,7 @@ OBJETIVO:
                 </a>
             </div>
         </form>
-        <form action="../CONTROLLER/userController.php" method="post" id="contForm">
+        <form action="/CONTROLLER/userController.php" method="post" id="contForm">
             <div id="contTextInfo">
                 <?php
                 // Nombre de usuario con el que se le denominará
@@ -246,12 +246,12 @@ OBJETIVO:
             <div id="contSessionCount">
                 <!-- Crear evento -->
                 <button class="btnNext btnCrEvent cPointer" name="btnBorrarUsuario">
-                    <a href="../VIEW/crearEvento.php">Crear evento</a>
+                    <a href="/crearEvento">Crear evento</a>
                 </button>
 
                 <!-- Ver evento -->
                 <button class="btnNext btnCrEvent cPointer" name="btnBorrarUsuario">
-                    <a href="../VIEW/pagEventos.php">Ver evento</a>
+                    <a href="/pagEventos">Ver evento</a>
                 </button>
             </div>
         </form>

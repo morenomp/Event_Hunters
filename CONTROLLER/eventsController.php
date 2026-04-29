@@ -32,23 +32,35 @@ class eventController
 {
     private $conn;
 
+    private function buildDsn(?string $dbname = null): string
+    {
+        $host = getenv('EVENT_HUNTERS_DB_HOST') ?: '127.0.0.1';
+        $port = getenv('EVENT_HUNTERS_DB_PORT') ?: '3306';
+        $dsn = "mysql:host=$host;port=$port;charset=utf8mb4";
+
+        if ($dbname !== null) {
+            $dsn .= ";dbname=$dbname";
+        }
+
+        return $dsn;
+    }
+
     public function __construct()
     {
-        $host = "localhost";
-        $user = "root";
-        $password = "";
-        $dbname = "event_hunters";
+        $user = getenv('EVENT_HUNTERS_DB_USER') ?: 'root';
+        $password = getenv('EVENT_HUNTERS_DB_PASSWORD') ?: '';
+        $dbname = getenv('EVENT_HUNTERS_DB_NAME') ?: 'event_hunters';
 
         try {
             // Conexión sin base de datos para crearla
-            $this->conn = new PDO("mysql:host=$host", $user, $password);
+            $this->conn = new PDO($this->buildDsn(), $user, $password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
             $this->conn->exec($sql);
 
             // Ahora conectamos directamente a la base de datos
-            $this->conn = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
+            $this->conn = new PDO($this->buildDsn($dbname), $user, $password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // contenido de la creación de un evento
@@ -62,7 +74,7 @@ class eventController
 
             $this->conn->exec($sql);
         } catch (PDOException $e) {
-            die("Error: " . $e->getMessage());
+            die("Error de conexion con la base de datos: " . $e->getMessage());
         }
     }
 
@@ -87,7 +99,7 @@ class eventController
 
                 $_SESSION['mensaje_error'] = "Ya existe un evento con ese nombre.";
                 error_log("Evento ya existe"); // Esto se verá en los logs de PHP
-                header("Location: ../VIEW/crearEvento.php");
+                header("Location: /crearEvento");
                 exit();
 
                 //SI NO existe, inserta un nuevo evento
@@ -106,12 +118,12 @@ class eventController
                 ]);
 
                 echo "Valores insertados correctamente.";
-                header("Location: ../VIEW/cuentaAdmin.php");
+                header("Location: /cuentaAdmin");
                 exit();
             }
         } catch (PDOException $e) {
             echo "Error al crear el evento: " . $e->getMessage();
-            header("Location: ../VIEW/index.php");
+            header("Location: /");
             exit();
         }
     }
@@ -132,7 +144,7 @@ class eventController
             return $resultados;
         } catch (PDOException $e) {
             echo "Error al ver el evento: " . $e->getMessage();
-            header("Location: ../VIEW/index.php");
+            header("Location: /");
             exit();
         }
     }
@@ -158,7 +170,7 @@ class eventController
             echo "Evento modificado correctamente";
         } catch (PDOException $e) {
             echo "Error al editar el evento: " . $e->getMessage();
-            header("Location: ../VIEW/index.php");
+            header("Location: /");
             exit();
         }
     }
@@ -180,16 +192,16 @@ class eventController
                 unset($_SESSION['eventName']);
 
                 echo "Evento eliminado correctamente.";
-                header("Location: ../VIEW/cuentaAdmin.php");
+                header("Location: /cuentaAdmin");
                 exit();
             } else {
                 echo "Nombre del evento no encontrado en la sesión.";
-                header("Location: ../VIEW/cuentaAdmin.php");
+                header("Location: /cuentaAdmin");
                 exit();
             }
         } catch (PDOException $e) {
             echo "Error al borrar el evento: " . $e->getMessage();
-            header("Location: ../VIEW/index.php");
+            header("Location: /");
             exit();
         }
     }

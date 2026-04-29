@@ -35,7 +35,7 @@ OBJETIVO:
     <header class="sticky-header notResponsiveH">
         <nav class="header-nav">
 
-            <a id="logoHeader" href="../VIEW/index.php">
+            <a id="logoHeader" href="/">
                 <img src="../IMG/LogotipoMedioColor.svg" alt="Logotipo oficial de Event Hunters" class="logo">
                 <span id="hoverLogo">
                     <h2>event</h2>
@@ -44,9 +44,9 @@ OBJETIVO:
             </a>
 
             <div class="nav-items">
-                <a href="../VIEW/index.php" class="nav-link">INICIO</a>
-                <a href="../VIEW/eventos.php" class="nav-link">EVENTOS</a>
-                <a href="../VIEW/about_us.php" class="nav-link">TRAYECTORIA</a>
+                <a href="/" class="nav-link">INICIO</a>
+                <a href="/eventos" class="nav-link">EVENTOS</a>
+                <a href="/about_us" class="nav-link">TRAYECTORIA</a>
             </div>
 
             <div class="nav-items">
@@ -65,7 +65,7 @@ OBJETIVO:
                 </span>
 
                 <!-- Registro en la web -->
-                <a class="imgHeaderMenu cta-nav" href="../VIEW/login.php">
+                <a class="imgHeaderMenu cta-nav" href="/login">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                         <path fill="#000000"
                             d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
@@ -73,7 +73,7 @@ OBJETIVO:
                 </a>
 
                 <!-- Entradas del usuario -->
-                <a class="imgHeaderMenu" href="../VIEW/entradas.php">
+                <a class="imgHeaderMenu" href="/entradas">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                         <path fill="#000000"
                             d="M96 32l0 32L48 64C21.5 64 0 85.5 0 112l0 48 448 0 0-48c0-26.5-21.5-48-48-48l-48 0 0-32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 32L160 64l0-32c0-17.7-14.3-32-32-32S96 14.3 96 32zM448 192L0 192 0 464c0 26.5 21.5 48 48 48l352 0c26.5 0 48-21.5 48-48l0-272z" />
@@ -89,7 +89,7 @@ OBJETIVO:
     <header class="sticky-header responsiveH">
         <nav class="header-nav">
 
-            <a id="logoHeader" href="../VIEW/index.php">
+            <a id="logoHeader" href="/">
                 <img src="../IMG/LogotipoMedioColor.svg" alt="Logotipo oficial de Event Hunters" class="logo">
             </a>
 
@@ -104,9 +104,9 @@ OBJETIVO:
 
                 <section id="cols">
                     <ul class="nav-items">
-                        <a href="../VIEW/index.php" class="nav-link">INICIO</a>
-                        <a href="../VIEW/eventos.php" class="nav-link">EVENTOS</a>
-                        <a href="../VIEW/about_us.php" class="nav-link">TRAYECTORIA</a>
+                        <a href="/" class="nav-link">INICIO</a>
+                        <a href="/eventos" class="nav-link">EVENTOS</a>
+                        <a href="/about_us" class="nav-link">TRAYECTORIA</a>
                     </ul>
 
                     <div class="nav-items">
@@ -125,7 +125,7 @@ OBJETIVO:
                         </span>
 
                         <!-- Registro en la web -->
-                        <a class="imgHeaderMenu cta-nav" href="../VIEW/login.php">
+                        <a class="imgHeaderMenu cta-nav" href="/login">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                 <path fill="#000000"
                                     d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
@@ -133,7 +133,7 @@ OBJETIVO:
                         </a>
 
                         <!-- Entradas del usuario -->
-                        <a class="imgHeaderMenu" href="../VIEW/entradas.php">
+                        <a class="imgHeaderMenu" href="/entradas">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                 <path fill="#000000"
                                     d="M96 32l0 32L48 64C21.5 64 0 85.5 0 112l0 48 448 0 0-48c0-26.5-21.5-48-48-48l-48 0 0-32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 32L160 64l0-32c0-17.7-14.3-32-32-32S96 14.3 96 32zM448 192L0 192 0 464c0 26.5 21.5 48 48 48l352 0c26.5 0 48-21.5 48-48l0-272z" />
@@ -149,7 +149,7 @@ OBJETIVO:
     <!-- //// -->
     <main>
         <!-- Contenedor inicial -->
-        <form action="../CONTROLLER/userController.php" method="post" id="contForm">
+        <form action="/CONTROLLER/userController.php" method="post" id="contForm">
 
             <div id="contTitle">
                 <!-- Título -->
@@ -164,7 +164,7 @@ OBJETIVO:
                 <div id="contInputs">
 
                     <!-- Nombre de usuario con el que se le denominará -->
-                    <input type="text" name="nameRegistro" placeholder="Nombre & Apellido" pattern="^[A-Za-z]+$"
+                    <input type="text" name="nameRegistro" placeholder="Nombre & Apellido" pattern="^[A-Za-zÁÉÍÓÚÜÑáéíóúüñÀ-ÿ]+(?:[ '\-][A-Za-zÁÉÍÓÚÜÑáéíóúüñÀ-ÿ]+)*$"
                         required>
 
                     <!-- Correo electrónico que usará para el registro -->
@@ -193,12 +193,12 @@ OBJETIVO:
                 </button>
 
                 <button class="btnNext" name="btnNext">
-                    <a href="../VIEW/registroAdmin.php">
+                    <a href="/registroAdmin">
                         Cuenta de Adminitrador
                     </a>
                     <br>
                     <br>
-                    <a href="../VIEW/login.php">
+                    <a href="/login">
                         Iniciar sesión
                     </a>
                 </button>

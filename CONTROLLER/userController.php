@@ -64,16 +64,28 @@ class userController
 {
     private $conn;
 
+    private function buildDsn(?string $dbname = null): string
+    {
+        $host = getenv('EVENT_HUNTERS_DB_HOST') ?: '127.0.0.1';
+        $port = getenv('EVENT_HUNTERS_DB_PORT') ?: '3306';
+        $dsn = "mysql:host=$host;port=$port;charset=utf8mb4";
+
+        if ($dbname !== null) {
+            $dsn .= ";dbname=$dbname";
+        }
+
+        return $dsn;
+    }
+
     public function __construct()
     {
-        $host = "localhost";
-        $user = "root";
-        $password = "";
-        $dbname = "event_hunters";
+        $user = getenv('EVENT_HUNTERS_DB_USER') ?: 'root';
+        $password = getenv('EVENT_HUNTERS_DB_PASSWORD') ?: '';
+        $dbname = getenv('EVENT_HUNTERS_DB_NAME') ?: 'event_hunters';
 
         try {
             // Conexión sin base de datos para crearla
-            $this->conn = new PDO("mysql:host=$host", $user, $password);
+            $this->conn = new PDO($this->buildDsn(), $user, $password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Crear la base de datos si no existe
@@ -82,7 +94,7 @@ class userController
             echo "Base de datos creada o ya existente.<br>";
 
             // Ahora conectamos directamente a la base de datos
-            $this->conn = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
+            $this->conn = new PDO($this->buildDsn($dbname), $user, $password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Crear la tabla USUARIOS
@@ -98,7 +110,7 @@ class userController
             $this->conn->exec($sql);
             echo "Tabla usuarios creada o ya existente.<br>";
         } catch (PDOException $e) {
-            die("Error: " . $e->getMessage());
+            die("Error de conexion con la base de datos: " . $e->getMessage());
         }
     }
 
@@ -141,9 +153,9 @@ class userController
 
             //REDIRECCIÓN SEGÚN EL ROL
             if ($row['rol'] === 'admin') {
-                header("Location: ../VIEW/cuentaAdmin.php");
+                header("Location: /cuentaAdmin");
             } else if ($row['rol'] === 'user') {
-                header("Location: ../VIEW/cuenta.php");
+                header("Location: /cuenta");
             }
             exit();
         } else {
@@ -157,7 +169,7 @@ class userController
             echo "Login failed";
 
             $_SESSION["error"] = "Correo o contraseña incorrectos.";
-            header("Location: ../VIEW/login.php");
+            header("Location: /login");
             exit();
         }
     }
@@ -203,11 +215,11 @@ class userController
                 ]);
 
                 echo "Administrador registrado correctamente.";
-                header("Location: ../VIEW/cuentaAdmin.php"); // Redirigimos tras éxito
+                header("Location: /cuentaAdmin"); // Redirigimos tras éxito
                 exit();
             } catch (PDOException $e) {
                 echo "Error al registrar el administrador: " . $e->getMessage();
-                header("Location: ../VIEW/cuentaAdmin.php");
+                header("Location: /cuentaAdmin");
                 exit();
             }
         } else {
@@ -245,7 +257,7 @@ class userController
                     ':rol' => $rol
                 ]);
 
-                header("Location: ../VIEW/cuenta.php");  // O la página que desees
+                header("Location: /cuenta");  // O la página que desees
                 exit();
             }
         }
@@ -255,7 +267,7 @@ class userController
     {
         session_unset();
         session_destroy();
-        header("Location: ../VIEW/cuenta.php");
+        header("Location: /cuenta");
         exit();
     }
 
@@ -270,11 +282,11 @@ class userController
                 ]);
                 session_unset();
                 session_destroy(); // eliminamos la session entera para que no hayan conflictos mas adelante
-                header("Location: ../VIEW/cuentaAdmin.php");
+                header("Location: /cuentaAdmin");
                 exit();
             } catch (PDOException $e) {
                 echo "Error al borrar el usuario: " . $e->getMessage();
-                header("Location: ../VIEW/index.php");
+                header("Location: /");
                 exit();
             }
         } else {
@@ -310,14 +322,14 @@ class userController
 
                 //REDIRECCIÓN SEGÚN EL ROL
                 if ($_SESSION['rol'] === 'admin') {
-                    header("Location: ../VIEW/cuentaAdmin.php");
+                    header("Location: /cuentaAdmin");
                 } else if ($_SESSION['rol'] === 'user') {
-                    header("Location: ../VIEW/cuenta.php");
+                    header("Location: /cuenta");
                 }
                 exit();
             } catch (PDOException $e) {
                 echo "Error al modificar el usuario: " . $e->getMessage();
-                header("Location: ../VIEW/index.php");
+                header("Location: /");
                 exit();
             }
         } else {
